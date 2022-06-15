@@ -1,0 +1,32 @@
+{
+	"kakko":{
+		"prefix": " ",
+		"body": "($1)",
+		"description": "kakko"
+	},
+	"kakko_selected":{
+		"prefix": " ",
+		"body": "($TM_SELECTED_TEXT)",
+		"description": "kakko_selected"
+	},
+	"nami_kakko":{
+		"prefix": " ",
+		"body": "{$1}",
+		"description": "nami_kakko"
+	},
+	"nami_kakko_selected":{
+		"prefix": " ",
+		"body": "{$TM_SELECTED_TEXT}",
+		"description": "nami_kakko_selected"
+	},
+	"kaku_kakko":{
+		"prefix": " ",
+		"body": "[$1]",
+		"description": "kaku_kakko"
+	},
+	"kaku_kakko_selected":{
+		"prefix": " ",
+		"body": "[$TM_SELECTED_TEXT]",
+		"description": "kaku_kakko_selected"
+	}
+}
