@@ -528,11 +528,11 @@
 		"when": "editorTextFocus && editorLangId == 'python'"
 	},
 	{
-		"key": "ctrl+k l",
+		"key": "ctrl+l ctrl+l",
 		"command": "remote-wsl.openFolder"
 	},
 	{
-		"key": "ctrl+k ctrl+shift+alt+e",
+		"key": "ctrl+l ctrl+shift+alt+e",
 		"command": "remote-wsl.revealInExplorer",
 		"when": "editorFocus && remoteName == 'wsl'"
 	},
@@ -540,5 +540,9 @@
 		"key": "shift+alt+r",
 		"command": "-remote-wsl.revealInExplorer",
 		"when": "editorFocus && remoteName == 'wsl'"
+	},
+	{
+		"key": "ctrl+l ctrl+shift+l",
+		"command": "workbench.action.remote.close"
 	}
 ]
