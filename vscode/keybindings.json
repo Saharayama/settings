@@ -528,7 +528,7 @@
 		"when": "editorTextFocus && editorLangId == 'python'"
 	},
 	{
-		"key": "ctrl+l ctrl+l",
+		"key": "ctrl+l ctrl+o",
 		"command": "remote-wsl.openFolder"
 	},
 	{
@@ -544,5 +544,9 @@
 	{
 		"key": "ctrl+l ctrl+shift+l",
 		"command": "workbench.action.remote.close"
+	},
+	{
+		"key": "ctrl+l ctrl+l",
+		"command": "remote-wsl.newWindow"
 	}
 ]

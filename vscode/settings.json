@@ -55,7 +55,7 @@
     "npm.fetchOnlinePackageInfo": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
     "window.restoreFullscreen": true,
-    "editor.glyphMargin": false,
+    // "editor.glyphMargin": false,
     "workbench.editor.untitled.hint": "hidden",
     "terminal.integrated.defaultProfile.windows": "Git Bash",
     "security.workspace.trust.untrustedFiles": "open",
