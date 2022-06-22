@@ -521,5 +521,24 @@
 	{
 		"key": "ctrl+oem_plus",
 		"command": "workbench.action.quickOpenTerm"
+	},
+	{
+		"key": "f5",
+		"command": "python.execInTerminal",
+		"when": "editorTextFocus && editorLangId == 'python'"
+	},
+	{
+		"key": "ctrl+k l",
+		"command": "remote-wsl.openFolder"
+	},
+	{
+		"key": "ctrl+k ctrl+shift+alt+e",
+		"command": "remote-wsl.revealInExplorer",
+		"when": "editorFocus && remoteName == 'wsl'"
+	},
+	{
+		"key": "shift+alt+r",
+		"command": "-remote-wsl.revealInExplorer",
+		"when": "editorFocus && remoteName == 'wsl'"
 	}
 ]
