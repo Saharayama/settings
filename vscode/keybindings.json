@@ -548,5 +548,57 @@
 	{
 		"key": "ctrl+l ctrl+l",
 		"command": "remote-wsl.newWindow"
+	},
+	{
+		"key":"ctrl+shift+2",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "double_quote"
+		},
+		"when": "editorTextFocus && !editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+2",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "double_quote_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+7",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "single_quote"
+		},
+		"when": "editorTextFocus && !editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+7",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "single_quote_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+oem_3",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "back_quote"
+		},
+		"when": "editorTextFocus && !editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+oem_3",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "back_quote_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection"
+	},
+	{
+		"key": "ctrl+shift+alt+f",
+		"command": "toggleFindInSelection"
 	}
 ]

@@ -30,7 +30,7 @@
         "editor.selectionHighlightBackground": "#00000000",
         "editor.foreground": "#ffffff",
         "editor.background": "#000000",
-        "terminal.foreground": "#00ff00",
+        "terminal.foreground": "#ffffff",
         "statusBar.noFolderBackground": "#0000ff00",
         "statusBar.foreground": "#eeeeee",
         "statusBar.background": "#66008000",
@@ -60,5 +60,10 @@
     "terminal.integrated.defaultProfile.windows": "Git Bash",
     "security.workspace.trust.untrustedFiles": "open",
     "telemetry.telemetryLevel": "off",
-    "security.workspace.trust.enabled": false
+    "security.workspace.trust.enabled": false,
+    "[c]": {
+        "editor.insertSpaces": false,
+    },
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.autoClosingQuotes": "never"
 }
