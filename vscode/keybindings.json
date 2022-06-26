@@ -114,16 +114,6 @@
 	},
 	{
 		"key": "ctrl+t",
-		"command": "editor.action.commentLine",
-		"when": "editorTextFocus && !editorReadonly"
-	},
-	{
-		"key": "ctrl+oem_2",
-		"command": "-editor.action.commentLine",
-		"when": "editorTextFocus && !editorReadonly"
-	},
-	{
-		"key": "ctrl+t",
 		"command": "-workbench.action.showAllSymbols"
 	},
 	{
@@ -494,7 +484,7 @@
 		"when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus"
 	},
 	{
-		"key": "ctrl+shift+oem_2",
+		"key": "ctrl+shift+oem_102",
 		"command": "workbench.action.terminal.kill",
 		"when": "terminalFocus"
 	},
@@ -504,15 +494,11 @@
 		"when": "suggestWidgetVisible"
 	},
 	{
-		"key": "ctrl+shift+oem_102",
+		"key": "ctrl+shift+alt+oem_102",
 		"command": "workbench.action.terminal.newWithCwd",
 		"args": {
 		  "cwd": "${fileDirname}"
 		}
-	},
-	{
-		"key": "ctrl+oem_2",
-		"command": "workbench.action.terminal.new"
 	},
 	{
 		"key": "ctrl+shift+oem_3",
@@ -610,5 +596,14 @@
 		"key": "ctrl+shift+y",
 		"command": "-workbench.debug.action.toggleRepl",
 		"when": "workbench.panel.repl.view.active"
+	},
+	{
+		"key": "ctrl+alt+oem_102",
+		"command": "workbench.action.terminal.new"
+	},
+	{
+		"key": "ctrl+oem_2",
+		"command": "-workbench.action.terminal.sendSequence",
+		"when": "terminalFocus"
 	}
 ]
