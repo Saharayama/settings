@@ -600,5 +600,15 @@
 	{
 		"key": "ctrl+shift+alt+f",
 		"command": "toggleFindInSelection"
+	},
+	{
+		"key": "ctrl+oem_minus",
+		"command": "workbench.debug.action.toggleRepl",
+		"when": "workbench.panel.repl.view.active"
+	},
+	{
+		"key": "ctrl+shift+y",
+		"command": "-workbench.debug.action.toggleRepl",
+		"when": "workbench.panel.repl.view.active"
 	}
 ]
