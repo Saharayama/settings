@@ -65,5 +65,7 @@
         "editor.insertSpaces": false,
     },
     "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.autoClosingQuotes": "never"
+    "editor.autoClosingQuotes": "never",
+    "C_Cpp.loggingLevel": "Information",
+    "editor.parameterHints.enabled": false
 }
