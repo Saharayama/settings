@@ -75,5 +75,25 @@
 		"prefix": " ",
 		"body": "`$TM_SELECTED_TEXT`",
 		"description": "back_quote_selected"
+	},
+	"zenkaku_kakko":{
+		"prefix": " ",
+		"body": "（$1）",
+		"description": "zenkaku_kakko"
+	},
+	"zenkaku_kakko_selected":{
+		"prefix": " ",
+		"body": "（$TM_SELECTED_TEXT）",
+		"description": "zenkaku_kakko_selected"
+	},
+	"kagi_kakko":{
+		"prefix": " ",
+		"body": "「$1」",
+		"description": "kagi_kakko"
+	},
+	"kagi_kakko_selected":{
+		"prefix": " ",
+		"body": "「$TM_SELECTED_TEXT」",
+		"description": "kagi_kakko_selected"
 	}
 }

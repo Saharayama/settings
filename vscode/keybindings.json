@@ -605,5 +605,37 @@
 		"key": "ctrl+oem_2",
 		"command": "-workbench.action.terminal.sendSequence",
 		"when": "terminalFocus"
+	},
+	{
+		"key":"ctrl+shift+9",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "zenkaku_kakko"
+		},
+		"when": "editorTextFocus && !editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+9",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "zenkaku_kakko_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+oem_6",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "kagi_kakko"
+		},
+		"when": "editorTextFocus && !editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+oem_6",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "kagi_kakko_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection"
 	}
 ]
