@@ -1,4 +1,5 @@
 {
+    "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions":
     [
@@ -11,12 +12,12 @@
             "keys": "ctrl+c"
         },
         {
-            "command": "find",
-            "keys": "ctrl+shift+f"
-        },
-        {
             "command": "paste",
             "keys": "ctrl+v"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
         },
         {
             "command":
@@ -33,20 +34,27 @@
     "copyOnSelect": false,
     "defaultProfile": "{}",
     "disableAnimations": true,
+    "experimental.rendering.software": false,
     "initialCols": 100,
     "profiles":
     {
         "defaults":
         {
+            "altGrAliasing": false,
+            "antialiasingMode": "cleartype",
             "bellStyle": "none",
-            "colorScheme": "user",
+            "closeOnExit": "graceful",
+            "colorScheme": "user3",
             "cursorShape": "underscore",
             "font":
             {
                 "face": "Ricty",
                 "size": 12
             },
-            "padding": "0, 0, 0, 0"
+            "intenseTextStyle": "all",
+            "padding": "0",
+            "scrollbarState": "hidden",
+            "suppressApplicationTitle": true
         },
         "list":
         [
@@ -59,7 +67,6 @@
             },
             {
                 "colorScheme": "user2",
-                "commandline": "cmd.exe",
                 "guid": "{}",
                 "hidden": false,
                 "name": "CMD"
@@ -73,8 +80,9 @@
             {
                 "guid": "{}",
                 "hidden": false,
-                "name": "Debian",
-                "source": "Windows.Terminal.Wsl"
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": "\\\\wsl.localhost\\Ubuntu\\home\\iida"
             }
         ]
     },
@@ -332,7 +340,32 @@
             "selectionBackground": "#FFFFFF",
             "white": "#FFFFFF",
             "yellow": "#C19C00"
+        },
+        {
+            "background": "#000000",
+            "black": "#000000",
+            "blue": "#555555",
+            "brightBlack": "#FFFFFF",
+            "brightBlue": "#9090FF",
+            "brightCyan": "#40FFFF",
+            "brightGreen": "#40FF40",
+            "brightPurple": "#FF40FF",
+            "brightRed": "#E74856",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FFFF00",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#00BFBF",
+            "foreground": "#FFFFFF",
+            "green": "#FFFFFF",
+            "name": "user3",
+            "purple": "#881798",
+            "red": "#C50F1F",
+            "selectionBackground": "#FFFFFF",
+            "white": "#FFFFFF",
+            "yellow": "#C19C00"
         }
     ],
-    "tabWidthMode": "equal"
+    "tabSwitcherMode": "disabled",
+    "tabWidthMode": "compact",
+    "windowingBehavior": "useExisting"
 }
