@@ -1,15 +1,5 @@
 [
 	{
-		"key": "f5",
-		"command": "-workbench.action.debug.start",
-		"when": "!inDebugMode"
-	},
-	{
-		"key": "f5",
-		"command": "-workbench.action.debug.continue",
-		"when": "inDebugMode"
-	},
-	{
 		"key": "ctrl+shift+j",
 		"command": "-workbench.action.search.toggleQueryDetails",
 		"when": "searchViewletVisible"
@@ -271,11 +261,6 @@
 	},
 	{
 		"key": "shift+f5",
-		"command": "-workbench.action.debug.stop",
-		"when": "inDebugMode"
-	},
-	{
-		"key": "shift+f5",
 		"command": "markdown.showPreview",
 		"when": "editorTextFocus && editorLangId == 'markdown'"
 
@@ -331,19 +316,6 @@
 		"when": "!editorFocus"
 	},
 	{
-		"key": "ctrl+k ctrl+f",
-		"command": "workbench.action.closeFolder"
-	},
-	{
-		"key": "ctrl+k f",
-		"command": "-workbench.action.closeFolder"
-	},
-	{
-		"key": "ctrl+k ctrl+f",
-		"command": "-editor.action.formatSelection",
-		"when": "editorTextFocus && !editorReadonly"
-	},
-	{
 		"key": "ctrl+shift+o",
 		"command": "-workbench.action.gotoSymbol"
 	},
@@ -374,11 +346,6 @@
 		"key": "ctrl+alt+enter",
 		"command": "-editor.action.replaceAll",
 		"when": "editorFocus && findWidgetVisible"
-	},
-	{
-		"key": "ctrl+f5",
-		"command": "-workbench.action.debug.run",
-		"when": "!inDebugMode"
 	},
 	{
 		"key": "ctrl+p ctrl+e",
@@ -440,10 +407,6 @@
 		"when": "editorTextFocus && editorHasSelection"
 	},
 	{
-		"key": "ctrl+shift+d",
-		"command": "-workbench.view.debug"
-	},
-	{
 		"key": "ctrl+d",
 		"command": "-editor.action.addSelectionToNextFindMatch",
 		"when": "editorFocus"
@@ -454,7 +417,7 @@
 		"when": "editorFocus"
 	},
 	{
-		"key": "ctrl+d",
+		"key": "alt+d",
 		"command": "editor.action.smartSelect.expand",
 		"when": "editorTextFocus"
 	},
@@ -464,7 +427,7 @@
 		"when": "editorTextFocus"
 	},
 	{
-		"key": "ctrl+shift+d",
+		"key": "shift+alt+d",
 		"command": "editor.action.smartSelect.shrink",
 		"when": "editorTextFocus"
 	},
@@ -637,5 +600,15 @@
 			"name": "kagi_kakko_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection"
+	},
+	{
+		"key": "shift+alt+d",
+		"command": "-editor.detectLanguage",
+		"when": "editorTextFocus && !notebookEditable"
+	},
+	{
+		"key": "shift+alt+d",
+		"command": "-notebook.cell.detectLanguage",
+		"when": "notebookCellEditable && notebookEditable"
 	}
 ]
