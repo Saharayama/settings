@@ -30,13 +30,30 @@
         "editor.selectionHighlightBackground": "#00000000",
         "editor.foreground": "#ffffff",
         "editor.background": "#000000",
-        "terminal.foreground": "#ffffff",
         "statusBar.noFolderBackground": "#0000ff00",
         "statusBar.foreground": "#eeeeee",
         "statusBar.background": "#66008000",
         // "editorGroupHeader.tabsBorder": "#ff0000",
         // "statusBar.border": "#ff0000",
         // "panel.border": "#ff0000",
+        "terminal.foreground": "#ffffff",
+        "terminal.ansiBlack": "#000000",
+        "terminal.ansiBlue": "#555555",
+        "terminal.ansiBrightBlack": "#ffffff",
+        "terminal.ansiBrightBlue": "#9090ff",
+        "terminal.ansiBrightCyan": "#40ffff",
+        "terminal.ansiBrightGreen": "#40ff40",
+        "terminal.ansiBrightMagenta": "#ff40ff",
+        "terminal.ansiBrightRed": "#e74856",
+        "terminal.ansiBrightWhite": "#ffffff",
+        "terminal.ansiBrightYellow": "#ffff00",
+        "terminal.ansiCyan": "#00bfbf",
+        "terminal.ansiGreen": "#ffffff",
+        "terminal.ansiMagenta": "#881798",
+        "terminal.ansiRed": "#c50f1f",
+        "terminal.selectionBackground": "#ffffff66",
+        "terminal.ansiWhite": "#ffffff",
+        "terminal.ansiYellow": "#c19c00"
     },
     "workbench.activityBar.visible": false,
     "window.zoomLevel": 0,
@@ -67,5 +84,8 @@
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.autoClosingQuotes": "never",
     "C_Cpp.loggingLevel": "Information",
-    "editor.parameterHints.enabled": false
+    "editor.parameterHints.enabled": false,
+    "remote.SSH.remotePlatform": {
+        "ao": "linux"
+    }
 }
