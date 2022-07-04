@@ -610,5 +610,13 @@
 		"key": "shift+alt+d",
 		"command": "-notebook.cell.detectLanguage",
 		"when": "notebookCellEditable && notebookEditable"
+	},
+	{
+		"key": "ctrl+k ctrl+z",
+		"command": "workbench.action.toggleZenMode"
+	},
+	{
+		"key": "ctrl+k z",
+		"command": "-workbench.action.toggleZenMode"
 	}
 ]
