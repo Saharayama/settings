@@ -1,0 +1,632 @@
+[
+	{
+		"key": "ctrl+shift+j",
+		"command": "-workbench.action.search.toggleQueryDetails",
+		"when": "searchViewletVisible"
+	},
+	{
+		"key": "ctrl+shift+tab",
+		"command": "workbench.action.previousEditor"
+	},
+	{
+		"key": "ctrl+pageup",
+		"command": "-workbench.action.previousEditor"
+	},
+	{
+		"key": "ctrl+shift+tab",
+		"command": "-workbench.action.openPreviousRecentlyUsedEditorInGroup"
+	},
+	{
+		"key": "ctrl+tab",
+		"command": "-workbench.action.openNextRecentlyUsedEditorInGroup"
+	},
+	{
+		"key": "ctrl+tab",
+		"command": "workbench.action.nextEditor"
+	},
+	{
+		"key": "ctrl+pagedown",
+		"command": "-workbench.action.nextEditor"
+	},
+	{
+		"key": "ctrl+shift+m",
+		"command": "-workbench.actions.view.problems"
+	},
+	{
+		"key": "tab",
+		"command": "selectNextSuggestion",
+		"when": "suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "ctrl+down",
+		"command": "-selectNextSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "shift+tab",
+		"command": "selectPrevSuggestion",
+		"when": "suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "ctrl+up",
+		"command": "-selectPrevSuggestion",
+		"when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "escape",
+		"command": "closeFindWidget",
+		"when": "editorFocus && findWidgetVisible"
+	},
+	{
+		"key": "shift+escape",
+		"command": "-closeFindWidget",
+		"when": "editorFocus && findWidgetVisible"
+	},
+	{
+		"key": "tab",
+		"command": "-acceptSelectedSuggestion",
+		"when": "suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "ctrl+backspace",
+		"command": "-deleteWordLeft",
+		"when": "textInputFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+backspace",
+		"command": "-workbench.action.terminal.deleteWordLeft",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "shift+delete",
+		"command": "-editor.action.clipboardCutAction",
+		"when": "textInputFocus && !editorReadonly"
+	},
+	{
+		"key": "shift+delete",
+		"command": "-deleteFile",
+		"when": "config.files.enableTrash && explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+	},
+	{
+		"key": "shift+delete",
+		"command": "editor.action.deleteLines",
+		"when": "textInputFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+k",
+		"command": "-editor.action.deleteLines",
+		"when": "textInputFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+delete",
+		"command": "-workbench.action.terminal.deleteWordRight",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "ctrl+t",
+		"command": "-workbench.action.showAllSymbols"
+	},
+	{
+		"key": "ctrl+delete",
+		"command": "-deleteWordRight",
+		"when": "textInputFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+left",
+		"command": "-cursorWordStartLeft",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "ctrl+right",
+		"command": "-cursorWordEndRight",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "ctrl+p",
+		"command": "-workbench.action.quickOpen"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "-workbench.action.togglePanel"
+	},
+	{
+		"key": "ctrl+shift+r",
+		"command": "-editor.action.refactor",
+		"when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+	},
+	{
+		"key":"ctrl+shift+8",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "kakko"
+		},
+		"when": "editorTextFocus && !editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+8",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "kakko_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+oem_4",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "nami_kakko"
+		},
+		"when": "editorTextFocus && !editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+oem_4",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "nami_kakko_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection"
+	},
+	{
+		"key": "ctrl+shift+s",
+		"command": "-workbench.action.files.saveAs"
+	},
+	{
+		"key": "ctrl+h",
+		"command": "-editor.action.startFindReplaceAction"
+	},
+	{
+		"key": "ctrl+oem_3",
+		"command": "workbench.actions.view.problems"
+	},
+	{
+		"key": "ctrl+oem_1",
+		"command": "workbench.action.output.toggleOutput"
+	},
+	{
+		"key": "ctrl+shift+u",
+		"command": "-workbench.action.output.toggleOutput"
+	},
+	{
+		"key": "ctrl+oem_102",
+		"command": "workbench.action.terminal.toggleTerminal"
+	},
+	{
+		"key": "ctrl+oem_3",
+		"command": "-workbench.action.terminal.toggleTerminal"
+	},
+	{
+		"key": "ctrl+oem_5",
+		"command": "-workbench.action.terminal.split",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "ctrl+shift+oem_4",
+		"command": "-editor.fold",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+oem_6",
+		"command": "-editor.unfold",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+oem_period",
+		"command": "editor.action.indentLines",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+oem_6",
+		"command": "-editor.action.indentLines",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+oem_comma",
+		"command": "editor.action.outdentLines",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+oem_4",
+		"command": "-editor.action.outdentLines",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+r",
+		"command": "-workbench.action.openRecent"
+	},
+	{
+		"key": "ctrl+r",
+		"command": "editor.action.startFindReplaceAction"
+	},
+	{
+		"key": "ctrl+shift+alt+c",
+		"command": "workbench.action.terminal.runSelectedText"
+	},
+	{
+		"key": "ctrl+oem_plus",
+		"command": "-workbench.action.zoomIn"
+	},
+	{
+		"key": "ctrl+oem_minus",
+		"command": "-workbench.action.zoomOut"
+	},
+	{
+		"key": "f5",
+		"command": "markdown.showPreviewToSide",
+		"when": "editorTextFocus && editorLangId == 'markdown'"
+	},
+	{
+		"key": "ctrl+k v",
+		"command": "-markdown.showPreviewToSide",
+		"when": "editorLangId == 'markdown'"
+	},
+	{
+		"key": "shift+f5",
+		"command": "markdown.showPreview",
+		"when": "editorTextFocus && editorLangId == 'markdown'"
+
+	},
+	{
+		"key": "ctrl+shift+v",
+		"command": "-markdown.showPreview",
+		"when": "editorLangId == 'markdown'"
+	},
+	{
+		"key": "ctrl+w",
+		"command": "-workbench.action.closeWindow",
+		"when": "!editorIsOpen && !multipleEditorGroups"
+	},
+	{
+		"key": "delete",
+		"command": "-notification.clear",
+		"when": "notificationFocus"
+	},
+	{
+		"key": "escape",
+		"command": "-notifications.hideToasts",
+		"when": "notificationToastsVisible"
+	},
+	{
+		"key": "escape",
+		"command": "-notifications.hideList",
+		"when": "notificationCenterVisible"
+	},
+	{
+		"key": "escape",
+		"command": "notifications.clearAll",
+		"when": "!suggestWidgetVisible && !findWidgetVisible"
+	},
+	{
+		"key": "escape",
+		"command": "hideSuggestWidget",
+		"when": "suggestWidgetVisible"
+	},
+	{
+		"key": "escape",
+		"command": "-hideSuggestWidget",
+		"when": "suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+e",
+		"command": "revealFileInOS",
+		"when": "editorFocus"
+	},
+	{
+		"key": "shift+alt+r",
+		"command": "-revealFileInOS",
+		"when": "!editorFocus"
+	},
+	{
+		"key": "ctrl+shift+o",
+		"command": "-workbench.action.gotoSymbol"
+	},
+	{
+		"key": "ctrl+shift+o",
+		"command": "workbench.action.files.openFolder"
+	},
+	{
+		"key": "ctrl+k ctrl+o",
+		"command": "-workbench.action.files.openFolder"
+	},
+	{
+		"key": "ctrl+space",
+		"command": "-editor.action.triggerSuggest",
+		"when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+space",
+		"command": "-toggleSuggestionDetails",
+		"when": "suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "ctrl+shift+space",
+		"command": "-editor.action.triggerParameterHints",
+		"when": "editorHasSignatureHelpProvider && editorTextFocus"
+	},
+	{
+		"key": "ctrl+alt+enter",
+		"command": "-editor.action.replaceAll",
+		"when": "editorFocus && findWidgetVisible"
+	},
+	{
+		"key": "ctrl+p ctrl+e",
+		"command": "workbench.action.openProcessExplorer"
+	},
+	{
+		"key": "ctrl+shift+oem_period",
+		"command": "-breadcrumbs.toggleToOn",
+		"when": "!config.breadcrumbs.enabled"
+	},
+	{
+		"key": "ctrl+shift+oem_period",
+		"command": "-editor.action.inPlaceReplace.down",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+oem_period",
+		"command": "-breadcrumbs.focusAndSelect",
+		"when": "breadcrumbsPossible"
+	},
+	{
+		"key": "ctrl+shift+oem_comma",
+		"command": "-editor.action.inPlaceReplace.up",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+b",
+		"command": "-workbench.action.tasks.build"
+	},
+	{
+		"key": "alt+l",
+		"command": "-toggleFindInSelection",
+		"when": "editorFocus"
+	},
+	{
+		"key": "alt+l",
+		"command": "expandLineSelection",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "ctrl+l",
+		"command": "-expandLineSelection",
+		"when": "textInputFocus"
+	},
+	{
+		"key":"ctrl+oem_4",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "kaku_kakko"
+		},
+		"when": "editorTextFocus && !editorHasSelection"
+	},
+	{
+		"key":"ctrl+oem_4",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "kaku_kakko_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection"
+	},
+	{
+		"key": "ctrl+d",
+		"command": "-editor.action.addSelectionToNextFindMatch",
+		"when": "editorFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+d",
+		"command": "editor.action.addSelectionToNextFindMatch",
+		"when": "editorFocus"
+	},
+	{
+		"key": "alt+d",
+		"command": "editor.action.smartSelect.expand",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "shift+alt+right",
+		"command": "-editor.action.smartSelect.expand",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "shift+alt+d",
+		"command": "editor.action.smartSelect.shrink",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "shift+alt+left",
+		"command": "-editor.action.smartSelect.shrink",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "shift+enter",
+		"command": "editor.action.replaceAll",
+		"when": "editorFocus && findWidgetVisible"
+	},
+	{
+		"key": "shift+tab",
+		"command": "-outdent",
+		"when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+	},
+	{
+		"key": "ctrl+shift+oem_102",
+		"command": "workbench.action.terminal.kill",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "ctrl+oem_2",
+		"command": "-toggleExplainMode",
+		"when": "suggestWidgetVisible"
+	},
+	{
+		"key": "ctrl+shift+alt+oem_102",
+		"command": "workbench.action.terminal.newWithCwd",
+		"args": {
+		  "cwd": "${fileDirname}"
+		}
+	},
+	{
+		"key": "ctrl+shift+oem_3",
+		"command": "-workbench.action.terminal.new"
+	},
+	{
+		"key": "ctrl+oem_plus",
+		"command": "workbench.action.quickOpenTerm"
+	},
+	{
+		"key": "f5",
+		"command": "python.execInTerminal",
+		"when": "editorTextFocus && editorLangId == 'python'"
+	},
+	{
+		"key": "ctrl+l ctrl+o",
+		"command": "remote-wsl.openFolder"
+	},
+	{
+		"key": "ctrl+l ctrl+shift+alt+e",
+		"command": "remote-wsl.revealInExplorer",
+		"when": "editorFocus && remoteName == 'wsl'"
+	},
+	{
+		"key": "shift+alt+r",
+		"command": "-remote-wsl.revealInExplorer",
+		"when": "editorFocus && remoteName == 'wsl'"
+	},
+	{
+		"key": "ctrl+l ctrl+shift+l",
+		"command": "workbench.action.remote.close"
+	},
+	{
+		"key": "ctrl+l ctrl+l",
+		"command": "remote-wsl.newWindow"
+	},
+	{
+		"key":"ctrl+shift+2",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "double_quote"
+		},
+		"when": "editorTextFocus && !editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+2",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "double_quote_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+7",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "single_quote"
+		},
+		"when": "editorTextFocus && !editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+7",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "single_quote_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+oem_3",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "back_quote"
+		},
+		"when": "editorTextFocus && !editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+oem_3",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "back_quote_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection"
+	},
+	{
+		"key": "ctrl+shift+alt+f",
+		"command": "toggleFindInSelection"
+	},
+	{
+		"key": "ctrl+oem_minus",
+		"command": "workbench.debug.action.toggleRepl",
+		"when": "workbench.panel.repl.view.active"
+	},
+	{
+		"key": "ctrl+shift+y",
+		"command": "-workbench.debug.action.toggleRepl",
+		"when": "workbench.panel.repl.view.active"
+	},
+	{
+		"key": "ctrl+alt+oem_102",
+		"command": "workbench.action.terminal.new"
+	},
+	{
+		"key": "ctrl+oem_2",
+		"command": "-workbench.action.terminal.sendSequence",
+		"when": "terminalFocus"
+	},
+	{
+		"key":"ctrl+shift+9",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "zenkaku_kakko"
+		},
+		"when": "editorTextFocus && !editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+9",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "zenkaku_kakko_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+oem_6",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "kagi_kakko"
+		},
+		"when": "editorTextFocus && !editorHasSelection"
+	},
+	{
+		"key":"ctrl+shift+oem_6",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "kagi_kakko_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection"
+	},
+	{
+		"key": "shift+alt+d",
+		"command": "-editor.detectLanguage",
+		"when": "editorTextFocus && !notebookEditable"
+	},
+	{
+		"key": "shift+alt+d",
+		"command": "-notebook.cell.detectLanguage",
+		"when": "notebookCellEditable && notebookEditable"
+	},
+	{
+		"key": "ctrl+k ctrl+z",
+		"command": "workbench.action.toggleZenMode"
+	},
+	{
+		"key": "ctrl+k z",
+		"command": "-workbench.action.toggleZenMode"
+	},
+	{
+		"key": "ctrl+shift+oem_2",
+		"command": "editor.action.blockComment",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "shift+alt+a",
+		"command": "-editor.action.blockComment",
+		"when": "editorTextFocus && !editorReadonly"
+	}
+]
