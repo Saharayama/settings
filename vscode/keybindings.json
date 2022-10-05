@@ -251,7 +251,7 @@
 	},
 	{
 		"key": "f5",
-		"command": "markdown.showPreviewToSide",
+		"command": "markdown.showPreview",
 		"when": "editorTextFocus && editorLangId == 'markdown'"
 	},
 	{
@@ -261,7 +261,7 @@
 	},
 	{
 		"key": "shift+f5",
-		"command": "markdown.showPreview",
+		"command": "markdown.showPreviewToSide",
 		"when": "editorTextFocus && editorLangId == 'markdown'"
 
 	},
@@ -628,5 +628,25 @@
 		"key": "shift+alt+a",
 		"command": "-editor.action.blockComment",
 		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+shift+alt+n",
+		"command": "notifications.showList"
+	},
+	{
+		"key": "ctrl+shift+alt+oem_plus",
+		"command": "editor.action.insertSnippet",
+		"when": "editorTextFocus",
+		"args": {
+			"name": "current_date"
+		}
+	},
+	{
+		"key": "ctrl+shift+alt+oem_1",
+		"command": "editor.action.insertSnippet",
+		"when": "editorTextFocus",
+		"args": {
+			"name": "current_time"
+		}
 	}
 ]

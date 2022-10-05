@@ -79,7 +79,6 @@
     "telemetry.telemetryLevel": "off",
     "security.workspace.trust.enabled": false,
     "[c]": {
-        "editor.insertSpaces": false,
         "editor.glyphMargin": true
     },
     "editor.suggest.snippetsPreventQuickSuggestions": false,
@@ -95,5 +94,6 @@
         "arduino.logLevel": "info",
         "arduino.commandPath": "arduino_debug.exe",
         "arduino.defaultBaudRate": 115200
-    }
+    },
+    "workbench.layoutControl.enabled": false
 }
