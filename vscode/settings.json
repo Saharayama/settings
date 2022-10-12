@@ -78,9 +78,9 @@
     "security.workspace.trust.untrustedFiles": "open",
     "telemetry.telemetryLevel": "off",
     "security.workspace.trust.enabled": false,
-    "[c]": {
-        "editor.glyphMargin": true
-    },
+    // "[c]": {
+    //     "editor.glyphMargin": true
+    // },
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.autoClosingQuotes": "never",
     "C_Cpp.loggingLevel": "Information",

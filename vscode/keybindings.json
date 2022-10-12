@@ -631,7 +631,8 @@
 	},
 	{
 		"key": "ctrl+shift+alt+n",
-		"command": "notifications.showList"
+		"command": "notifications.showList",
+		"when": "!notificationCenterVisible"
 	},
 	{
 		"key": "ctrl+shift+alt+oem_plus",
@@ -648,5 +649,14 @@
 		"args": {
 			"name": "current_time"
 		}
+	},
+	{
+		"key": "ctrl+shift+alt+n",
+		"command": "notifications.hideList",
+		"when": "notificationCenterVisible"
+	},
+	{
+		"key": "shift+alt+r",
+		"command": "workbench.action.openRecent"
 	}
 ]
