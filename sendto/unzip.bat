@@ -8,7 +8,16 @@
 
     set V=%~x1%~a1
 
-	if /i "%V:~0,-10%"==".zip-" (
+	set TRUE_FALSE=FALSE
+	if /i "%V:~0,-11%"==".zip" (
+		set TRUE_FALSE=TRUE
+	)
+
+	if /i "%V:~0,-11%"==".7z" (
+		set TRUE_FALSE=TRUE
+	)
+
+	if %TRUE_FALSE%==TRUE (
 		if not exist "%~dpn1" (
 			call "C:\Program Files\7-Zip\7z.exe" x "%~f1" -o*
 		) else (
@@ -17,7 +26,7 @@
 			exit
 		)
 	) else (
-		echo "%~f1" is not ZIP file.
+		echo "%~f1" is not supported.
 		pause
 		exit
 	)
