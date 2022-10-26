@@ -86,7 +86,8 @@
     "C_Cpp.loggingLevel": "Information",
     "editor.parameterHints.enabled": false,
     "remote.SSH.remotePlatform": {
-        "ao": "linux"
+        "ao": "linux",
+        "rt": "linux"
     },
     "[arduino]": {
         "arduino.path": "C:/Program Files (x86)/Arduino",
@@ -95,5 +96,8 @@
         "arduino.commandPath": "arduino_debug.exe",
         "arduino.defaultBaudRate": 115200
     },
-    "workbench.layoutControl.enabled": false
+    "workbench.layoutControl.enabled": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.accessibilitySupport": "off",
+    "editor.folding": false
 }

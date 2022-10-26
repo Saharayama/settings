@@ -658,5 +658,21 @@
 	{
 		"key": "shift+alt+r",
 		"command": "workbench.action.openRecent"
+	},
+	{
+		"key": "ctrl+shift+alt+oem_3",
+		"command": "editor.action.insertSnippet",
+		"when": "editorTextFocus",
+		"args": {
+			"name": "code_block"
+		}
+	},
+	{
+		"key":"ctrl+shift+alt+oem_3",
+		"command":"editor.action.insertSnippet",
+		"args":{
+			"name": "code_block_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection"
 	}
 ]
