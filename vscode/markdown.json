@@ -1,6 +1,5 @@
 {
 	"code_block":{
-		"prefix": " ",
 		"body": [
 			"```$1",
 			"$0",
@@ -9,7 +8,6 @@
 		"description": "code_block"
 	},
 	"code_block_selected":{
-		"prefix": " ",
 		"body": [
 			"```$1",
 			"$TM_SELECTED_TEXT",
