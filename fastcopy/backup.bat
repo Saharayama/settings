@@ -10,6 +10,7 @@ call %FASTCOPY% /job=documents /auto_close
 call :done
 
 timeout /t 1 /nobreak >nul
+exit
 
 :done
 if %errorlevel% equ 0 (
