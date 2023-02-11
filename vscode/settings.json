@@ -105,5 +105,6 @@
     },
     "powershell.integratedConsole.showOnStartup": false,
     "powershell.cwd": "${fileDirname}",
-    "powershell.promptToUpdatePowerShell": false
+    "powershell.promptToUpdatePowerShell": false,
+    "files.insertFinalNewline": true
 }

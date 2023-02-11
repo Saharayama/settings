@@ -674,5 +674,45 @@
 			"name": "code_block_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection"
+	},
+	{
+		"key": "ctrl+alt+up",
+		"command": "-editor.action.insertCursorAbove",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+up",
+		"command": "-cursorColumnSelectUp",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "ctrl+alt+down",
+		"command": "-editor.action.insertCursorBelow",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+down",
+		"command": "-cursorColumnSelectDown",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+up",
+		"command": "editor.action.insertCursorAbove",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+alt+up",
+		"command": "cursorColumnSelectUp",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+down",
+		"command": "editor.action.insertCursorBelow",
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+alt+down",
+		"command": "cursorColumnSelectDown",
+		"when": "textInputFocus"
 	}
 ]
