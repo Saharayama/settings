@@ -238,10 +238,6 @@
 		"command": "editor.action.startFindReplaceAction"
 	},
 	{
-		"key": "ctrl+shift+alt+c",
-		"command": "workbench.action.terminal.runSelectedText"
-	},
-	{
 		"key": "ctrl+oem_plus",
 		"command": "-workbench.action.zoomIn"
 	},
@@ -714,5 +710,30 @@
 		"key": "ctrl+alt+down",
 		"command": "cursorColumnSelectDown",
 		"when": "textInputFocus"
+	},
+	{
+		"key": "shift+alt+c",
+		"command": "-copyFilePath",
+		"when": "!editorFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+c",
+		"command": "copyFilePath",
+		"when": "editorFocus"
+	},
+	{
+		"key": "ctrl+shift+c",
+		"command": "-workbench.action.terminal.openNativeConsole",
+		"when": "!terminalFocus"
+	},
+	{
+		"key": "ctrl+shift+c",
+		"command": "copyRelativeFilePath",
+		"when": "editorFocus"
+	},
+	{
+		"key": "ctrl+k ctrl+shift+c",
+		"command": "-copyRelativeFilePath",
+		"when": "!editorFocus"
 	}
 ]
