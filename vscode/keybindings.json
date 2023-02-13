@@ -722,18 +722,18 @@
 		"when": "editorFocus"
 	},
 	{
-		"key": "ctrl+shift+c",
-		"command": "-workbench.action.terminal.openNativeConsole",
-		"when": "!terminalFocus"
-	},
-	{
-		"key": "ctrl+shift+c",
-		"command": "copyRelativeFilePath",
-		"when": "editorFocus"
-	},
-	{
 		"key": "ctrl+k ctrl+shift+c",
 		"command": "-copyRelativeFilePath",
 		"when": "!editorFocus"
+	},
+	{
+		"key": "shift+alt+c",
+		"command": "-search.action.copyPath",
+		"when": "fileMatchOrFolderMatchWithResourceFocus"
+	},
+	{
+		"key": "shift+alt+c",
+		"command": "copyRelativeFilePath",
+		"when": "editorFocus"
 	}
 ]
