@@ -15,7 +15,7 @@
     "editor.quickSuggestionsDelay": 0,
     "editor.suggestSelection": "recentlyUsedByPrefix",
     "editor.suggest.localityBonus": true,
-    "editor.wordSeparators": "`~!@$%^&*()=+[{]}|;:'\",<>/?.#にをはがのともへでや。、，．・：（）",
+    "editor.wordSeparators": "`~!@$%^&*()=+[{]}|;:'\",<>/?.#にをはがのともへでや。、，．・：（）\\",
     "files.trimTrailingWhitespace": true,
     "[markdown]": {
         "files.trimTrailingWhitespace": false
@@ -85,17 +85,6 @@
     "editor.autoClosingQuotes": "never",
     "C_Cpp.loggingLevel": "Information",
     "editor.parameterHints.enabled": false,
-    "remote.SSH.remotePlatform": {
-        "ao": "linux",
-        "rt": "linux"
-    },
-    "[arduino]": {
-        "arduino.path": "C:/Program Files (x86)/Arduino",
-        "C_Cpp.intelliSenseEngine": "Tag Parser",
-        "arduino.logLevel": "info",
-        "arduino.commandPath": "arduino_debug.exe",
-        "arduino.defaultBaudRate": 115200
-    },
     "workbench.layoutControl.enabled": false,
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.accessibilitySupport": "off",
@@ -106,5 +95,7 @@
     "powershell.integratedConsole.showOnStartup": false,
     "powershell.cwd": "${fileDirname}",
     "powershell.promptToUpdatePowerShell": false,
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "C_Cpp.suggestSnippets": false,
+    "C_Cpp.clang_format_style": "{BitFieldColonSpacing: After, SpaceBeforeParens: Never, BreakBeforeBraces: Allman, IndentCaseLabels: true, IndentWidth: 4, TabWidth: 4, SpacesBeforeTrailingComments: 2, AlignArrayOfStructures: Right, BreakBeforeBinaryOperators: All, MaxEmptyLinesToKeep: 2, UseTab: Always}"
 }
