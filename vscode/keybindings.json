@@ -747,7 +747,8 @@
 	},
 	{
 		"key": "ctrl+shift+alt+oem_5",
-		"command": "workbench.action.splitEditor"
+		"command": "workbench.action.splitEditor",
+		"when": "editorFocus"
 	},
 	{
 		"key": "ctrl+oem_5",
@@ -755,7 +756,8 @@
 	},
 	{
 		"key": "ctrl+shift+alt+oem_minus",
-		"command": "workbench.action.splitEditorOrthogonal"
+		"command": "workbench.action.splitEditorOrthogonal",
+		"when": "editorFocus"
 	},
 	{
 		"key": "ctrl+k ctrl+oem_5",
