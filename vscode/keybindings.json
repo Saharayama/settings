@@ -735,5 +735,30 @@
 		"key": "shift+alt+c",
 		"command": "copyRelativeFilePath",
 		"when": "editorFocus"
+	},
+	{
+		"key": "ctrl+e",
+		"command": "workbench.action.quickOpen",
+		"when": "!terminalFocus"
+	},
+	{
+		"key": "ctrl+e",
+		"command": "-workbench.action.quickOpen"
+	},
+	{
+		"key": "ctrl+shift+alt+oem_5",
+		"command": "workbench.action.splitEditor"
+	},
+	{
+		"key": "ctrl+oem_5",
+		"command": "-workbench.action.splitEditor"
+	},
+	{
+		"key": "ctrl+shift+alt+oem_minus",
+		"command": "workbench.action.splitEditorOrthogonal"
+	},
+	{
+		"key": "ctrl+k ctrl+oem_5",
+		"command": "-workbench.action.splitEditorOrthogonal"
 	}
 ]
