@@ -797,5 +797,24 @@
 		"key": "ctrl+alt+pagedown",
 		"command": "-workbench.action.terminal.scrollDown",
 		"when": "terminalFocus && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+	},
+	{
+		"key": "ctrl+shift+f",
+		"command": "workbench.action.terminal.focusFind",
+		"when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+	},
+	{
+		"key": "ctrl+f",
+		"command": "-workbench.action.terminal.focusFind",
+		"when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+	},
+	{
+		"key": "ctrl+shift+f",
+		"command": "workbench.action.findInFiles",
+		"when": "!terminalFocus && !terminalFindFocused"
+	},
+	{
+		"key": "ctrl+shift+f",
+		"command": "-workbench.action.findInFiles"
 	}
 ]
