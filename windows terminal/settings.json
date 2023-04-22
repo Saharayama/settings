@@ -4,16 +4,16 @@
     "actions":
     [
         {
-            "command": "paste",
-            "keys": "ctrl+v"
-        },
-        {
             "command":
             {
                 "action": "copy",
                 "singleLine": false
             },
             "keys": "ctrl+c"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
         },
         {
             "command": "find",
@@ -23,10 +23,63 @@
             "command":
             {
                 "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
+                "split": "right"
             },
-            "keys": "alt+shift+d"
+            "keys": "ctrl+alt+shift+\\"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+minus"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+plus"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+pgup"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+pgdn"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+up"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+down"
+        },
+        {
+            "command":
+            {
+                "action": "scrollDown"
+            },
+            "keys": "shift+down"
+        },
+        {
+            "command": "scrollUpPage",
+            "keys": "shift+pgup"
+        },
+        {
+            "command":
+            {
+                "action": "splitPane",
+                "split": "down"
+            },
+            "keys": "ctrl+alt+shift+minus"
+        },
+        {
+            "command": "scrollDownPage",
+            "keys": "shift+pgdn"
+        },
+        {
+            "command":
+            {
+                "action": "scrollUp"
+            },
+            "keys": "shift+up"
         }
     ],
     "alwaysShowTabs": true,
