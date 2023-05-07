@@ -15,77 +15,84 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-
-	"kakko":{
+	"kakko": {
 		"body": "($1)",
 		"description": "kakko"
 	},
-	"kakko_selected":{
+	"kakko_selected": {
 		"body": "($TM_SELECTED_TEXT)",
 		"description": "kakko_selected"
 	},
-	"nami_kakko":{
+	"nami_kakko": {
 		"body": "{$1}",
 		"description": "nami_kakko"
 	},
-	"nami_kakko_selected":{
+	"nami_kakko_selected": {
 		"body": "{$TM_SELECTED_TEXT}",
 		"description": "nami_kakko_selected"
 	},
-	"kaku_kakko":{
+	"kaku_kakko": {
 		"body": "[$1]",
 		"description": "kaku_kakko"
 	},
-	"kaku_kakko_selected":{
+	"kaku_kakko_selected": {
 		"body": "[$TM_SELECTED_TEXT]",
 		"description": "kaku_kakko_selected"
 	},
-	"double_quote":{
+	"double_quote": {
 		"body": "\"$1\"",
 		"description": "double_quote"
 	},
-	"double_quote_selected":{
+	"double_quote_selected": {
 		"body": "\"$TM_SELECTED_TEXT\"",
 		"description": "double_quote_selected"
 	},
-	"single_quote":{
+	"single_quote": {
 		"body": "'$1'",
 		"description": "single_quote"
 	},
-	"single_quote_selected":{
+	"single_quote_selected": {
 		"body": "'$TM_SELECTED_TEXT'",
 		"description": "single_quote_selected"
 	},
-	"back_quote":{
+	"back_quote": {
 		"body": "`$1`",
 		"description": "back_quote"
 	},
-	"back_quote_selected":{
+	"back_quote_selected": {
 		"body": "`$TM_SELECTED_TEXT`",
 		"description": "back_quote_selected"
 	},
-	"zenkaku_kakko":{
+	"zenkaku_kakko": {
 		"body": "（$1）",
 		"description": "zenkaku_kakko"
 	},
-	"zenkaku_kakko_selected":{
+	"zenkaku_kakko_selected": {
 		"body": "（$TM_SELECTED_TEXT）",
 		"description": "zenkaku_kakko_selected"
 	},
-	"kagi_kakko":{
+	"kagi_kakko": {
 		"body": "「$1」",
 		"description": "kagi_kakko"
 	},
-	"kagi_kakko_selected":{
+	"kagi_kakko_selected": {
 		"body": "「$TM_SELECTED_TEXT」",
 		"description": "kagi_kakko_selected"
 	},
-	"current_date":{
+	"current_date": {
 		"body": "$CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE",
 		"description": "current_date"
 	},
-	"current_time":{
+	"current_time": {
 		"body": "$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
 		"description": "current_time"
+	},
+	"yama_kakko": {
+		"body": "<$1>",
+		"description": "yama_kakko"
+	},
+	"yama_kakko_selected": {
+		"body": "<$TM_SELECTED_TEXT>",
+		"description": "yama_kakko_selected"
 	}
 }

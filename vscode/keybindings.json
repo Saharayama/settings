@@ -135,33 +135,33 @@
 		"when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
 	},
 	{
-		"key":"ctrl+shift+8",
-		"command":"editor.action.insertSnippet",
-		"args":{
+		"key": "ctrl+shift+8",
+		"command": "editor.action.insertSnippet",
+		"args": {
 			"name": "kakko"
 		},
 		"when": "editorTextFocus && !editorHasSelection"
 	},
 	{
-		"key":"ctrl+shift+8",
-		"command":"editor.action.insertSnippet",
-		"args":{
+		"key": "ctrl+shift+8",
+		"command": "editor.action.insertSnippet",
+		"args": {
 			"name": "kakko_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection"
 	},
 	{
-		"key":"ctrl+shift+oem_4",
-		"command":"editor.action.insertSnippet",
-		"args":{
+		"key": "ctrl+shift+oem_4",
+		"command": "editor.action.insertSnippet",
+		"args": {
 			"name": "nami_kakko"
 		},
 		"when": "editorTextFocus && !editorHasSelection"
 	},
 	{
-		"key":"ctrl+shift+oem_4",
-		"command":"editor.action.insertSnippet",
-		"args":{
+		"key": "ctrl+shift+oem_4",
+		"command": "editor.action.insertSnippet",
+		"args": {
 			"name": "nami_kakko_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection"
@@ -257,9 +257,8 @@
 	},
 	{
 		"key": "shift+f5",
-		"command": "markdown.showPreviewToSide",
+		"command": "extension.markdown-pdf.pdf",
 		"when": "editorTextFocus && editorLangId == 'markdown'"
-
 	},
 	{
 		"key": "ctrl+shift+v",
@@ -387,17 +386,17 @@
 		"when": "textInputFocus"
 	},
 	{
-		"key":"ctrl+oem_4",
-		"command":"editor.action.insertSnippet",
-		"args":{
+		"key": "ctrl+oem_4",
+		"command": "editor.action.insertSnippet",
+		"args": {
 			"name": "kaku_kakko"
 		},
 		"when": "editorTextFocus && !editorHasSelection"
 	},
 	{
-		"key":"ctrl+oem_4",
-		"command":"editor.action.insertSnippet",
-		"args":{
+		"key": "ctrl+oem_4",
+		"command": "editor.action.insertSnippet",
+		"args": {
 			"name": "kaku_kakko_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection"
@@ -456,7 +455,7 @@
 		"key": "ctrl+shift+alt+oem_102",
 		"command": "workbench.action.terminal.newWithCwd",
 		"args": {
-		  "cwd": "${fileDirname}"
+			"cwd": "${fileDirname}"
 		}
 	},
 	{
@@ -495,49 +494,49 @@
 		"command": "remote-wsl.newWindow"
 	},
 	{
-		"key":"ctrl+shift+2",
-		"command":"editor.action.insertSnippet",
-		"args":{
+		"key": "ctrl+shift+2",
+		"command": "editor.action.insertSnippet",
+		"args": {
 			"name": "double_quote"
 		},
 		"when": "editorTextFocus && !editorHasSelection"
 	},
 	{
-		"key":"ctrl+shift+2",
-		"command":"editor.action.insertSnippet",
-		"args":{
+		"key": "ctrl+shift+2",
+		"command": "editor.action.insertSnippet",
+		"args": {
 			"name": "double_quote_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection"
 	},
 	{
-		"key":"ctrl+shift+7",
-		"command":"editor.action.insertSnippet",
-		"args":{
+		"key": "ctrl+shift+7",
+		"command": "editor.action.insertSnippet",
+		"args": {
 			"name": "single_quote"
 		},
 		"when": "editorTextFocus && !editorHasSelection"
 	},
 	{
-		"key":"ctrl+shift+7",
-		"command":"editor.action.insertSnippet",
-		"args":{
+		"key": "ctrl+shift+7",
+		"command": "editor.action.insertSnippet",
+		"args": {
 			"name": "single_quote_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection"
 	},
 	{
-		"key":"ctrl+shift+oem_3",
-		"command":"editor.action.insertSnippet",
-		"args":{
+		"key": "ctrl+shift+oem_3",
+		"command": "editor.action.insertSnippet",
+		"args": {
 			"name": "back_quote"
 		},
 		"when": "editorTextFocus && !editorHasSelection"
 	},
 	{
-		"key":"ctrl+shift+oem_3",
-		"command":"editor.action.insertSnippet",
-		"args":{
+		"key": "ctrl+shift+oem_3",
+		"command": "editor.action.insertSnippet",
+		"args": {
 			"name": "back_quote_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection"
@@ -566,33 +565,33 @@
 		"when": "terminalFocus"
 	},
 	{
-		"key":"ctrl+shift+9",
-		"command":"editor.action.insertSnippet",
-		"args":{
+		"key": "ctrl+shift+9",
+		"command": "editor.action.insertSnippet",
+		"args": {
 			"name": "zenkaku_kakko"
 		},
 		"when": "editorTextFocus && !editorHasSelection"
 	},
 	{
-		"key":"ctrl+shift+9",
-		"command":"editor.action.insertSnippet",
-		"args":{
+		"key": "ctrl+shift+9",
+		"command": "editor.action.insertSnippet",
+		"args": {
 			"name": "zenkaku_kakko_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection"
 	},
 	{
-		"key":"ctrl+shift+oem_6",
-		"command":"editor.action.insertSnippet",
-		"args":{
+		"key": "ctrl+shift+oem_6",
+		"command": "editor.action.insertSnippet",
+		"args": {
 			"name": "kagi_kakko"
 		},
 		"when": "editorTextFocus && !editorHasSelection"
 	},
 	{
-		"key":"ctrl+shift+oem_6",
-		"command":"editor.action.insertSnippet",
-		"args":{
+		"key": "ctrl+shift+oem_6",
+		"command": "editor.action.insertSnippet",
+		"args": {
 			"name": "kagi_kakko_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection"
@@ -664,9 +663,9 @@
 		}
 	},
 	{
-		"key":"ctrl+shift+alt+oem_3",
-		"command":"editor.action.insertSnippet",
-		"args":{
+		"key": "ctrl+shift+alt+oem_3",
+		"command": "editor.action.insertSnippet",
+		"args": {
 			"name": "code_block_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection"
@@ -816,5 +815,21 @@
 	{
 		"key": "ctrl+shift+f",
 		"command": "-workbench.action.findInFiles"
+	},
+	{
+		"key": "ctrl+shift+alt+oem_comma",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"name": "yama_kakko"
+		},
+		"when": "editorTextFocus && !editorHasSelection"
+	},
+	{
+		"key": "ctrl+shift+alt+oem_comma",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"name": "yama_kakko_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection"
 	}
 ]

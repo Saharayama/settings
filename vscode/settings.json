@@ -100,5 +100,9 @@
     "C_Cpp.clang_format_style": "{BitFieldColonSpacing: After, SpaceBeforeParens: Never, BreakBeforeBraces: Custom, IndentCaseLabels: true, IndentWidth: 4, TabWidth: 4, SpacesBeforeTrailingComments: 2, AlignArrayOfStructures: Right, BreakBeforeBinaryOperators: All, MaxEmptyLinesToKeep: 2, UseTab: Always, ColumnLimit: 0, BraceWrapping: {AfterEnum: true, AfterUnion: true, AfterCaseLabel: true, AfterControlStatement: Always, AfterFunction: true, AfterStruct: true, BeforeElse: true, BeforeWhile: true, IndentBraces: false}}",
     "terminal.integrated.showExitAlert": false,
     "git.autofetch": true,
-    "terminal.integrated.allowChords": false
+    "terminal.integrated.allowChords": false,
+    "markdown-pdf.displayHeaderFooter": false,
+    "markdown-pdf.styles": [
+        "~\\AppData\\Roaming\\Code\\User\\md-pdf.css"
+    ]
 }
