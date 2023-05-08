@@ -101,8 +101,10 @@
     "terminal.integrated.showExitAlert": false,
     "git.autofetch": true,
     "terminal.integrated.allowChords": false,
-    "markdown-pdf.displayHeaderFooter": false,
     "markdown-pdf.styles": [
         "~\\AppData\\Roaming\\Code\\User\\md-pdf.css"
-    ]
+    ],
+    "markdown-pdf.headerTemplate": "<div></div>",
+    "markdown-pdf.footerTemplate": "<div style=\"font-size: 11px; margin: 0 auto; font-family: 'Ricty'\"> <span class='pageNumber'></span> / <span class='totalPages'></span></div>",
+    "markdown-pdf.margin.bottom": "1.5cm"
 }
