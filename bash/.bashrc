@@ -17,7 +17,7 @@ shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
-HISTFILESIZE=2000
+HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -121,7 +121,7 @@ fi
 PS1='\[\e[1;32m\]\u \[\e[33m\]\w \[\e[0m\]\n\$ '
 
 alias exp='explorer.exe'
-alias la='ls -lAh --time-style='+%Y-%m-%d''
+alias la='ls -lAh --time-style="+%Y-%m-%d"'
 alias las='ls -lAh --time-style="+%Y-%m-%d %H:%M:%S"'
 export LANG=ja_JP.UTF-8
 EDITOR='"code" --wait'
