@@ -16,7 +16,7 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
+HISTSIZE=10000
 HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
@@ -88,9 +88,9 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-#alias ll='ls -alF'
-#alias la='ls -A'
-#alias l='ls -CF'
+# alias ll='ls -alF'
+# alias la='ls -A'
+# alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

@@ -95,6 +95,8 @@
     "powershell.integratedConsole.showOnStartup": false,
     "powershell.cwd": "${fileDirname}",
     "powershell.promptToUpdatePowerShell": false,
+    "powershell.startAutomatically": false,
+    "python.defaultInterpreterPath": "C:\\Program Files\\Python311\\python.exe",
     "files.insertFinalNewline": true,
     "C_Cpp.suggestSnippets": false,
     "C_Cpp.clang_format_style": "{BitFieldColonSpacing: After, SpaceBeforeParens: Never, BreakBeforeBraces: Custom, IndentCaseLabels: true, IndentWidth: 4, TabWidth: 4, SpacesBeforeTrailingComments: 2, AlignArrayOfStructures: Right, BreakBeforeBinaryOperators: All, MaxEmptyLinesToKeep: 2, UseTab: Always, ColumnLimit: 0, BraceWrapping: {AfterEnum: true, AfterUnion: true, AfterCaseLabel: true, AfterControlStatement: Always, AfterFunction: true, AfterStruct: true, BeforeElse: true, BeforeWhile: true, IndentBraces: false}}",
@@ -106,5 +108,6 @@
     ],
     "markdown-pdf.headerTemplate": "<div></div>",
     "markdown-pdf.footerTemplate": "<div style=\"font-size: 11px; margin: 0 auto; font-family: 'Ricty'\"> <span class='pageNumber'></span> / <span class='totalPages'></span></div>",
-    "markdown-pdf.margin.bottom": "1.5cm"
+    "markdown-pdf.margin.bottom": "1.5cm",
+    "terminal.integrated.scrollback": 10000
 }

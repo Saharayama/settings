@@ -831,5 +831,13 @@
 			"name": "yama_kakko_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection"
-	}
+	},
+		{
+			"key": "ctrl+1",
+			"command": "-workbench.action.focusFirstEditorGroup"
+		},
+		{
+			"key": "ctrl+1",
+			"command": "workbench.action.firstEditorInGroup"
+		}
 ]
