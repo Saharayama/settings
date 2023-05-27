@@ -832,12 +832,12 @@
 		},
 		"when": "editorTextFocus && editorHasSelection"
 	},
-		{
-			"key": "ctrl+1",
-			"command": "-workbench.action.focusFirstEditorGroup"
-		},
-		{
-			"key": "ctrl+1",
-			"command": "workbench.action.firstEditorInGroup"
-		}
+	{
+		"key": "ctrl+1",
+		"command": "-workbench.action.focusFirstEditorGroup"
+	},
+	{
+		"key": "ctrl+1",
+		"command": "workbench.action.firstEditorInGroup"
+	}
 ]
