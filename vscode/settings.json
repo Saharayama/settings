@@ -11,7 +11,7 @@
     "editor.minimap.enabled": false,
     "editor.fontSize": 16,
     "editor.snippetSuggestions": "inline",
-    "editor.renderLineHighlight": "all",
+    "editor.renderLineHighlight": "none",
     "editor.quickSuggestionsDelay": 0,
     "editor.suggestSelection": "recentlyUsedByPrefix",
     "editor.suggest.localityBonus": true,
@@ -33,9 +33,7 @@
         "statusBar.noFolderBackground": "#0000ff00",
         "statusBar.foreground": "#eeeeee",
         "statusBar.background": "#66008000",
-        // "editorGroupHeader.tabsBorder": "#ff0000",
         // "statusBar.border": "#ff0000",
-        // "panel.border": "#ff0000",
         "terminal.foreground": "#ffffff",
         "terminal.ansiBlack": "#000000",
         "terminal.ansiBlue": "#555555",
@@ -53,7 +51,9 @@
         "terminal.ansiRed": "#c50f1f",
         "terminal.selectionBackground": "#ffffff66",
         "terminal.ansiWhite": "#ffffff",
-        "terminal.ansiYellow": "#c19c00"
+        "terminal.ansiYellow": "#c19c00",
+        "editorStickyScroll.background": "#111111",
+        "editorLineNumber.activeForeground": "#ffffff"
     },
     "workbench.activityBar.visible": false,
     "window.zoomLevel": 0,
@@ -78,9 +78,6 @@
     "security.workspace.trust.untrustedFiles": "open",
     "telemetry.telemetryLevel": "off",
     "security.workspace.trust.enabled": false,
-    // "[c]": {
-    //     "editor.glyphMargin": true
-    // },
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.autoClosingQuotes": "never",
     "C_Cpp.loggingLevel": "Information",
@@ -114,5 +111,6 @@
     "editor.occurrencesHighlight": false,
     "terminal.integrated.shellIntegration.decorationsEnabled": "never",
     "python.analysis.typeCheckingMode": "strict",
-    "diffEditor.ignoreTrimWhitespace": false
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.snippets.codeActions.enabled": false
 }
