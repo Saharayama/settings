@@ -1,2 +1,4 @@
 set bell-style none
 "\e\e": ""
+set colored-stats on
+set completion-ignore-case on
