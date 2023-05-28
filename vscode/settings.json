@@ -112,5 +112,10 @@
     "terminal.integrated.shellIntegration.decorationsEnabled": "never",
     "python.analysis.typeCheckingMode": "strict",
     "diffEditor.ignoreTrimWhitespace": false,
-    "editor.snippets.codeActions.enabled": false
+    "editor.snippets.codeActions.enabled": false,
+    "editor.find.autoFindInSelection": "multiline",
+    "editor.find.seedSearchStringFromSelection": "selection",
+    "workbench.editor.enablePreview": false,
+    "search.quickOpen.includeHistory": false,
+    "diffEditor.diffAlgorithm": "advanced"
 }
