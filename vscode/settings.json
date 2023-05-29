@@ -117,5 +117,7 @@
     "editor.find.seedSearchStringFromSelection": "selection",
     "workbench.editor.enablePreview": false,
     "search.quickOpen.includeHistory": false,
-    "diffEditor.diffAlgorithm": "advanced"
+    "diffEditor.diffAlgorithm": "advanced",
+    "editor.stickyScroll.defaultModel": "foldingProviderModel",
+    "git.openRepositoryInParentFolders": "never"
 }
