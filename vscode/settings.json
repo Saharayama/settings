@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "Ricty",
+    "editor.fontFamily": "'Ricty ShinDiminished'",
     "editor.insertSpaces": true,
     "workbench.startupEditor": "none",
     "editor.detectIndentation": true,
@@ -30,10 +30,9 @@
         "editor.selectionHighlightBackground": "#00000000",
         "editor.foreground": "#ffffff",
         "editor.background": "#000000",
-        "statusBar.noFolderBackground": "#0000ff00",
-        "statusBar.foreground": "#eeeeee",
-        "statusBar.background": "#66008000",
-        // "statusBar.border": "#ff0000",
+        "statusBar.background": "#181818",
+        "statusBar.noFolderBackground": "#181818",
+        "statusBar.border": "#2a2a2a",
         "terminal.foreground": "#ffffff",
         "terminal.ansiBlack": "#000000",
         "terminal.ansiBlue": "#555555",
@@ -53,12 +52,20 @@
         "terminal.ansiWhite": "#ffffff",
         "terminal.ansiYellow": "#c19c00",
         "editorStickyScroll.background": "#111111",
-        "editorLineNumber.activeForeground": "#ffffff"
+        "editorLineNumber.activeForeground": "#ffffff",
+        "statusBarItem.remoteBackground": "#555555",
+        "titleBar.activeBackground": "#181818",
+        "titleBar.border": "#2a2a2a",
+        "sideBar.background": "#181818",
+        "editorGroupHeader.tabsBackground": "#181818",
+        "tab.inactiveBackground": "#181818",
+        "statusBar.focusBorder": "#00000000",
+        "sideBarSectionHeader.border": "#2a2a2a",
+        "editorOverviewRuler.border": "#000000"
     },
     "workbench.activityBar.visible": false,
-    "window.zoomLevel": 0,
     "workbench.settings.useSplitJSON": true,
-    "markdown.preview.fontFamily": "Ricty",
+    "markdown.preview.fontFamily": "'Ricty ShinDiminished'",
     "markdown.preview.fontSize": 16,
     "markdown.preview.scrollEditorWithPreview": false,
     "terminal.integrated.cursorStyle": "underline",
@@ -104,7 +111,7 @@
         "~\\AppData\\Roaming\\Code\\User\\md-pdf.css"
     ],
     "markdown-pdf.headerTemplate": "<div></div>",
-    "markdown-pdf.footerTemplate": "<div style=\"font-size: 11px; margin: 0 auto; font-family: 'Ricty'\"> <span class='pageNumber'></span> / <span class='totalPages'></span></div>",
+    "markdown-pdf.footerTemplate": "<div style=\"font-size: 11px; margin: 0 auto; font-family: 'Ricty ShinDiminished'\"> <span class='pageNumber'></span> / <span class='totalPages'></span></div>",
     "markdown-pdf.margin.bottom": "1.5cm",
     "terminal.integrated.scrollback": 10000,
     "workbench.colorTheme": "Default Dark+",
@@ -119,5 +126,7 @@
     "search.quickOpen.includeHistory": false,
     "diffEditor.diffAlgorithm": "advanced",
     "editor.stickyScroll.defaultModel": "foldingProviderModel",
-    "git.openRepositoryInParentFolders": "never"
+    "git.openRepositoryInParentFolders": "never",
+    "terminal.integrated.lineHeight": 1.1,
+    "editor.scrollbar.vertical": "visible"
 }
