@@ -891,5 +891,9 @@
 		"key": "escape",
 		"command": "-editor.action.selectEditor",
 		"when": "stickyScrollFocused"
+	},
+	{
+		"key": "ctrl+shift+b",
+		"command": "breadcrumbs.toggle"
 	}
 ]
