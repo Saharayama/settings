@@ -52,7 +52,7 @@
         "terminal.ansiYellow": "#c19c00",
         "editorStickyScroll.background": "#303030",
         "editorLineNumber.activeForeground": "#ffffff",
-        "statusBarItem.remoteBackground": "#555555",
+        "statusBarItem.remoteBackground": "#666666",
         "titleBar.activeBackground": "#151515",
         "sideBar.background": "#1f1f1f",
         "editorGroupHeader.tabsBackground": "#1f1f1f",
