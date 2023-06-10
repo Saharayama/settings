@@ -909,5 +909,18 @@
 		"key": "ctrl+shift+c",
 		"command": "-workbench.action.terminal.openNativeConsole",
 		"when": "!terminalFocus"
+	},
+	{
+		"key": "ctrl+shift+v",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"snippet": "$CLIPBOARD"
+		},
+		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+v",
+		"command": "-markdown.showPreview",
+		"when": "!notebookEditorFocused && editorLangId == 'markdown'"
 	}
 ]
