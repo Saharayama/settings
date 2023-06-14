@@ -897,7 +897,7 @@
 		"command": "breadcrumbs.toggle"
 	},
 	{
-		"key": "ctrl+shift+alt+r",
+		"key": "ctrl+t",
 		"command": "workbench.action.files.toggleActiveEditorReadonlyInSession",
 		"when": "editorTextFocus"
 	},

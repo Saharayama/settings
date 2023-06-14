@@ -133,11 +133,19 @@
                 "startingDirectory": "~"
             },
             {
-                "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
+                "commandline": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
                 "guid": "{}",
                 "hidden": false,
                 "icon": "ms-appx:///ProfileIcons/pwsh.png",
                 "name": "pwsh",
+                "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "commandline": "C:\\Program Files\\Python311\\python.exe",
+                "guid": "{}",
+                "hidden": false,
+                "icon": "C:\\Program Files\\Python311\\Lib\\test\\imghdrdata\\python.png",
+                "name": "python",
                 "startingDirectory": "%USERPROFILE%"
             },
             {
