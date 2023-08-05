@@ -133,5 +133,7 @@
     "terminal.integrated.lineHeight": 1.1,
     "editor.scrollbar.vertical": "visible",
     "files.readonlyFromPermissions": true,
-    "breadcrumbs.enabled": false
+    "breadcrumbs.enabled": false,
+    "markdown.preview.breaks": true,
+    "markdown-pdf.breaks": true
 }

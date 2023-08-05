@@ -922,5 +922,19 @@
 		"key": "ctrl+shift+v",
 		"command": "-markdown.showPreview",
 		"when": "!notebookEditorFocused && editorLangId == 'markdown'"
+	},
+	{
+		"key": "ctrl+shift+alt+p",
+		"command": "workbench.profiles.actions.switchProfile"
+	},
+	{
+		"key": "ctrl+shift+alt+b",
+		"command": "breadcrumbs.focusAndSelect",
+		"when": "breadcrumbsPossible && breadcrumbsVisible"
+	},
+	{
+		"key": "ctrl+shift+oem_period",
+		"command": "-breadcrumbs.focusAndSelect",
+		"when": "breadcrumbsPossible && breadcrumbsVisible"
 	}
 ]
