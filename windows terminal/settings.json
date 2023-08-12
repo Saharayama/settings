@@ -1,11 +1,9 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
-    [
+    "actions": [
         {
-            "command":
-            {
+            "command": {
                 "action": "copy",
                 "singleLine": false
             },
@@ -20,8 +18,7 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command":
-            {
+            "command": {
                 "action": "splitPane",
                 "split": "right"
             },
@@ -52,8 +49,7 @@
             "keys": "ctrl+shift+down"
         },
         {
-            "command":
-            {
+            "command": {
                 "action": "scrollDown"
             },
             "keys": "shift+down"
@@ -63,8 +59,7 @@
             "keys": "shift+pgup"
         },
         {
-            "command":
-            {
+            "command": {
                 "action": "splitPane",
                 "split": "down"
             },
@@ -75,8 +70,7 @@
             "keys": "shift+pgdn"
         },
         {
-            "command":
-            {
+            "command": {
                 "action": "scrollUp"
             },
             "keys": "shift+up"
@@ -89,18 +83,15 @@
     "disableAnimations": true,
     "experimental.rendering.software": false,
     "initialCols": 100,
-    "profiles":
-    {
-        "defaults":
-        {
+    "profiles": {
+        "defaults": {
             "altGrAliasing": false,
             "antialiasingMode": "cleartype",
             "bellStyle": "none",
             "closeOnExit": "always",
             "colorScheme": "user3",
             "cursorShape": "underscore",
-            "font":
-            {
+            "font": {
                 "face": "Ricty ShinDiminished",
                 "size": 12
             },
@@ -109,8 +100,7 @@
             "scrollbarState": "hidden",
             "suppressApplicationTitle": true
         },
-        "list":
-        [
+        "list": [
             {
                 "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
                 "guid": "{}",
@@ -161,8 +151,7 @@
             }
         ]
     },
-    "schemes":
-    [
+    "schemes": [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
