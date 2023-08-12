@@ -402,16 +402,6 @@
 		"when": "editorTextFocus && editorHasSelection"
 	},
 	{
-		"key": "ctrl+d",
-		"command": "-editor.action.addSelectionToNextFindMatch",
-		"when": "editorFocus"
-	},
-	{
-		"key": "ctrl+shift+alt+d",
-		"command": "editor.action.addSelectionToNextFindMatch",
-		"when": "editorFocus"
-	},
-	{
 		"key": "alt+d",
 		"command": "editor.action.smartSelect.expand",
 		"when": "editorTextFocus"
@@ -936,5 +926,15 @@
 		"key": "ctrl+shift+oem_period",
 		"command": "-breadcrumbs.focusAndSelect",
 		"when": "breadcrumbsPossible && breadcrumbsVisible"
+	},
+	{
+		"key": "ctrl+shift+alt+w",
+		"command": "deleteWordLeft",
+		"when": "editorFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+d",
+		"command": "deleteWordRight",
+		"when": "editorFocus"
 	}
 ]
