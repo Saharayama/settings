@@ -17,9 +17,6 @@
     "editor.suggest.localityBonus": true,
     "editor.wordSeparators": "`~!@$%^&*()=+[{]}|;:'\",<>/?.#にをはがのともへでや。、，．・：（）\\",
     "files.trimTrailingWhitespace": true,
-    "[markdown]": {
-        "files.trimTrailingWhitespace": false
-    },
     "extensions.autoCheckUpdates": false,
     "update.mode": "manual",
     "update.enableWindowsBackgroundUpdates": false,
