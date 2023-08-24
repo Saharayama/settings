@@ -936,5 +936,19 @@
 		"key": "ctrl+shift+alt+d",
 		"command": "deleteWordRight",
 		"when": "editorFocus"
+	},
+	{
+		"key": "ctrl+k ctrl+shift+alt+w",
+		"command": "workbench.action.closeEditorsToTheRight"
+	},
+	{
+		"key": "ctrl+shift+alt+k",
+		"command": "deleteAllRight",
+		"when": "editorFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+u",
+		"command": "deleteAllLeft",
+		"when": "editorFocus"
 	}
 ]
