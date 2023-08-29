@@ -1,0 +1,105 @@
+{
+	"my_inline_math": {
+		"prefix": " ",
+		"body": "\\$ $1 \\$",
+		"description": "インライン数式"
+	},
+	"my_inline_math_selected": {
+		"prefix": " ",
+		"body": "\\$ $TM_SELECTED_TEXT \\$",
+		"description": "インライン数式_selected"
+	},
+	"my_mathrm": {
+		"prefix": " ",
+		"body": "\\mathrm{$1}",
+		"description": "\\mathrm"
+	},
+	"my_mathrm_selected": {
+		"prefix": " ",
+		"body": "\\mathrm{$TM_SELECTED_TEXT}",
+		"description": "\\mathrm_selected"
+	},
+	"mleftright": {
+		"prefix": " ",
+		"body": "\\mleft( $1 \\mright)",
+		"description": "mleftright"
+	},
+	"mleftright_selected": {
+		"prefix": " ",
+		"body": "\\mleft( $TM_SELECTED_TEXT \\mright)",
+		"description": "mleftright_selected"
+	},
+	"mleftright_nami": {
+		"prefix": " ",
+		"body": "\\mleft\\{ $1 \\mright\\\\}",
+		"description": "mleftright_nami"
+	},
+	"mleftright_nami_selected": {
+		"prefix": " ",
+		"body": "\\mleft\\{ $TM_SELECTED_TEXT \\mright\\\\}",
+		"description": "mleftright_nami_selected"
+	},
+	"my_SI": {
+		"prefix": " ",
+		"body": "\\SI{$1}{$2}",
+		"description": "SI"
+	},
+	"my_SI_selected": {
+		"prefix": " ",
+		"body": "\\SI{$TM_SELECTED_TEXT}{$1}",
+		"description": "SI_selected"
+	},
+	"my_si": {
+		"prefix": " ",
+		"body": "\\si{$1}",
+		"description": "si"
+	},
+	"my_si_selected": {
+		"prefix": " ",
+		"body": "\\si{$TM_SELECTED_TEXT}",
+		"description": "si_selected"
+	},
+	"my_align": {
+		"prefix": " ",
+		"body": [
+			"\\begin{align}",
+			"    $1",
+			"\\end{align}"
+		],
+		"description": "align"
+	},
+	"my_bm": {
+		"prefix": " ",
+		"body": "\\bm{$1}",
+		"description": "bm"
+	},
+	"my_bm_selected": {
+		"prefix": " ",
+		"body": "\\bm{$TM_SELECTED_TEXT}",
+		"description": "bm_selected"
+	},
+	"mleftright_kaku": {
+		"prefix": " ",
+		"body": "\\mleft[ $1 \\mright]",
+		"description": "mleftright_kaku"
+	},
+	"mleftright_kaku_selected": {
+		"prefix": " ",
+		"body": "\\mleft[ $TM_SELECTED_TEXT \\mright]",
+		"description": "mleftright_kaku_selected"
+	},
+	"no_new_line": {
+		"prefix": " ",
+		"body": "~\\!",
+		"description": "no_new_line"
+	},
+	"my_align_notag": {
+		"prefix": " ",
+		"body": [
+			"\\begin{align*}",
+			"    $1",
+			"\\end{align*}"
+		],
+		"description": "align_notag"
+	}
+}

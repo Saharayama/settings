@@ -1,0 +1,112 @@
+{
+    "latex-workshop.view.pdf.viewer": "external",
+    "latex-workshop.view.pdf.external.viewer.command": "C:/Program Files/SumatraPDF/SumatraPDF.exe",
+    "latex-workshop.view.pdf.external.viewer.args": [
+        "-reuse-instance",
+        "%PDF%"
+    ],
+    "latex-workshop.view.pdf.external.synctex.command": "C:/Program Files/SumatraPDF/SumatraPDF.exe",
+    "latex-workshop.view.pdf.external.synctex.args": [
+        "-reuse-instance",
+        "-forward-search",
+        "%TEX%",
+        "%LINE%",
+        "%PDF%"
+    ],
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.dvi"
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "upLaTeX",
+            "command": "uplatex",
+            "args": [
+                "-no-guess-input-enc",
+                "-kanji=utf8",
+                "-synctex=1",
+                "-halt-on-error",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "DviPdf",
+            "command": "dvipdfmx",
+            "args": [
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "ClutTeX",
+            "command": "cluttex",
+            "args": [
+                "-e",
+                "uplatex",
+                "--synctex=1",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "pbibtex",
+            "command": "pbibtex",
+            "args": [
+                "-kanji=utf8",
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "upLaTeX",
+            "tools": [
+                "upLaTeX",
+                "pbibtex",
+                "upLaTeX",
+                "upLaTeX",
+                "DviPdf"
+            ]
+        },
+        {
+            "name": "ClutTeX",
+            "tools": [
+                "ClutTeX"
+            ]
+        }
+    ],
+    "latex-workshop.message.update.show": false,
+    "latex-workshop.hover.preview.enabled": false,
+    "latex-workshop.hover.ref.enabled": false,
+    "latex-workshop.hover.command.enabled": false,
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.message.latexlog.exclude": [
+        "Package caption Warning: Unknown document class \\(or package\\),"
+    ],
+    "latex-workshop.view.pdf.invert": 1,
+    "[latex]": {
+        "editor.quickSuggestions": {
+            "other": false,
+            "comments": false,
+            "strings": false
+        }
+    }
+}

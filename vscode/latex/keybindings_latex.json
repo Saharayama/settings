@@ -1,0 +1,236 @@
+[
+	{
+		"key": "f5",
+		"command": "latex-workshop.build",
+		"when": "editorTextFocus && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+alt+b",
+		"command": "-latex-workshop.build",
+		"when": "editorTextFocus && !isMac"
+	},
+	{
+		"key": "alt+win+b",
+		"command": "-latex-workshop.build",
+		"when": "editorTextFocus && isMac"
+	},
+	{
+		"key": "alt+win+c",
+		"command": "-latex-workshop.clean",
+		"when": "editorTextFocus && isMac"
+	},
+	{
+		"key": "alt+win+x",
+		"command": "-workbench.view.extension.latex",
+		"when": "isMac"
+	},
+	{
+		"key": "alt+win+j",
+		"command": "-latex-workshop.synctex",
+		"when": "editorTextFocus && isMac"
+	},
+	{
+		"key": "alt+win+v",
+		"command": "-latex-workshop.view",
+		"when": "editorTextFocus && isMac"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "latex-workshop.synctex",
+		"when": "editorTextFocus && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+alt+j",
+		"command": "-latex-workshop.synctex",
+		"when": "editorTextFocus && !isMac"
+	},
+	{
+		"key": "ctrl+shift+i",
+		"command": "type",
+		"args": {
+			"text": "\\item "
+		},
+		"when": "editorTextFocus && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+shift+m",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "my_inline_math"
+		},
+		"when": "editorTextFocus && !editorHasSelection && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+shift+m",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "my_inline_math_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+shift+r",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "my_mathrm"
+		},
+		"when": "editorTextFocus && !editorHasSelection && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+shift+r",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "my_mathrm_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+shift+r",
+		"command": "-workbench.action.quickOpenNavigatePreviousInRecentFilesPicker",
+		"when": "inQuickOpen && inRecentFilesPicker"
+	},
+	{
+		"key": "ctrl+shift+9",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "mleftright"
+		},
+		"when": "editorTextFocus && !editorHasSelection && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+shift+9",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "mleftright_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+shift+oem_6",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "mleftright_nami"
+		},
+		"when": "editorTextFocus && !editorHasSelection && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+shift+oem_6",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "mleftright_nami_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+h",
+		"command": "latex-workshop.kill",
+		"when": "editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+shift+s",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "my_SI"
+		},
+		"when": "editorTextFocus && !editorHasSelection && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+shift+s",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "my_SI_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+shift+alt+s",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "my_si"
+		},
+		"when": "editorTextFocus && !editorHasSelection && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+shift+alt+s",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "my_si_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+shift+b",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "my_bm"
+		},
+		"when": "editorTextFocus && !editorHasSelection && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+shift+b",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "my_bm_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+shift+a",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "my_align"
+		},
+		"when": "editorTextFocus && !editorHasSelection && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+shift+alt+a",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "my_align_notag"
+		},
+		"when": "editorTextFocus && !editorHasSelection && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+oem_6",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "mleftright_kaku"
+		},
+		"when": "editorTextFocus && !editorHasSelection && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+oem_6",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "mleftright_kaku_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection && editorLangId == 'latex'"
+	},
+	{
+		"key": "ctrl+shift+oem_7",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "latex",
+			"name": "no_new_line"
+		},
+		"when": "editorTextFocus && !editorHasSelection && editorLangId == 'latex'"
+	}
+]
