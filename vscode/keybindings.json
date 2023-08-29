@@ -938,7 +938,7 @@
 		"when": "editorFocus"
 	},
 	{
-		"key": "ctrl+k ctrl+shift+alt+w",
+		"key": "ctrl+k shift+alt+w",
 		"command": "workbench.action.closeEditorsToTheRight"
 	},
 	{
@@ -950,5 +950,9 @@
 		"key": "ctrl+shift+alt+u",
 		"command": "deleteAllLeft",
 		"when": "editorFocus"
+	},
+	{
+		"key": "ctrl+k ctrl+shift+alt+w",
+		"command": "workbench.action.closeOtherEditors"
 	}
 ]
