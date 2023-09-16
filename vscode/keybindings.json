@@ -424,7 +424,7 @@
 	{
 		"key": "shift+enter",
 		"command": "editor.action.replaceAll",
-		"when": "editorFocus && findWidgetVisible"
+		"when": "editorFocus && (findInputFocussed || replaceInputFocussed)"
 	},
 	{
 		"key": "shift+tab",
@@ -649,14 +649,14 @@
 		"command": "editor.action.insertSnippet",
 		"when": "editorTextFocus",
 		"args": {
-			"name": "code_block"
+			"name": "md_code_block"
 		}
 	},
 	{
 		"key": "ctrl+shift+alt+oem_3",
 		"command": "editor.action.insertSnippet",
 		"args": {
-			"name": "code_block_selected"
+			"name": "md_code_block_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection"
 	},
@@ -954,5 +954,21 @@
 	{
 		"key": "ctrl+k ctrl+shift+alt+w",
 		"command": "workbench.action.closeOtherEditors"
+	},
+	{
+		"key": "shift+enter",
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"cursorEnd",
+				{
+					"command": "editor.action.insertSnippet",
+					"args": {
+						"name": "md_list"
+					}
+				}
+			]
+		},
+		"when": "editorTextFocus && editorLangId == 'markdown'"
 	}
 ]

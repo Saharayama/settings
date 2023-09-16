@@ -1,19 +1,20 @@
 {
-	"code_block":{
+	"md_code_block": {
 		"body": [
 			"```$1",
 			"$0",
 			"```"
-		],
-		"description": "code_block"
+		]
 	},
-	"code_block_selected":{
+	"md_code_block_selected": {
 		"body": [
 			"```$1",
 			"$TM_SELECTED_TEXT",
 			"```",
 			"$0"
-		],
-		"description": "code_block_selected"
+		]
+	},
+	"md_list": {
+		"body": "\n${TM_CURRENT_LINE/(^\\s*-\\s.*$)|(^\\s*1\\.\\s.*$)|(.*)/${1:+- }${2:+1. }/}"
 	}
 }
