@@ -647,18 +647,20 @@
 	{
 		"key": "ctrl+shift+alt+oem_3",
 		"command": "editor.action.insertSnippet",
-		"when": "editorTextFocus",
 		"args": {
+			"langId": "markdown",
 			"name": "md_code_block"
-		}
+		},
+		"when": "editorTextFocus && editorLangId == 'markdown'"
 	},
 	{
 		"key": "ctrl+shift+alt+oem_3",
 		"command": "editor.action.insertSnippet",
 		"args": {
+			"langId": "markdown",
 			"name": "md_code_block_selected"
 		},
-		"when": "editorTextFocus && editorHasSelection"
+		"when": "editorTextFocus && editorHasSelection && editorLangId == 'markdown'"
 	},
 	{
 		"key": "ctrl+alt+up",
@@ -964,6 +966,7 @@
 				{
 					"command": "editor.action.insertSnippet",
 					"args": {
+						"langId": "markdown",
 						"name": "md_list"
 					}
 				}
