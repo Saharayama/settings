@@ -967,11 +967,25 @@
 					"command": "editor.action.insertSnippet",
 					"args": {
 						"langId": "markdown",
-						"name": "md_list"
+						"name": "md_list_complete"
 					}
 				}
 			]
 		},
 		"when": "editorTextFocus && editorLangId == 'markdown'"
+	},
+	{
+		"key": "alt+enter",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "markdown",
+			"name": "md_list_selective"
+		},
+		"when": "editorTextFocus && editorLangId == 'markdown'"
+	},
+	{
+		"key": "alt+enter",
+		"command": "-editor.action.selectAllMatches",
+		"when": "editorFocus && findWidgetVisible"
 	}
 ]
