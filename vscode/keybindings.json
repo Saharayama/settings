@@ -981,11 +981,26 @@
 			"langId": "markdown",
 			"name": "md_list_selective"
 		},
-		"when": "editorTextFocus && editorLangId == 'markdown'"
+		"when": "editorTextFocus && editorLangId == 'markdown' && !suggestWidgetVisible"
 	},
 	{
 		"key": "alt+enter",
 		"command": "-editor.action.selectAllMatches",
 		"when": "editorFocus && findWidgetVisible"
+	},
+	{
+		"key": "ctrl+space",
+		"command": "hideSuggestWidget",
+		"when": "suggestWidgetVisible"
+	},
+	{
+		"key": "alt+enter",
+		"command": "toggleSuggestionDetails",
+		"when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible"
+	},
+	{
+		"key": "ctrl+space",
+		"command": "-toggleSuggestionDetails",
+		"when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
 	}
 ]
