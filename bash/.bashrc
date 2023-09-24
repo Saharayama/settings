@@ -121,9 +121,10 @@ fi
 PS1='\[\e[1;32m\]\u \[\e[33m\]\w \[\e[0m\]\n\$ '
 
 alias exp='explorer.exe'
-alias la='ls -lAh --time-style="+%Y-%m-%d"'
-alias las='ls -lAh --time-style="+%Y-%m-%d %H:%M:%S"'
+alias la='ls -lAhtr --time-style="+%Y-%m-%d"'
+alias las='ls -lAhtr --time-style="+%Y-%m-%d %H:%M:%S"'
 export LANG=ja_JP.UTF-8
 EDITOR='"code" --wait'
 stty -ixon
 alias restart='exec $SHELL -l'
+alias echon='printf "%s\r\n"'
