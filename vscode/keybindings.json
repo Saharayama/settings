@@ -422,7 +422,7 @@
 		"when": "editorTextFocus"
 	},
 	{
-		"key": "shift+enter",
+		"key": "ctrl+shift+enter",
 		"command": "editor.action.replaceAll",
 		"when": "editorFocus && (findInputFocussed || replaceInputFocussed)"
 	},
