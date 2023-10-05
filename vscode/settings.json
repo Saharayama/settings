@@ -100,7 +100,7 @@
     "powershell.cwd": "${fileDirname}",
     "powershell.promptToUpdatePowerShell": false,
     "powershell.startAutomatically": false,
-    "python.defaultInterpreterPath": "C:/Program Files/Python311/python.exe",
+    "python.defaultInterpreterPath": "C:/Program Files/Python312/python.exe",
     "files.insertFinalNewline": true,
     "C_Cpp.suggestSnippets": false,
     "C_Cpp.clang_format_style": "{BitFieldColonSpacing: After, SpaceBeforeParens: Never, BreakBeforeBraces: Custom, IndentCaseLabels: true, IndentWidth: 4, TabWidth: 4, SpacesBeforeTrailingComments: 2, AlignArrayOfStructures: Right, BreakBeforeBinaryOperators: All, MaxEmptyLinesToKeep: 2, UseTab: AlignWithSpaces, ColumnLimit: 0, BraceWrapping: {AfterEnum: true, AfterUnion: true, AfterCaseLabel: true, AfterControlStatement: Always, AfterFunction: true, AfterStruct: true, BeforeElse: true, BeforeWhile: true, IndentBraces: false}}",
@@ -124,14 +124,16 @@
     "editor.find.seedSearchStringFromSelection": "selection",
     "workbench.editor.enablePreview": false,
     "search.quickOpen.includeHistory": false,
-    "diffEditor.diffAlgorithm": "advanced",
     "editor.stickyScroll.defaultModel": "foldingProviderModel",
     "git.openRepositoryInParentFolders": "never",
     "terminal.integrated.lineHeight": 1.1,
     "editor.scrollbar.vertical": "visible",
     "files.readonlyFromPermissions": true,
-    "breadcrumbs.enabled": false,
     "markdown.preview.breaks": true,
     "markdown-pdf.breaks": true,
-    "markdown-pdf.executablePath": "C:/Program Files/Google/Chrome/Application/chrome.exe"
+    "breadcrumbs.enabled": false,
+    "markdown-pdf.executablePath": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+    "workbench.editor.empty.hint": "hidden",
+    "window.commandCenter": false,
+    "window.density.editorTabHeight": "compact"
 }
