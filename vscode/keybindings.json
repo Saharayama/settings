@@ -1002,5 +1002,12 @@
 		"key": "ctrl+space",
 		"command": "-toggleSuggestionDetails",
 		"when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+i",
+		"command": "workbench.action.terminal.newWithProfile",
+		"args":{
+			"profileName": "ipython"
+		}
 	}
 ]

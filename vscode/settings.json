@@ -38,10 +38,10 @@
     "security.workspace.trust.enabled": false,
     "editor.accessibilitySupport": "off",
     // update
-    "extensions.autoCheckUpdates": false,
     "update.mode": "manual",
     "update.enableWindowsBackgroundUpdates": false,
     "extensions.autoUpdate": false,
+    "extensions.autoCheckUpdates": false,
     // settings for setting
     "workbench.settings.editor": "json",
     "workbench.settings.openDefaultKeybindings": false,
@@ -77,6 +77,24 @@
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.profiles.windows": {
+        "Git Bash": {
+            "path": "C:/Program Files/Git/bin/bash.exe",
+            "icon": "terminal-bash",
+            "overrideName": true,
+            "color": "terminal.ansiGreen"
+        },
+        "ipython": {
+            "path": "ipython",
+            "icon": "console",
+            "color": "terminal.ansiYellow"
+        },
+        "Command Prompt": null,
+        "PowerShell": null,
+        "Ubuntu (WSL)": null,
+        "Windows PowerShell": null,
+        "JavaScript デバッグ ターミナル": null
+    },
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.allowChords": false,
     "terminal.integrated.scrollback": 10000,
