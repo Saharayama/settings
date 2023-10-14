@@ -126,5 +126,6 @@ alias las='ls -lAhtr --time-style="+%Y-%m-%d %H:%M:%S"'
 export LANG=ja_JP.UTF-8
 EDITOR='"code" --wait'
 stty -ixon
-alias restart='exec $SHELL -l'
+alias restart='exec $SHELL'
 alias echon='printf "%s\r\n"'
+alias clip='iconv -f UTF-8 -t CP932 | clip.exe'
