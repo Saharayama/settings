@@ -93,7 +93,7 @@
             "cursorShape": "underscore",
             "font": {
                 "face": "Ricty ShinDiminished",
-                "size": 12
+                "size": 13
             },
             "intenseTextStyle": "all",
             "padding": "0",
@@ -131,10 +131,10 @@
                 "startingDirectory": "%USERPROFILE%"
             },
             {
-                "commandline": "C:\\Program Files\\Python311\\python.exe",
+                "commandline": "C:\\Program Files\\Python312\\python.exe",
                 "guid": "{}",
                 "hidden": false,
-                "icon": "C:\\Program Files\\Python311\\Lib\\test\\imghdrdata\\python.png",
+                "icon": "C:\\Program Files\\Python312\\Lib\\test\\imghdrdata\\python.png",
                 "name": "python",
                 "startingDirectory": "%USERPROFILE%"
             },
