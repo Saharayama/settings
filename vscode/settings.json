@@ -74,6 +74,7 @@
     // python
     "python.defaultInterpreterPath": "C:/Program Files/Python312/python.exe",
     "python.analysis.typeCheckingMode": "strict",
+    "python.analysis.autoImportCompletions": false,
     "[python]": {
         "editor.glyphMargin": true,
         "editor.defaultFormatter": "ms-python.black-formatter"
