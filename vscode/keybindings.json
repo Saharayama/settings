@@ -1001,8 +1001,17 @@
 	{
 		"key": "ctrl+shift+alt+i",
 		"command": "workbench.action.terminal.newWithProfile",
-		"args":{
+		"args": {
 			"profileName": "ipython"
 		}
+	},
+	{
+		"key": "ctrl+alt+oem_comma",
+		"command": "workbench.action.openWorkspaceSettingsFile",
+		"when": "workbenchState != 'empty'"
+	},
+	{
+		"key": "ctrl+k ctrl+shift+alt+s",
+		"command": "workbench.action.openGlobalKeybindingsFile"
 	}
 ]
