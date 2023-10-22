@@ -10,7 +10,7 @@ for n in sys.argv[1:]:
     out_dir = Path(archive_path.parent, archive_path.stem)
     if archive_path.suffix in SUFFIX_LIST:
         if out_dir.exists():
-            print(str(out_dir) + ' already exists.')
+            print(f'{out_dir} already exists.')
             subprocess.call('PAUSE', shell = True)
             sys.exit()
         result = subprocess.run([SEVEN_ZIP, 'x', archive_path, '-o' + str(out_dir)])
@@ -20,6 +20,6 @@ for n in sys.argv[1:]:
             subprocess.call('PAUSE', shell = True)
             sys.exit()
     else:
-        print(str(archive_path) + ' is not supported.')
+        print(f'{archive_path} is not supported.')
         subprocess.call('PAUSE', shell = True)
         sys.exit()
