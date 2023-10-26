@@ -110,6 +110,12 @@
     // git
     "git.autofetch": true,
     "git.openRepositoryInParentFolders": "never",
+    "git.showCommitInput": false,
+    "git.showActionButton": {
+        "commit": false,
+        "publish": false,
+        "sync": false
+    },
     // appearance
     "workbench.colorCustomizations": {
         "editor.selectionHighlightBackground": "#00000000",

@@ -527,10 +527,6 @@
 		"when": "editorTextFocus && editorHasSelection"
 	},
 	{
-		"key": "ctrl+shift+alt+f",
-		"command": "toggleFindInSelection"
-	},
-	{
 		"key": "ctrl+oem_minus",
 		"command": "workbench.debug.action.toggleRepl",
 		"when": "workbench.panel.repl.view.active"
@@ -1013,5 +1009,30 @@
 	{
 		"key": "ctrl+k ctrl+shift+alt+s",
 		"command": "workbench.action.openGlobalKeybindingsFile"
+},
+	{
+		"key": "ctrl+shift+alt+g",
+		"command": "git.openChange",
+		"when": "!inDiffEditor"
+	},
+	{
+		"key": "ctrl+shift+enter",
+		"command": "search.action.replaceAll",
+		"when": "replaceActive && searchViewletVisible && !findWidgetVisible"
+	},
+	{
+		"key": "ctrl+alt+enter",
+		"command": "-search.action.replaceAll",
+		"when": "replaceActive && searchViewletVisible && !findWidgetVisible"
+	},
+	{
+		"key": "ctrl+shift+alt+g",
+		"command": "git.openFile",
+		"when": "inDiffEditor"
+	},
+	{
+		"key": "ctrl+shift+alt+f",
+		"command": "diffEditor.toggleCollapseUnchangedRegions",
+		"when": "inDiffEditor"
 	}
 ]
