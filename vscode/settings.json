@@ -28,6 +28,8 @@
     "editor.parameterHints.enabled": false,
     "workbench.editor.empty.hint": "hidden",
     "workbench.startupEditor": "none",
+    "debug.console.fontFamily": "'Ricty ShinDiminished'",
+    "debug.console.fontSize": 16,
     // disable default settings
     "extensions.ignoreRecommendations": true,
     "workbench.enableExperiments": false,
