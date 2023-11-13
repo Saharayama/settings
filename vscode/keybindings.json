@@ -953,7 +953,7 @@
 		"command": "runCommands",
 		"args": {
 			"commands": [
-				"cursorEnd",
+				"cursorLineEnd",
 				{
 					"command": "editor.action.insertSnippet",
 					"args": {
@@ -1009,7 +1009,7 @@
 	{
 		"key": "ctrl+k ctrl+shift+alt+s",
 		"command": "workbench.action.openGlobalKeybindingsFile"
-},
+	},
 	{
 		"key": "ctrl+shift+alt+g",
 		"command": "git.openChange",
@@ -1034,5 +1034,15 @@
 		"key": "ctrl+shift+alt+f",
 		"command": "diffEditor.toggleCollapseUnchangedRegions",
 		"when": "inDiffEditor"
+	},
+	{
+		"key": "ctrl+oem_7",
+		"command": "workbench.action.closePanel",
+		"when": "view.vscode-serial-monitor.monitor0.visible"
+	},
+	{
+		"key": "ctrl+oem_7",
+		"command": "workbench.view.extension.vscode-serial-monitor-tools",
+		"when": "!view.vscode-serial-monitor.monitor0.visible"
 	}
 ]
