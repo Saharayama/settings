@@ -65,7 +65,7 @@
     // c
     "C_Cpp.loggingLevel": "Information",
     "C_Cpp.suggestSnippets": false,
-    "C_Cpp.clang_format_style": "{BitFieldColonSpacing: After, SpaceBeforeParens: Never, BreakBeforeBraces: Custom, IndentCaseLabels: true, IndentWidth: 4, TabWidth: 4, SpacesBeforeTrailingComments: 2, AlignArrayOfStructures: Right, BreakBeforeBinaryOperators: All, MaxEmptyLinesToKeep: 2, UseTab: AlignWithSpaces, ColumnLimit: 0, BraceWrapping: {AfterEnum: true, AfterUnion: true, AfterCaseLabel: true, AfterControlStatement: Always, AfterFunction: true, AfterStruct: true, BeforeElse: true, BeforeWhile: true, IndentBraces: false}}",
+    "C_Cpp.clang_format_style": "{BitFieldColonSpacing: After, SpaceBeforeParens: Never, BreakBeforeBraces: Custom, IndentCaseLabels: true, IndentWidth: 4, TabWidth: 4, SpacesBeforeTrailingComments: 2, AlignArrayOfStructures: Right, BreakBeforeBinaryOperators: All, MaxEmptyLinesToKeep: 2, UseTab: Always, ColumnLimit: 0, BraceWrapping: {AfterEnum: true, AfterUnion: true, AfterCaseLabel: true, AfterControlStatement: Always, AfterFunction: true, AfterStruct: true, BeforeElse: true, BeforeWhile: true, IndentBraces: false}, SortIncludes: Never}",
     "C_Cpp.dimInactiveRegions": false,
     "C_Cpp.default.compilerPath": "",
     // powershell
@@ -174,5 +174,6 @@
     "window.commandCenter": false,
     "window.density.editorTabHeight": "compact",
     "editor.stickyScroll.defaultModel": "foldingProviderModel",
-    "breadcrumbs.enabled": false
+    "breadcrumbs.enabled": false,
+    "diffEditor.hideUnchangedRegions.enabled": true
 }
