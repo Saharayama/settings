@@ -30,6 +30,7 @@
     "workbench.startupEditor": "none",
     "debug.console.fontFamily": "'Ricty ShinDiminished'",
     "debug.console.fontSize": 16,
+    "workbench.editor.preventPinnedEditorClose": "keyboard",
     // disable default settings
     "extensions.ignoreRecommendations": true,
     "workbench.enableExperiments": false,
@@ -65,7 +66,7 @@
     // c
     "C_Cpp.loggingLevel": "Information",
     "C_Cpp.suggestSnippets": false,
-    "C_Cpp.clang_format_style": "{BitFieldColonSpacing: After, SpaceBeforeParens: Never, BreakBeforeBraces: Custom, IndentCaseLabels: true, IndentWidth: 4, TabWidth: 4, SpacesBeforeTrailingComments: 2, AlignArrayOfStructures: Right, BreakBeforeBinaryOperators: All, MaxEmptyLinesToKeep: 2, UseTab: Always, ColumnLimit: 0, BraceWrapping: {AfterEnum: true, AfterUnion: true, AfterCaseLabel: true, AfterControlStatement: Always, AfterFunction: true, AfterStruct: true, BeforeElse: true, BeforeWhile: true, IndentBraces: false}, SortIncludes: Never}",
+    "C_Cpp.clang_format_style": "{BitFieldColonSpacing: After, SpaceBeforeParens: Never, BreakBeforeBraces: Custom, IndentCaseLabels: true, IndentWidth: 4, TabWidth: 4, SpacesBeforeTrailingComments: 2, AlignArrayOfStructures: Right, BreakBeforeBinaryOperators: All, MaxEmptyLinesToKeep: 2, UseTab: AlignWithSpaces, ColumnLimit: 0, BraceWrapping: {AfterEnum: true, AfterUnion: true, AfterCaseLabel: true, AfterControlStatement: Always, AfterFunction: true, AfterStruct: true, BeforeElse: true, BeforeWhile: true, IndentBraces: false}, SortIncludes: Never}",
     "C_Cpp.dimInactiveRegions": false,
     "C_Cpp.default.compilerPath": "",
     // powershell

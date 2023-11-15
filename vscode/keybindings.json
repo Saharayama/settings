@@ -472,7 +472,8 @@
 	},
 	{
 		"key": "ctrl+l ctrl+shift+l",
-		"command": "workbench.action.remote.close"
+		"command": "workbench.action.remote.close",
+		"when": "remoteName == 'wsl'"
 	},
 	{
 		"key": "ctrl+l ctrl+l",
