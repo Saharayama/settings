@@ -473,7 +473,7 @@
 	{
 		"key": "ctrl+l ctrl+shift+l",
 		"command": "workbench.action.remote.close",
-		"when": "remoteName == 'wsl'"
+		"when": "remoteConnectionState == connected"
 	},
 	{
 		"key": "ctrl+l ctrl+l",
