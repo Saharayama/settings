@@ -96,7 +96,7 @@
         },
         "ipython": {
             "path": "ipython",
-            "icon": "console",
+            "icon": "snake",
             "color": "terminal.ansiYellow"
         },
         "Command Prompt": null,
