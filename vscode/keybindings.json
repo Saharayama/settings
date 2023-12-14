@@ -1045,5 +1045,9 @@
 		"key": "ctrl+oem_7",
 		"command": "workbench.view.extension.vscode-serial-monitor-tools",
 		"when": "!view.vscode-serial-monitor.monitor0.visible"
+	},
+	{
+		"key": "ctrl+q",
+		"command": "workbench.action.focusActiveEditorGroup"
 	}
 ]
