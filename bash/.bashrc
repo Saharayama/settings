@@ -129,3 +129,5 @@ stty -ixon
 alias restart='exec $SHELL'
 alias echon='printf "%s\r\n"'
 alias clip='iconv -f UTF-8 -t CP932 | clip.exe'
+alias wu='winget upgrade'
+alias ws='winget search'
