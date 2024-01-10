@@ -1049,5 +1049,9 @@
 	{
 		"key": "ctrl+q",
 		"command": "workbench.action.focusActiveEditorGroup"
+	},
+	{
+		"key": "ctrl+m",
+		"command": "-editor.action.toggleTabFocusMode"
 	}
 ]
