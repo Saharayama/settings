@@ -80,7 +80,7 @@
 		"description": "kagi_kakko_selected"
 	},
 	"current_date": {
-		"body": "$CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE",
+		"body": "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
 		"description": "current_date"
 	},
 	"current_time": {
