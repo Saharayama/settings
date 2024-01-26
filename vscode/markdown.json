@@ -19,5 +19,8 @@
 	},
 	"md_list_selective": {
 		"body": "${1|- ,1. |}"
+	},
+	"md_list_complete_indent": {
+		"body": "\n\t${TM_CURRENT_LINE/(^\\s*-\\s.*$)|(^\\s*1\\.\\s.*$)|(.*)/${1:+- }${2:+1. }/}"
 	}
 }
