@@ -817,14 +817,6 @@
 		"when": "editorTextFocus && editorHasSelection"
 	},
 	{
-		"key": "ctrl+1",
-		"command": "-workbench.action.focusFirstEditorGroup"
-	},
-	{
-		"key": "ctrl+1",
-		"command": "workbench.action.firstEditorInGroup"
-	},
-	{
 		"key": "ctrl+shift+r",
 		"command": "workbench.action.replaceInFiles"
 	},
@@ -1070,5 +1062,40 @@
 	{
 		"key": "ctrl+m",
 		"command": "-editor.action.toggleTabFocusMode"
+	},
+	{
+		"key": "ctrl+shift+m",
+		"command": "workbench.action.evenEditorWidths",
+		"when": "!maximizedEditorGroup && multipleEditorGroups"
+	},
+	{
+		"key": "ctrl+m",
+		"command": "workbench.action.toggleMaximizeEditorGroup",
+		"when": "maximizedEditorGroup || multipleEditorGroups"
+	},
+	{
+		"key": "ctrl+k ctrl+m",
+		"command": "-workbench.action.toggleMaximizeEditorGroup",
+		"when": "maximizedEditorGroup || multipleEditorGroups"
+	},
+	{
+		"key": "ctrl+alt+oem_6",
+		"command": "workbench.action.moveEditorToBelowGroup"
+	},
+	{
+		"key": "ctrl+alt+oem_4",
+		"command": "workbench.action.moveEditorToAboveGroup"
+	},
+	{
+		"key": "alt+9",
+		"command": "workbench.action.lastEditorInGroup"
+	},
+	{
+		"key": "alt+0",
+		"command": "-workbench.action.lastEditorInGroup"
+	},
+	{
+		"key": "alt+9",
+		"command": "-workbench.action.openEditorAtIndex9"
 	}
 ]
