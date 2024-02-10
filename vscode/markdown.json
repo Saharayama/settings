@@ -22,5 +22,8 @@
 	},
 	"md_list_complete_indent": {
 		"body": "\n${TM_CURRENT_LINE/(^\\s*-\\s.*$)|(^\\s*1\\.\\s.*$)|(.*)/${1:+\t- }${2:+\t1. }/}"
+	},
+	"md_list_complete_no_indent": {
+		"body": "${TM_CURRENT_LINE/(^\\s*-\\s.*$)|(^\\s*1\\.\\s.*$)|(.*)/${1:+\n- }${2:+\n1. }/}"
 	}
 }

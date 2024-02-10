@@ -977,12 +977,36 @@
 	},
 	{
 		"key": "ctrl+shift+alt+enter",
-		"command": "editor.action.insertSnippet",
+		"command": "runCommands",
 		"args": {
-			"langId": "markdown",
-			"name": "md_list_complete"
+			"commands": [
+				"cursorLineEnd",
+				{
+					"command": "editor.action.insertSnippet",
+					"args": {
+						"langId": "markdown",
+						"name": "md_list_complete_no_indent"
+					}
+				}
+			]
 		},
 		"when": "editorTextFocus && editorLangId == 'markdown'"
+	},
+	{
+		"key": "ctrl+alt+enter",
+		"command": "runCommands",
+		"args": {
+			"commands": [
+				"cursorLineEnd",
+				{
+					"command": "editor.action.insertSnippet",
+					"args": {
+						"name": "no_indent_newline"
+					}
+				}
+			]
+		},
+		"when": "editorTextFocus"
 	},
 	{
 		"key": "alt+enter",

@@ -94,5 +94,8 @@
 	"yama_kakko_selected": {
 		"body": "<$TM_SELECTED_TEXT>",
 		"description": "yama_kakko_selected"
+	},
+	"no_indent_newline": {
+		"body": "${TM_LINE_INDEX/(.*)/${1:+\n}/}"
 	}
 }
