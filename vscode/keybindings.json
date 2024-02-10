@@ -976,7 +976,7 @@
 		"when": "editorTextFocus && editorLangId == 'markdown'"
 	},
 	{
-		"key": "ctrl+shift+alt+enter",
+		"key": "ctrl+alt+enter",
 		"command": "runCommands",
 		"args": {
 			"commands": [
@@ -993,7 +993,7 @@
 		"when": "editorTextFocus && editorLangId == 'markdown'"
 	},
 	{
-		"key": "ctrl+alt+enter",
+		"key": "ctrl+shift+alt+enter",
 		"command": "runCommands",
 		"args": {
 			"commands": [
