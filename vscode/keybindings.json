@@ -976,6 +976,15 @@
 		"when": "editorTextFocus && editorLangId == 'markdown'"
 	},
 	{
+		"key": "ctrl+shift+alt+enter",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"langId": "markdown",
+			"name": "md_list_complete"
+		},
+		"when": "editorTextFocus && editorLangId == 'markdown'"
+	},
+	{
 		"key": "alt+enter",
 		"command": "editor.action.insertSnippet",
 		"args": {
@@ -1066,7 +1075,7 @@
 	{
 		"key": "ctrl+shift+m",
 		"command": "workbench.action.evenEditorWidths",
-		"when": "!maximizedEditorGroup && multipleEditorGroups"
+		"when": "multipleEditorGroups && !maximizedEditorGroup"
 	},
 	{
 		"key": "ctrl+m",
