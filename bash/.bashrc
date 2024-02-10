@@ -133,15 +133,20 @@ alias wu='winget upgrade'
 alias ws='winget search'
 alias g-='git switch -'
 alias gb='git branch'
-alias gl='git log --oneline'
-alias glr='git log --oneline --reverse'
+alias gl='git log --oneline --pretty=format:"%C(auto)%h %C(cyan)%cd%C(auto)%d %s %C(green bold dim)%an%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
+alias glr='git log --oneline --reverse --pretty=format:"%C(auto)%h %C(cyan)%cd%C(auto)%d %s %C(green bold dim)%an%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
+alias grl='git reflog --oneline --pretty=format:"%C(auto)%h %C(cyan)%gd:%C(auto)%d %gs %C(green bold dim)%gn%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
 alias gs='git show'
 alias gf='git fetch'
-alias gr='git rev-parse'
+function gr() {
+  if [ -z "$1" ]; then
+    set -- "@";
+  fi
+  git rev-parse "$1"
+}
 function grc() {
   if [ -z "$1" ]; then
     set -- "@";
   fi
-
-  git rev-parse "$1" | clip
+  git rev-parse "$1" | tee >(clip)
 }
