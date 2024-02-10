@@ -131,3 +131,17 @@ alias echon='printf "%s\r\n"'
 alias clip='iconv -f UTF-8 -t CP932 | clip.exe'
 alias wu='winget upgrade'
 alias ws='winget search'
+alias g-='git switch -'
+alias gb='git branch'
+alias gl='git log --oneline'
+alias glr='git log --oneline --reverse'
+alias gs='git show'
+alias gf='git fetch'
+alias gr='git rev-parse'
+function grc() {
+  if [ -z "$1" ]; then
+    set -- "@";
+  fi
+
+  git rev-parse "$1" | clip
+}
