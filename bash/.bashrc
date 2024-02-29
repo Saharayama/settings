@@ -139,14 +139,18 @@ alias grl='git reflog --oneline --pretty=format:"%C(auto)%h %C(cyan)%gd:%C(auto)
 alias gs='git show'
 alias gf='git fetch'
 function gr() {
-  git rev-parse --revs-only ${1:-"@"} | tee >(clip)
+  git rev-parse --revs-only "${1:-"@"}" | tee >(clip)
 }
 function en() {
   if [ -z "$2" ]; then
     echo
     return
   fi
-  for n in $(eval echo {$1..$2}); do
+  local step=""
+  if [ -n "$3" ]; then
+    step="..$3"
+  fi
+  for n in $(eval echo {$1..$2$step}); do
     echon "$n"
   done | tee >(clip)
 }
