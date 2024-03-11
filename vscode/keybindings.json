@@ -1131,5 +1131,15 @@
 	{
 		"key": "alt+9",
 		"command": "-workbench.action.openEditorAtIndex9"
+	},
+	{
+		"key": "alt+q",
+		"command": "search.action.collapseSearchResults",
+		"when": "hasSearchResult"
+	},
+	{
+		"key": "shift+alt+q",
+		"command": "search.action.expandSearchResults",
+		"when": "hasSearchResult"
 	}
 ]
