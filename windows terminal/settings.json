@@ -10,21 +10,6 @@
             "keys": "ctrl+c"
         },
         {
-            "command": "paste",
-            "keys": "ctrl+v"
-        },
-        {
-            "command": "find",
-            "keys": "ctrl+shift+f"
-        },
-        {
-            "command": {
-                "action": "splitPane",
-                "split": "right"
-            },
-            "keys": "ctrl+alt+shift+\\"
-        },
-        {
             "command": "unbound",
             "keys": "alt+shift+minus"
         },
@@ -50,6 +35,21 @@
         },
         {
             "command": {
+                "action": "splitPane",
+                "split": "down"
+            },
+            "keys": "ctrl+alt+shift+minus"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "command": {
                 "action": "scrollDown"
             },
             "keys": "shift+down"
@@ -61,9 +61,9 @@
         {
             "command": {
                 "action": "splitPane",
-                "split": "down"
+                "split": "right"
             },
-            "keys": "ctrl+alt+shift+minus"
+            "keys": "ctrl+alt+shift+\\"
         },
         {
             "command": "scrollDownPage",
@@ -83,6 +83,11 @@
     "disableAnimations": true,
     "experimental.rendering.software": false,
     "initialCols": 100,
+    "newTabMenu": [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
     "profiles": {
         "defaults": {
             "altGrAliasing": false,
@@ -92,11 +97,12 @@
             "colorScheme": "user3",
             "cursorShape": "underscore",
             "font": {
+                "cellHeight": "1.1",
                 "face": "Ricty ShinDiminished",
-                "size": 13
+                "size": 13.0
             },
             "intenseTextStyle": "all",
-            "padding": "0",
+            "padding": "2, 0, 2, 2",
             "scrollbarState": "hidden",
             "suppressApplicationTitle": true
         },
@@ -431,5 +437,6 @@
     ],
     "tabSwitcherMode": "disabled",
     "tabWidthMode": "compact",
+    "themes": [],
     "windowingBehavior": "useExisting"
 }
