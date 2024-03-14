@@ -9,7 +9,7 @@
     "editor.quickSuggestionsDelay": 0,
     "editor.suggestSelection": "recentlyUsedByPrefix",
     "editor.suggest.localityBonus": true,
-    "editor.wordSeparators": "`~!@$%^&*()=+[{]}|;:'\",<>/?.#にをはがのともへでや。、，．・：（）\\'して'",
+    "editor.wordSeparators": "`~!@$%^&*()=+[{]}|;:'\",<>/?.#にをはがのともへでや。、，．・：（）\\'して''する'な'ため'",
     "files.trimTrailingWhitespace": true,
     "files.autoGuessEncoding": true,
     "window.restoreWindows": "none",
