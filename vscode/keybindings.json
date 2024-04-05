@@ -1141,5 +1141,10 @@
 		"key": "shift+alt+q",
 		"command": "search.action.expandSearchResults",
 		"when": "hasSearchResult"
+	},
+	{
+		"key": "alt+q",
+		"command": "workbench.files.action.collapseExplorerFolders",
+		"when": "explorerViewletVisible"
 	}
 ]
