@@ -157,3 +157,4 @@ function en() {
 function echonc() {
   echon $* | tee >(clip)
 }
+alias gr-='git rev-parse --symbolic-full-name --abbrev-ref=loose @{-1}'
