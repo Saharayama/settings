@@ -432,11 +432,6 @@
 		"when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus"
 	},
 	{
-		"key": "ctrl+shift+oem_102",
-		"command": "workbench.action.terminal.kill",
-		"when": "terminalFocus"
-	},
-	{
 		"key": "ctrl+oem_2",
 		"command": "-toggleExplainMode",
 		"when": "suggestWidgetVisible"
@@ -1146,5 +1141,14 @@
 		"key": "alt+q",
 		"command": "workbench.files.action.collapseExplorerFolders",
 		"when": "explorerViewletVisible"
+	},
+	{
+		"key": "ctrl+shift+oem_102",
+		"command": "workbench.action.togglePanel"
+	},
+	{
+		"key": "ctrl+f",
+		"command": "-workbench.action.terminal.focusFind",
+		"when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
 	}
 ]
