@@ -900,8 +900,7 @@
 	},
 	{
 		"key": "ctrl+shift+alt+b",
-		"command": "breadcrumbs.focusAndSelect",
-		"when": "breadcrumbsPossible && breadcrumbsVisible"
+		"command": "breadcrumbs.toggleToOn"
 	},
 	{
 		"key": "ctrl+shift+oem_period",
