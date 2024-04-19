@@ -118,7 +118,7 @@ fi
 
 
 
-PS1='\[\e[1;32m\]\u \[\e[33m\]\w \[\e[0m\]\n\$ '
+PS1='\[\e[1;32m\]\u \[\e[33m\]\w\[\e[36m\]`__git_ps1`\[\e[0m\]\n\$ '
 
 alias exp='explorer.exe'
 alias la='ls -lAhtr --time-style="+%Y-%m-%d"'
@@ -126,9 +126,9 @@ alias las='ls -lAhtr --time-style="+%Y-%m-%d %H:%M:%S"'
 export LANG=ja_JP.UTF-8
 EDITOR='"code" --wait'
 stty -ixon
-alias restart='exec $SHELL'
+alias rs='exec $SHELL'
 alias echon='printf "%s\r\n"'
-alias clip='iconv -f UTF-8 -t CP932 | clip.exe'
+# alias clip='iconv -f UTF-8 -t CP932 | clip.exe'
 alias wu='winget upgrade'
 alias ws='winget search'
 alias g-='git switch -'
@@ -157,4 +157,6 @@ function en() {
 function echonc() {
   echon $* | tee >(clip)
 }
-alias gr-='git rev-parse --symbolic-full-name --abbrev-ref=loose @{-1}'
+alias wttr='curl -s "wttr.in?1MF&lang=ja"'
+alias gr-='git rev-parse --revs-only --symbolic-full-name --abbrev-ref=loose @{-1}'
+chcp.com 65001 > /dev/null
