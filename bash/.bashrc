@@ -118,7 +118,7 @@ fi
 
 
 
-PS1='\[\e[1;32m\]\u \[\e[33m\]\w\[\e[36m\]`__git_ps1`\[\e[0m\]\n\$ '
+PS1='\[\e[1;32m\]\u \[\e[33m\]\w\[\e[0m\]\n\$ '
 
 alias exp='explorer.exe'
 alias la='ls -lAhtr --time-style="+%Y-%m-%d"'
@@ -158,5 +158,16 @@ function echonc() {
   echon $* | tee >(clip)
 }
 alias wttr='curl -s "wttr.in?1MF&lang=ja"'
-alias gr-='git rev-parse --revs-only --symbolic-full-name --abbrev-ref=loose @{-1}'
-chcp.com 65001 > /dev/null
+chcp.com 65001 >/dev/null
+alias gst='git status'
+function gr-() {
+  output=$(git rev-parse --revs-only --symbolic-full-name --abbrev-ref=loose @{-1})
+  if [ $? -ne 0 ]; then
+    return
+  fi
+  if [ -z "$output" ]; then
+    git rev-parse @{-1}
+  else
+    echo "$output"
+  fi
+}
