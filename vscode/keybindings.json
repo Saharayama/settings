@@ -1154,5 +1154,9 @@
 		"key": "ctrl+k f",
 		"command": "-workbench.action.closeFolder",
 		"when": "emptyWorkspaceSupport && workbenchState != 'empty'"
+	},
+	{
+		"key": "ctrl+shift+alt+l",
+		"command": "workbench.action.toggleLockedScrolling"
 	}
 ]

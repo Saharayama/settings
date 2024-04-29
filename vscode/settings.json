@@ -31,6 +31,7 @@
     "debug.console.fontFamily": "'Ricty ShinDiminished'",
     "debug.console.fontSize": 16,
     "workbench.editor.preventPinnedEditorClose": "keyboard",
+    "diffEditor.renderGutterMenu": false,
     // disable default settings
     "extensions.ignoreRecommendations": true,
     "workbench.enableExperiments": false,
