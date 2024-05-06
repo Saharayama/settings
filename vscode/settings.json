@@ -111,6 +111,7 @@
     "terminal.integrated.scrollback": 10000,
     "terminal.integrated.shellIntegration.decorationsEnabled": "never",
     "terminal.integrated.lineHeight": 1.1,
+    "terminal.integrated.shellIntegration.enabled": false,
     // git
     "git.autofetch": true,
     "git.openRepositoryInParentFolders": "never",
