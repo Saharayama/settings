@@ -138,10 +138,10 @@ alias glr='git log --oneline --reverse --pretty=format:"%C(auto)%h %C(cyan)%cd%C
 alias grl='git reflog --oneline --pretty=format:"%C(auto)%h %C(cyan)%gd:%C(auto)%d %gs %C(green bold dim)%gn%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
 alias gs='git show'
 alias gf='git fetch'
-function gr() {
+gr() {
   git rev-parse --revs-only "${1:-"@"}" | tee >(clip)
 }
-function en() {
+en() {
   if [ -z "$2" ]; then
     echo
     return
@@ -154,14 +154,14 @@ function en() {
     echon "$n"
   done | tee >(clip)
 }
-function echonc() {
+echonc() {
   echon $* | tee >(clip)
 }
 alias wttr='curl -s "wttr.in?1MF&lang=ja"'
 chcp.com 65001 >/dev/null
 alias gst='git status'
-function gr-() {
-  output=$(git rev-parse --revs-only --symbolic-full-name --abbrev-ref=loose @{-1})
+gr-() {
+  local output=$(git rev-parse --revs-only --symbolic-full-name --abbrev-ref=loose @{-1})
   if [ $? -ne 0 ]; then
     return
   fi
