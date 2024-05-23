@@ -161,12 +161,13 @@ alias wttr='curl -s "wttr.in?1MF&lang=ja"'
 chcp.com 65001 >/dev/null
 alias gst='git status'
 gr-() {
-  local output=$(git rev-parse --revs-only --symbolic-full-name --abbrev-ref=loose @{-1})
+  local output
+  output=$(git rev-parse --revs-only --symbolic-full-name --abbrev-ref=loose @{-1}) || return
   if [ $? -ne 0 ]; then
     return
   fi
   if [ -z "$output" ]; then
-    git rev-parse @{-1}
+    git rev-parse --revs-only @{-1}
   else
     echo "$output"
   fi
