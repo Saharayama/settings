@@ -163,9 +163,6 @@ alias gst='git status'
 gr-() {
   local output
   output=$(git rev-parse --revs-only --symbolic-full-name --abbrev-ref=loose @{-1}) || return
-  if [ $? -ne 0 ]; then
-    return
-  fi
   if [ -z "$output" ]; then
     git rev-parse --revs-only @{-1}
   else
