@@ -78,26 +78,6 @@
 		"when": "terminalFocus"
 	},
 	{
-		"key": "shift+delete",
-		"command": "-editor.action.clipboardCutAction",
-		"when": "textInputFocus && !editorReadonly"
-	},
-	{
-		"key": "shift+delete",
-		"command": "-deleteFile",
-		"when": "config.files.enableTrash && explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-	},
-	{
-		"key": "shift+delete",
-		"command": "editor.action.deleteLines",
-		"when": "textInputFocus && !editorReadonly"
-	},
-	{
-		"key": "ctrl+shift+k",
-		"command": "-editor.action.deleteLines",
-		"when": "textInputFocus && !editorReadonly"
-	},
-	{
 		"key": "ctrl+delete",
 		"command": "-workbench.action.terminal.deleteWordRight",
 		"when": "terminalFocus"
@@ -1158,5 +1138,9 @@
 	{
 		"key": "ctrl+shift+alt+l",
 		"command": "workbench.action.toggleLockedScrolling"
+	},
+	{
+		"key": "ctrl+shift+q",
+		"command": "workbench.action.experimental.quickTextSearch"
 	}
 ]
