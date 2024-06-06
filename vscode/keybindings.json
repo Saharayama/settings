@@ -1141,7 +1141,7 @@
 	},
 	{
 		"key": "ctrl+shift+q",
-		"command": "workbench.action.experimental.quickTextSearch"
+		"command": "workbench.action.quickTextSearch"
 	},
 	{
 		"key": "alt+0",
@@ -1150,5 +1150,9 @@
 	{
 		"key": "ctrl+numpad0",
 		"command": "-workbench.action.zoomReset"
+	},
+	{
+		"key": "ctrl+k ctrl+shift+alt+g",
+		"command": "git.viewChanges"
 	}
 ]
