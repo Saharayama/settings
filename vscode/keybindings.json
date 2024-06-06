@@ -1142,5 +1142,13 @@
 	{
 		"key": "ctrl+shift+q",
 		"command": "workbench.action.experimental.quickTextSearch"
+	},
+	{
+		"key": "alt+0",
+		"command": "workbench.action.zoomReset"
+	},
+	{
+		"key": "ctrl+numpad0",
+		"command": "-workbench.action.zoomReset"
 	}
 ]
