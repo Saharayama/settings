@@ -169,7 +169,7 @@ gr-() {
     echo "$output"
   fi
 }
-export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:'\[A'
+export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:'\[A':pve
 export PROMPT_COMMAND="history -a"
 mkcd() {
   if ! [ -d "$1" ]; then
@@ -178,3 +178,4 @@ mkcd() {
     echo "Directory '$1' already exists."
   fi
 }
+alias pve='python -m venv --upgrade-deps .venv'
