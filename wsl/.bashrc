@@ -171,3 +171,10 @@ gr-() {
 }
 export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:'\[A'
 export PROMPT_COMMAND="history -a"
+mkcd() {
+  if ! [ -d "$1" ]; then
+    mkdir -p "$1" && cd "$1"
+  else
+    echo "Directory '$1' already exists."
+  fi
+}

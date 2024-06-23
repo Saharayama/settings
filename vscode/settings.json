@@ -178,7 +178,8 @@
     "window.commandCenter": false,
     "window.density.editorTabHeight": "compact",
     "editor.stickyScroll.defaultModel": "foldingProviderModel",
-    "breadcrumbs.enabled": false,
     "diffEditor.hideUnchangedRegions.enabled": true,
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${profileName}",
+    "breadcrumbs.enabled": false,
     "editor.stickyScroll.enabled": false
 }
