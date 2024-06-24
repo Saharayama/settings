@@ -178,4 +178,5 @@ mkcd() {
     echo "Directory '$1' already exists."
   fi
 }
-alias pve='python -m venv --upgrade-deps .venv'
+alias pve='python -m venv --upgrade-deps .venv && . .venv/Scripts/activate'
+alias gd='git diff'
