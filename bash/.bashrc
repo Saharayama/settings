@@ -180,3 +180,17 @@ mkcd() {
 }
 alias pve='python -m venv --upgrade-deps .venv && . .venv/Scripts/activate'
 alias gd='git diff'
+rt() {
+  local string="$1"
+  local count="$2"
+
+  if [[ $# -ne 2 || ! "$count" =~ ^[0-9]+$ ]]; then
+    echo "Usage: rt <string> <count>"
+    return 1
+  fi
+
+  for ((i = 0; i < count; i++)); do
+    echo -n "$string"
+  done | tee >(clip)
+  echo
+}
