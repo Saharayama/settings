@@ -54,15 +54,15 @@ gr() {
 en() {
   if [ -z "$2" ]; then
     echo
-    return
+    return 1
   fi
   local step=""
   if [ -n "$3" ]; then
     step="..$3"
   fi
-  for n in $(eval echo {$1..$2$step}); do
-    echon "$n"
-  done | tee >(clip)
+  local sequence=$(eval echo {$1..$2$step})
+  printf '%s\r\n' $sequence | clip
+  printf '%s\r\n' "$sequence" | tee >(wc -w)
 }
 echonc() {
   echon $* | tee >(clip)
