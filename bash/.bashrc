@@ -60,9 +60,9 @@ en() {
   if [ -n "$3" ]; then
     step="..$3"
   fi
-  local sequence=$(eval echo {$1..$2$step})
-  printf '%s\r\n' $sequence | clip
-  printf '%s\r\n' "$sequence" | tee >(wc -w)
+  local sequence=$(eval echo "$4""{""$1".."$2""$step""}""$5")
+  printf "%s\r\n" $sequence | clip
+  printf "%s\r\n" "$sequence" | tee >(wc -w)
 }
 echonc() {
   echon $* | tee >(clip)
@@ -79,7 +79,7 @@ gr-() {
     echo "$output"
   fi
 }
-export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:'\[A':pve
+export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:pve
 export PROMPT_COMMAND="history -a"
 mkcd() {
   if ! [ -d "$1" ]; then
@@ -97,6 +97,6 @@ rt() {
     echo "Usage: rt <string> <count>"
     return 1
   fi
-  yes "$string" | head -n "$count" | tr -d '\n' | tee >(clip)
+  yes "$string" | head -n "$count" | tr -d "\n" | tee >(clip)
   echo
 }
