@@ -79,7 +79,7 @@ gr-() {
     echo "$output"
   fi
 }
-export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:pve
+export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:pve:gd
 export PROMPT_COMMAND="history -a"
 mkcd() {
   if ! [ -d "$1" ]; then
