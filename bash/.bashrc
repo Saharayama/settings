@@ -79,7 +79,7 @@ gr-() {
     echo "$output"
   fi
 }
-export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:pve:gd
+export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:pve:gd:cpc
 export PROMPT_COMMAND="history -a"
 mkcd() {
   if ! [ -d "$1" ]; then
@@ -100,3 +100,4 @@ rt() {
   yes "$string" | head -n "$count" | tr -d "\n" | tee >(clip)
   echo
 }
+alias cpc='fc -ln -1 | sed "s/^[\t ]*//" | tee >(clip)'
