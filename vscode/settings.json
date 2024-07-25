@@ -32,6 +32,36 @@
     "debug.console.fontSize": 16,
     "workbench.editor.preventPinnedEditorClose": "keyboard",
     "diffEditor.renderGutterMenu": false,
+    "editor.language.colorizedBracketPairs": [
+        [
+            "(",
+            ")"
+        ],
+        [
+            "[",
+            "]"
+        ],
+        [
+            "{",
+            "}"
+        ],
+        [
+            "（",
+            "）"
+        ],
+        [
+            "「",
+            "」"
+        ],
+        [
+            "『",
+            "』"
+        ],
+        [
+            "【",
+            "】"
+        ]
+    ],
     // disable default settings
     "extensions.ignoreRecommendations": true,
     "workbench.enableExperiments": false,

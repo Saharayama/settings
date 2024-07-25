@@ -1154,5 +1154,13 @@
 	{
 		"key": "ctrl+k ctrl+shift+alt+g",
 		"command": "git.viewChanges"
+	},
+	{
+		"key": "ctrl+alt+d",
+		"command": "editor.action.selectToBracket",
+		"args": {
+			"selectBrackets": true
+		},
+		"when": "editorTextFocus"
 	}
 ]
