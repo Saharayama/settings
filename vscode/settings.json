@@ -9,7 +9,7 @@
     "editor.quickSuggestionsDelay": 0,
     "editor.suggestSelection": "recentlyUsedByPrefix",
     "editor.suggest.localityBonus": true,
-    "editor.wordSeparators": "`~!@$%^&*()=+[{]}|;:'\",<>/?.#にをはがのともへでや。、，．・：（）\\てなめり「」",
+    "editor.wordSeparators": "`~!@$%^&*()=+[{]}|;:'\",<>/?.#にをはがのともへでや。、，．・：（）\\てなめり「」『』【】",
     "files.trimTrailingWhitespace": true,
     "files.autoGuessEncoding": true,
     "window.restoreWindows": "none",
@@ -61,6 +61,9 @@
             "【",
             "】"
         ]
+    ],
+    "files.candidateGuessEncodings": [
+        "shiftjis"
     ],
     // disable default settings
     "extensions.ignoreRecommendations": true,
