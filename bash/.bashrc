@@ -46,7 +46,7 @@ alias gb='git branch'
 alias gl='git log --oneline --pretty=format:"%C(auto)%h %C(cyan)%cd%C(auto)%d %s %C(green bold dim)%an%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
 alias glr='git log --oneline --reverse --pretty=format:"%C(auto)%h %C(cyan)%cd%C(auto)%d %s %C(green bold dim)%an%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
 alias grl='git reflog --oneline --pretty=format:"%C(auto)%h %C(cyan)%gd:%C(auto)%d %gs %C(green bold dim)%gn%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
-alias gs='git show'
+alias gs='git show --date=format:"%Y-%m-%d %H:%M:%S"'
 alias gf='git fetch'
 gr() {
   git rev-parse --revs-only "${1:-"@"}" | tee >(clip)
@@ -85,7 +85,8 @@ mkcd() {
   if ! [ -d "$1" ]; then
     mkdir -p "$1" && cd "$1"
   else
-    echo "Directory '$1' already exists."
+    echo "Directory '$1' already exists." >&2
+    return 1
   fi
 }
 alias pve='python -m venv --upgrade-deps .venv && . .venv/Scripts/activate'
@@ -94,7 +95,7 @@ rt() {
   local string="$1"
   local count="$2"
   if [[ $# -ne 2 || ! "$count" =~ ^[0-9]+$ ]]; then
-    echo "Usage: rt <string> <count>"
+    echo "Usage: rt <string> <count>" >&2
     return 1
   fi
   yes "$string" | head -n "$count" | tr -d "\n" | tee >(clip)
