@@ -102,3 +102,6 @@ rt() {
   echo
 }
 alias cpc='fc -ln -1 | sed "s/^[\t ]*//" | tee >(clip)'
+ef() {
+  awk -v row="$1" -v col="$2" 'NR==row {print $col}' | tee >(clip)
+}
