@@ -103,5 +103,14 @@ rt() {
 }
 alias cpc='fc -ln -1 | sed "s/^[\t ]*//" | tee >(clip)'
 ef() {
-  awk -v row="$1" -v col="$2" 'NR==row {print $col}' | tee >(clip)
+  awk -v row="$1" -v col="$2" '
+  {
+    lines[NR] = $0
+  }
+  END {
+    row = (row < 0) ? NR + row + 1 : row
+    split(lines[row], fields)
+    col = (col < 0) ? length(fields) + col + 1 : col
+    print fields[col]
+  }' | tee >(clip)
 }
