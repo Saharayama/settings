@@ -1,6 +1,9 @@
 body {
     font-family: "Ricty ShinDiminished";
-    /* font-family: "BIZ UDPGothic"; */
+    /* font-family: "Arial", "BIZ UDPGothic", sans-serif; */
+    line-break: strict;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 code {
