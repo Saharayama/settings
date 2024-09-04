@@ -155,6 +155,7 @@
         "publish": false,
         "sync": false
     },
+    "scm.showHistoryGraph": false,
     // appearance
     "workbench.colorCustomizations": {
         "editor.selectionHighlightBackground": "#00000000",
