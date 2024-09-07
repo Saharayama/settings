@@ -214,6 +214,7 @@
     "editor.stickyScroll.defaultModel": "foldingProviderModel",
     "diffEditor.hideUnchangedRegions.enabled": true,
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${profileName}",
+    "zenMode.showTabs": "none",
     "breadcrumbs.enabled": false,
     "editor.stickyScroll.enabled": false
 }
