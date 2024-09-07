@@ -1072,7 +1072,7 @@
 		"command": "-editor.action.toggleTabFocusMode"
 	},
 	{
-		"key": "ctrl+shift+m",
+		"key": "ctrl+shift+alt+m",
 		"command": "workbench.action.evenEditorWidths",
 		"when": "multipleEditorGroups && !maximizedEditorGroup"
 	},
@@ -1162,5 +1162,13 @@
 			"selectBrackets": true
 		},
 		"when": "editorTextFocus"
+	},
+	{
+		"key": "ctrl+shift+alt+oem_4",
+		"command": "workbench.action.increaseViewSize"
+	},
+	{
+		"key": "ctrl+shift+alt+oem_6",
+		"command": "workbench.action.decreaseViewSize"
 	}
 ]
