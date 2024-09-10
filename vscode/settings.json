@@ -65,6 +65,7 @@
     "files.candidateGuessEncodings": [
         "shiftjis"
     ],
+    "files.defaultLanguage": "markdown",
     // disable default settings
     "extensions.ignoreRecommendations": true,
     "workbench.enableExperiments": false,
