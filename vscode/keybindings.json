@@ -1170,5 +1170,21 @@
 	{
 		"key": "ctrl+shift+alt+oem_6",
 		"command": "workbench.action.decreaseViewSize"
+	},
+	{
+		"key": "ctrl+oem_6",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"name": "kakko_2"
+		},
+		"when": "editorTextFocus && !editorHasSelection"
+	},
+	{
+		"key": "ctrl+oem_6",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"name": "kakko_2_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection"
 	}
 ]

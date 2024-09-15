@@ -97,5 +97,13 @@
 	},
 	"no_indent_newline": {
 		"body": "${TM_LINE_INDEX/(.*)/\n/}"
-	}
+	},
+	"kakko_2": {
+		"body": "『$1』",
+		"description": "kakko_2"
+	},
+	"kakko_2_selected": {
+		"body": "『$TM_SELECTED_TEXT』",
+		"description": "kakko_2_selected"
+	},
 }
