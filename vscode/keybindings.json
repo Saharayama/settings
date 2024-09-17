@@ -296,7 +296,8 @@
 	},
 	{
 		"key": "ctrl+shift+o",
-		"command": "workbench.action.files.openFolder"
+		"command": "workbench.action.files.openFolder",
+		"when": "!terminalFocus"
 	},
 	{
 		"key": "ctrl+k ctrl+o",
