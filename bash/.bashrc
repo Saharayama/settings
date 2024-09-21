@@ -40,7 +40,8 @@ alias rs='exec $SHELL'
 alias echon='printf "%s\r\n"'
 # alias clip='iconv -f UTF-8 -t CP932 | clip.exe'
 alias wu='winget.exe upgrade'
-alias ws='winget.exe search'
+alias wf='winget.exe find'
+alias ws='winget.exe show'
 alias g-='git switch -'
 alias gb='git branch'
 alias gl='git log --oneline --pretty=format:"%C(auto)%h %C(cyan)%cd%C(auto)%d %s %C(green bold dim)%an%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
@@ -114,3 +115,5 @@ ef() {
     print fields[col]
   }' | tee >(clip)
 }
+alias tree='cmd "/c tree /f & :"'
+alias xargs='xargs '
