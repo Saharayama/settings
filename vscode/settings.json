@@ -82,7 +82,6 @@
     "extensions.autoCheckUpdates": false,
     // settings for setting
     "workbench.settings.editor": "json",
-    "workbench.settings.openDefaultKeybindings": false,
     "workbench.settings.useSplitJSON": true,
     // markdown
     "markdown.preview.fontFamily": "'Ricty ShinDiminished'",
