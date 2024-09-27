@@ -1187,5 +1187,10 @@
 			"name": "kakko_2_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection"
+	},
+	{
+		"key": "alt+s",
+		"command": "toggleFindInSelection",
+		"when": "findWidgetVisible"
 	}
 ]
