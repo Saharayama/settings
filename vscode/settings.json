@@ -66,6 +66,7 @@
         "shiftjis"
     ],
     "files.defaultLanguage": "markdown",
+    "explorer.copyRelativePathSeparator": "/",
     // disable default settings
     "extensions.ignoreRecommendations": true,
     "workbench.enableExperiments": false,
@@ -127,11 +128,6 @@
             "icon": "terminal-bash",
             "overrideName": true,
             "color": "terminal.ansiGreen"
-        },
-        "ipython": {
-            "path": "ipython",
-            "icon": "snake",
-            "color": "terminal.ansiYellow"
         },
         "Command Prompt": null,
         "PowerShell": null,

@@ -1014,13 +1014,6 @@
 		"when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
 	},
 	{
-		"key": "ctrl+shift+alt+i",
-		"command": "workbench.action.terminal.newWithProfile",
-		"args": {
-			"profileName": "ipython"
-		}
-	},
-	{
 		"key": "ctrl+alt+oem_comma",
 		"command": "workbench.action.openWorkspaceSettingsFile",
 		"when": "workbenchState != 'empty'"
