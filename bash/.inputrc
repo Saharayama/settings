@@ -2,7 +2,7 @@ set bell-style none
 "\e\e": ""
 set colored-stats on
 set completion-ignore-case on
-"\C-i": "()\e[D"
+"\C-t": "()\e[D"
 "\C-o": "{}\e[D"
 "\C-p": "[]\e[D"
 "\C-b": "\"\"\e[D"
