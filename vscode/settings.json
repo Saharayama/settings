@@ -207,9 +207,10 @@
     "window.commandCenter": false,
     "window.density.editorTabHeight": "compact",
     "editor.stickyScroll.defaultModel": "foldingProviderModel",
-    "diffEditor.hideUnchangedRegions.enabled": true,
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${profileName}",
     "zenMode.showTabs": "none",
-    "breadcrumbs.enabled": false,
-    "editor.stickyScroll.enabled": false
+    "workbench.panel.showLabels": false,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "editor.stickyScroll.enabled": false,
+    "breadcrumbs.enabled": false
 }
