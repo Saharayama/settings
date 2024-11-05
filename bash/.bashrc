@@ -120,19 +120,18 @@ alias xargs='xargs '
 alias gds='git diff --staged'
 op() {
   while IFS= read -r file_name; do
+    file_name="${file_name//$'\r'/}"
     if [ ! -e "$file_name" ]; then
-      echo "'$file_name' does not exist" >&2
+      echo "'$file_name' does not exist." >&2
       continue
     fi
     abs_path=$(readlink -f -- "$file_name")
     windows_path=$(cygpath -w -- "$abs_path")
     case "${windows_path##*.}" in
       "xl"*)
-        cd || exit
-        start "" "C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE" -x "$windows_path";;
+        start "" "C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE" //x "$windows_path" > /dev/null 2>&1;;
       "doc"*)
-        cd || exit
-        start "" "C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE" -w "$windows_path";;
+        start "" "C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE" //w "$windows_path" > /dev/null 2>&1;;
       *)
         explorer "$windows_path"
     esac
