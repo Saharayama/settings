@@ -119,11 +119,12 @@ alias tree='cmd "/c tree /f & :" | iconv -f CP932 -t UTF-8 -c'
 alias xargs='xargs '
 alias gds='git diff --staged'
 op() {
-  while IFS= read -r file_name; do
+  open_file() {
+    local file_name="$1"
     file_name="${file_name//$'\r'/}"
     if [ ! -e "$file_name" ]; then
       echo "'$file_name' does not exist." >&2
-      continue
+      return
     fi
     abs_path=$(readlink -f -- "$file_name")
     windows_path=$(cygpath -w -- "$abs_path")
@@ -133,7 +134,16 @@ op() {
       "doc"*)
         start "" "C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE" //w "$windows_path" > /dev/null 2>&1;;
       *)
-        explorer "$windows_path"
+        start "" "$windows_path" > /dev/null 2>&1
     esac
+  }
+  if [ ! -t 0 ]; then
+    while IFS= read -r std_input; do
+      open_file "$std_input"
+    done
+  fi
+  for arg in "$@"; do
+    open_file "$arg"
   done
+  unset -f open_file
 }
