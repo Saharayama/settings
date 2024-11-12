@@ -826,16 +826,10 @@
 	},
 	{
 		"key": "ctrl+shift+alt+s",
-		"command": "editor.action.focusStickyScroll",
-		"when": "stickyScrollVisible"
+		"command": "editor.action.focusStickyScroll"
 	},
 	{
 		"key": "escape",
-		"command": "editor.action.selectEditor",
-		"when": "stickyScrollFocused && !findWidgetVisible"
-	},
-	{
-		"key": "ctrl+shift+alt+s",
 		"command": "editor.action.selectEditor",
 		"when": "stickyScrollFocused && !findWidgetVisible"
 	},
