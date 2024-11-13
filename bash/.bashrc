@@ -28,7 +28,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-PS1='\[\e[1;32m\]\u \[\e[33m\]\w\[\e[0m\]\n\$ '
+PS1='\[\e[1;32m\]\u \[\e[33m\]\w\[\e[0m\]\n🦆 '
 
 alias exp='explorer.exe'
 alias la='ls -lAhtr --time-style="+%Y-%m-%d"'
@@ -146,4 +146,11 @@ op() {
     open_file "$arg"
   done
   unset -f open_file
+}
+rd() {
+  if [[ "$PS1" == *"$"* ]]; then
+    PS1="${PS1//\\$/🦆}"
+  else
+    PS1="${PS1//🦆/\\$}"
+  fi
 }
