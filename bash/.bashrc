@@ -80,7 +80,7 @@ gr-() {
     echo "$output"
   fi
 }
-export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds
+export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:rd
 export PROMPT_COMMAND="history -a"
 mkcd() {
   if ! [ -d "$1" ]; then
@@ -138,7 +138,7 @@ op() {
     esac
   }
   if [ ! -t 0 ]; then
-    while IFS= read -r std_input; do
+    while IFS= read -r std_input || [ -n "$std_input" ]; do
       open_file "$std_input"
     done
   fi
