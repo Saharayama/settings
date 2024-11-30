@@ -54,14 +54,14 @@ gr() {
 }
 en() {
   if [ -z "$2" ]; then
-    echo
+    echo "Usage: en BEGIN END [STEP [PREFIX [SUFFIX]]]" >&2
     return 1
   fi
   local step=""
   if [ -n "$3" ]; then
     step="..$3"
   fi
-  local sequence=$(eval echo "$4""{""$1".."$2""$step""}""$5")
+  local sequence=$(eval echo '$4'"{""$1".."$2""$step""}"'$5')
   printf "%s\r\n" $sequence | clip
   printf "%s\r\n" "$sequence" | tee >(wc -w)
 }
