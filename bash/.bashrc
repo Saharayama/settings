@@ -80,7 +80,7 @@ gr-() {
     echo "$output"
   fi
 }
-export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:rd:gdn:gdsn
+export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:rd:gdn:gdsn:cc:cco
 export PROMPT_COMMAND="history -a"
 mkcd() {
   if ! [ -d "$1" ]; then
@@ -156,3 +156,5 @@ rd() {
 }
 alias gdn='git diff --name-only'
 alias gdsn='git diff --staged --name-only'
+alias cc='cat /dev/clipboard'
+alias cco='cat /dev/clipboard | op'
