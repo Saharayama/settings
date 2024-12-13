@@ -67,6 +67,11 @@
     ],
     "files.defaultLanguage": "markdown",
     "explorer.copyRelativePathSeparator": "/",
+    "editor.occurrencesHighlight": "multiFile",
+    "editor.occurrencesHighlightDelay": 0,
+    "[markdown][plaintext]": {
+        "editor.occurrencesHighlight": "off"
+    },
     // disable default settings
     "extensions.ignoreRecommendations": true,
     "workbench.enableExperiments": false,
@@ -203,7 +208,6 @@
     "editor.renderLineHighlight": "none",
     "workbench.activityBar.location": "hidden",
     "workbench.layoutControl.enabled": false,
-    "editor.occurrencesHighlight": "off",
     "editor.scrollbar.vertical": "visible",
     "window.commandCenter": false,
     "window.density.editorTabHeight": "compact",
@@ -213,5 +217,6 @@
     "workbench.panel.showLabels": false,
     "diffEditor.hideUnchangedRegions.enabled": true,
     "editor.stickyScroll.enabled": false,
-    "breadcrumbs.enabled": false
+    "breadcrumbs.enabled": false,
+    // "workbench.editor.wrapTabs": true
 }
