@@ -7,3 +7,4 @@ set completion-ignore-case on
 "\C-p": "[]\e[D"
 "\C-b": "\"\"\e[D"
 "\C-n": "''\e[D"
+"\C-h": "**\e[D"
