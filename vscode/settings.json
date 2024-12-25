@@ -116,7 +116,7 @@
     "powershell.promptToUpdatePowerShell": false,
     "powershell.startAutomatically": false,
     // python
-    "python.defaultInterpreterPath": "C:/Program Files/Python312/python.exe",
+    "python.defaultInterpreterPath": "C:/Program Files/Python313/python.exe",
     "python.analysis.typeCheckingMode": "strict",
     "python.analysis.autoImportCompletions": false,
     "[python]": {
