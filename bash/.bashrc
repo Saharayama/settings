@@ -159,3 +159,6 @@ alias gdsn='git diff --staged --name-only'
 alias cc='cat /dev/clipboard'
 alias cco='cat /dev/clipboard | op'
 alias gdt='git difftool'
+pp() {
+  python -c "from math import *; print($*)"
+}
