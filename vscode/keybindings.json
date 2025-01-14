@@ -849,10 +849,6 @@
 	},
 	{
 		"key": "ctrl+shift+c",
-		"command": "editor.action.clipboardCopyAction"
-	},
-	{
-		"key": "ctrl+shift+c",
 		"command": "-workbench.action.terminal.openNativeConsole",
 		"when": "!terminalFocus"
 	},
@@ -1179,5 +1175,19 @@
 		"key": "alt+s",
 		"command": "toggleFindInSelection",
 		"when": "findWidgetVisible"
+	},
+	{
+		"key": "ctrl+shift+alt+h",
+		"command": "editor.showCallHierarchy",
+		"when": "editorHasCallHierarchyProvider && editorTextFocus && !inReferenceSearchEditor"
+	},
+	{
+		"key": "shift+alt+h",
+		"command": "-editor.showCallHierarchy",
+		"when": "editorHasCallHierarchyProvider && editorTextFocus && !inReferenceSearchEditor"
+	},
+	{
+		"key": "ctrl+shift+c",
+		"command": "workbench.view.extension.references-view"
 	}
 ]
