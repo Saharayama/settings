@@ -219,5 +219,6 @@
     "diffEditor.hideUnchangedRegions.enabled": true,
     "editor.stickyScroll.enabled": false,
     "breadcrumbs.enabled": false,
-    // "workbench.editor.wrapTabs": true
+    "workbench.tree.indent": 16,
+     // "workbench.editor.wrapTabs": true
 }
