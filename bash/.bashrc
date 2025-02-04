@@ -28,7 +28,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-PS1='\[\e[1;32m\]\u \[\e[33m\]\w\[\e[0m\]\n🦆 '
+PS1='\[\e[1;32m\]\u \[\e[33m\]\w\[\e[0m\]\n\$ '
 
 alias exp='explorer.exe'
 alias la='ls -lAhtr --time-style="+%Y-%m-%d"'
@@ -54,14 +54,14 @@ gr() {
 }
 en() {
   if [ -z "$2" ]; then
-    echo "Usage: en BEGIN END [STEP [PREFIX [SUFFIX]]]" >&2
+    echo "Usage: en BEGIN END [PREFIX [SUFFIX [STEP]]]" >&2
     return 1
   fi
   local step=""
-  if [ -n "$3" ]; then
-    step="..$3"
+  if [ -n "$5" ]; then
+    step="..$5"
   fi
-  local sequence=$(eval echo '$4'"{""$1".."$2""$step""}"'$5')
+  local sequence=$(eval echo '$3'"{""$1".."$2""$step""}"'$4')
   printf "%s\r\n" $sequence | clip
   printf "%s\r\n" "$sequence" | tee >(wc -w)
 }
