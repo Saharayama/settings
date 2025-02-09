@@ -121,6 +121,7 @@
             "closeOnExit": "always",
             "colorScheme": "user3",
             "cursorShape": "underscore",
+            "experimental.repositionCursorWithMouse": true,
             "font": {
                 "cellHeight": "1.1",
                 "face": "Ricty ShinDiminished",
@@ -128,6 +129,7 @@
             },
             "intenseTextStyle": "all",
             "padding": "2, 0, 2, 2",
+            "pathTranslationStyle": "none",
             "scrollbarState": "hidden",
             "suppressApplicationTitle": true
         },
@@ -137,6 +139,7 @@
                 "guid": "{}",
                 "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
                 "name": "Git Bash",
+                "pathTranslationStyle": "msys2",
                 "startingDirectory": "%USERPROFILE%"
             },
             {
@@ -151,6 +154,7 @@
                 "hidden": false,
                 "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
                 "name": "Ubuntu",
+                "pathTranslationStyle": "wsl",
                 "startingDirectory": "~"
             },
             {
