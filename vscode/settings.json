@@ -121,7 +121,7 @@
     "python.analysis.autoImportCompletions": false,
     "[python]": {
         "editor.glyphMargin": true,
-        "editor.defaultFormatter": "ms-python.black-formatter"
+        "editor.defaultFormatter": "charliermarsh.ruff"
     },
     // terminal
     "terminal.integrated.cursorStyle": "underline",
