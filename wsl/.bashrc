@@ -118,7 +118,7 @@ fi
 
 
 
-PS1='(wsl) \[\e[1;32m\]\u \[\e[33m\]\w\[\e[0m\]\n\$ '
+PS1='(WSL) \[\e[1;32m\]\u \[\e[33m\]\w\[\e[0m\]\n\$ '
 
 alias exp='explorer.exe'
 alias la='ls -lAhtr --time-style="+%Y-%m-%d"'
@@ -130,29 +130,30 @@ alias rs='exec $SHELL -l'
 alias echon='printf "%s\r\n"'
 alias clip='iconv -f UTF-8 -t CP932 | clip.exe'
 alias wu='winget.exe upgrade'
-alias ws='winget.exe search'
+alias wf='winget.exe find'
+alias ws='winget.exe show'
 alias g-='git switch -'
 alias gb='git branch'
 alias gl='git log --oneline --pretty=format:"%C(auto)%h %C(cyan)%cd%C(auto)%d %s %C(green bold dim)%an%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
 alias glr='git log --oneline --reverse --pretty=format:"%C(auto)%h %C(cyan)%cd%C(auto)%d %s %C(green bold dim)%an%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
 alias grl='git reflog --oneline --pretty=format:"%C(auto)%h %C(cyan)%gd:%C(auto)%d %gs %C(green bold dim)%gn%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
-alias gs='git show'
+alias gs='git show --date=format:"%Y-%m-%d %H:%M:%S"'
 alias gf='git fetch'
 gr() {
   git rev-parse --revs-only "${1:-"@"}" | tee >(clip)
 }
 en() {
   if [ -z "$2" ]; then
-    echo
-    return
+    echo "Usage: en BEGIN END [PREFIX [SUFFIX [STEP]]]" >&2
+    return 1
   fi
   local step=""
-  if [ -n "$3" ]; then
-    step="..$3"
+  if [ -n "$5" ]; then
+    step="..$5"
   fi
-  for n in $(eval echo {$1..$2$step}); do
-    echon "$n"
-  done | tee >(clip)
+  local sequence=$(eval echo '$3'"{""$1".."$2""$step""}"'$4')
+  printf "%s\r\n" $sequence | clip
+  printf "%s\r\n" "$sequence" | tee >(wc -w)
 }
 echonc() {
   echon $* | tee >(clip)
@@ -169,12 +170,49 @@ gr-() {
     echo "$output"
   fi
 }
-export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:'\[A'
+export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:rd:gdn:gdsn:cc:cco
 export PROMPT_COMMAND="history -a"
 mkcd() {
   if ! [ -d "$1" ]; then
     mkdir -p "$1" && cd "$1"
   else
-    echo "Directory '$1' already exists."
+    echo "Directory '$1' already exists." >&2
+    return 1
   fi
 }
+alias gd='git diff'
+rt() {
+  local string="$1"
+  local count="$2"
+  if [[ $# -ne 2 || ! "$count" =~ ^[0-9]+$ ]]; then
+    echo "Usage: rt <string> <count>" >&2
+    return 1
+  fi
+  yes "$string" | head -n "$count" | tr -d "\n" | tee >(clip)
+  echo
+}
+alias cpc='fc -ln -1 | sed "s/^[\t ]*//" | tee >(clip)'
+ef() {
+  awk -v row="$1" -v col="$2" '
+  {
+    lines[NR] = $0
+  }
+  END {
+    row = (row < 0) ? NR + row + 1 : row
+    split(lines[row], fields)
+    col = (col < 0) ? length(fields) + col + 1 : col
+    print fields[col]
+  }' | tee >(clip)
+}
+alias xargs='xargs '
+alias gds='git diff --staged'
+rd() {
+  if [[ "$PS1" == *"$"* ]]; then
+    PS1="${PS1//\\$/🦆}"
+  else
+    PS1="${PS1//🦆/\\$}"
+  fi
+}
+alias gdn='git diff --name-only'
+alias gdsn='git diff --staged --name-only'
+alias gdt='git difftool'
