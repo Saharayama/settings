@@ -157,6 +157,9 @@
         "publish": false,
         "sync": false
     },
+    "git.blame.editorDecoration.enabled": false,
+    "git.blame.statusBarItem.enabled": false,
+    "git.blame.editorDecoration.template": "${subject} ${authorName} (${authorDate})",
     // appearance
     "workbench.colorCustomizations": {
         "editor.selectionHighlightBackground": "#00000000",
@@ -167,7 +170,7 @@
         "terminal.foreground": "#ffffff",
         "terminal.ansiBlack": "#000000",
         "terminal.ansiBlue": "#555555",
-        "terminal.ansiBrightBlack": "#ffffff",
+        "terminal.ansiBrightBlack": "#888888",
         "terminal.ansiBrightBlue": "#9090ff",
         "terminal.ansiBrightCyan": "#40ffff",
         "terminal.ansiBrightGreen": "#40ff40",
