@@ -1,5 +1,5 @@
-import sys
 import subprocess
+import sys
 
 for n in sys.argv[1:]:
-    subprocess.Popen([r'mspaint', n])
+    subprocess.Popen([r"mspaint", n])
