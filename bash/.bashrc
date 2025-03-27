@@ -160,5 +160,17 @@ alias cc='cat /dev/clipboard'
 alias cco='cat /dev/clipboard | op'
 alias gdt='git difftool'
 pp() {
-  python -c "from math import *; print($*)"
+  local input_data
+  if [ -t 0 ]; then
+    input_data="$*"
+  else
+    input_data=$(cat)
+  fi
+  if [ -z "$input_data" ]; then
+    return 1
+  fi
+  if ! python -c "from math import *; print($input_data)"; then
+    echo "Error: Python execution failed." >&2
+    return 1
+  fi
 }
