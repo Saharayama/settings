@@ -950,7 +950,7 @@
 					"command": "editor.action.insertSnippet",
 					"args": {
 						"langId": "markdown",
-						"name": "md_list_complete"
+						"name": "md_list_complete_no_indent"
 					}
 				},
 				"editor.action.outdentLines"
