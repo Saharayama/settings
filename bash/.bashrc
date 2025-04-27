@@ -115,7 +115,7 @@ ef() {
     print fields[col]
   }' | tee >(clip)
 }
-alias tree='cmd "/c tree /f & :" | iconv -f CP932 -t UTF-8 -c'
+alias tree='pwsh -c "tree /f" | iconv -f CP932 -t UTF-8 -c'
 alias xargs='xargs '
 alias gds='git diff --staged'
 op() {
@@ -174,3 +174,4 @@ pp() {
     return 1
   fi
 }
+alias swu='sudo winget.exe upgrade'
