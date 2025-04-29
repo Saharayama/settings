@@ -115,7 +115,13 @@ ef() {
     print fields[col]
   }' | tee >(clip)
 }
-alias tree='pwsh -c "tree /f" | iconv -f CP932 -t UTF-8 -c'
+tree() {
+  local path=''
+  if [ -n "$1" ]; then
+    path="\"$1\""
+  fi
+  pwsh -c "tree /f "$path"" | iconv -f CP932 -t UTF-8 -c
+}
 alias xargs='xargs '
 alias gds='git diff --staged'
 op() {
