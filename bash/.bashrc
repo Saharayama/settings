@@ -175,7 +175,7 @@ pp() {
   if [ -z "$input_data" ]; then
     return 1
   fi
-  if ! python -c "from math import *; print($input_data)"; then
+  if ! python -c "from math import *; res = $input_data; out_res = f'{res}\n{hex(res)}\n{bin(res)}' if isinstance(res, int) else res; print(out_res)"; then
     echo "Error: Python execution failed." >&2
     return 1
   fi
