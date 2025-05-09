@@ -166,16 +166,14 @@ alias cc='cat /dev/clipboard'
 alias cco='cat /dev/clipboard | op'
 alias gdt='git difftool'
 pp() {
-  local input_data
-  if [ -t 0 ]; then
-    input_data="$*"
-  else
-    input_data=$(cat)
+  local input_arg="$*"
+  if [ ! -t 0 ]; then
+    input_pipe=$(cat | head -n1)
   fi
-  if [ -z "$input_data" ]; then
+  if [ -z "$input_arg" ] && [ -z "$input_pipe" ]; then
     return 1
   fi
-  if ! python -c "from math import *; res = $input_data; out_res = f'{res}\n{hex(res)}\n{bin(res)}' if isinstance(res, int) else res; print(out_res)"; then
+  if ! python -c "from math import *; res =$input_pipe $input_arg; out_res = f'{res}\n{hex(res)}\n{bin(res)}' if isinstance(res, int) else res; print(out_res)"; then
     echo "Error: Python execution failed." >&2
     return 1
   fi
