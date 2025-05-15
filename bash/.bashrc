@@ -116,7 +116,7 @@ ef() {
   }' | tee >(clip)
 }
 tree() {
-  local path=''
+  local path=""
   if [ -n "$1" ]; then
     path="\"$1\""
   fi
@@ -126,14 +126,13 @@ alias xargs='xargs '
 alias gds='git diff --staged'
 op() {
   open_file() {
-    local file_name="$1"
-    file_name="${file_name//$'\r'/}"
+    local file_name="${1//$'\r'/}"
     if [ ! -e "$file_name" ]; then
       echo "'$file_name' does not exist." >&2
       return
     fi
-    abs_path=$(readlink -f -- "$file_name")
-    windows_path=$(cygpath -w -- "$abs_path")
+    local abs_path=$(readlink -f -- "$file_name")
+    local windows_path=$(cygpath -w -- "$abs_path")
     case "${windows_path##*.}" in
       "xl"*)
         start "" "C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE" //x "$windows_path" > /dev/null 2>&1;;
@@ -167,14 +166,20 @@ alias cco='cat /dev/clipboard | op'
 alias gdt='git difftool'
 pp() {
   local input_arg="$*"
+  local input_pipe=""
   if [ ! -t 0 ]; then
-    input_pipe=$(cat | head -n1)
+    IFS=$'\r' read -r input_pipe || true
   fi
   if [ -z "$input_arg" ] && [ -z "$input_pipe" ]; then
     return 1
   fi
-  if ! python -c "from math import *; res =$input_pipe $input_arg; out_res = f'{res}\n{hex(res)}\n{bin(res)}' if isinstance(res, int) else res; print(out_res)"; then
-    echo "Error: Python execution failed." >&2
+  local final_expression=""
+  if [[ "$input_arg" == *"@"* ]]; then
+    final_expression="${input_arg//@/ "$input_pipe" }"
+  else
+    final_expression="$input_pipe $input_arg"
+  fi
+  if ! python -c "from math import *; res = $final_expression; out_res = f'{res}\n{hex(res)}\n{bin(res)}' if isinstance(res, int) else res; print(out_res)"; then
     return 1
   fi
 }
