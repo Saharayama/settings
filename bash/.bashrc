@@ -184,3 +184,4 @@ pp() {
   fi
 }
 alias swu='sudo winget.exe upgrade'
+alias dh='sed -i "\$d" ~/.bash_history && history -c && history -r'
