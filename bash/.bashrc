@@ -165,7 +165,7 @@ alias cc='cat /dev/clipboard'
 alias cco='cat /dev/clipboard | op'
 alias gdt='git difftool'
 pp() {
-  local input_arg="$*"
+  local input_arg="${*//$'\r'/}"
   local input_pipe=""
   if [ ! -t 0 ]; then
     IFS=$'\r' read -r input_pipe || true
