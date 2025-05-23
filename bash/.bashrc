@@ -95,8 +95,8 @@ alias gd='git diff'
 rt() {
   local string="$1"
   local count="$2"
-  if [[ $# -ne 2 || ! "$count" =~ ^[0-9]+$ ]]; then
-    echo "Usage: rt <string> <count>" >&2
+  if [[ $# -ne 2 || ! "$count" =~ ^[1-9][0-9]*$ ]]; then
+    echo "Usage: rt <STRING> <COUNT>" >&2
     return 1
   fi
   yes "$string" | head -n "$count" | tr -d "\n" | tee >(clip)
@@ -184,4 +184,21 @@ pp() {
   fi
 }
 alias swu='sudo winget.exe upgrade'
-alias dh='sed -i "\$d" ~/.bash_history && history -c && history -r'
+dh() {
+  local offset_from_end=1
+  if [[ -n "$1" ]]; then
+    if [[ "$1" =~ ^[1-9][0-9]*$ ]]; then
+      offset_from_end="$1"
+    else
+      echo "Usage: dh [OFFSET_FROM_END]" >&2
+      return 1
+    fi
+  fi
+  local total_lines=$(wc -l < ~/.bash_history)
+  local line_to_delete=$((total_lines - offset_from_end + 1))
+  if [[ "$line_to_delete" -lt 1 ]]; then
+    echo "Error: out of range" >&2
+    return 1
+  fi
+  sed -i "${line_to_delete}d" ~/.bash_history && history -c && history -r
+}
