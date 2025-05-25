@@ -152,13 +152,6 @@ op() {
   done
   unset -f open_file
 }
-rd() {
-  if [[ "$PS1" == *"$"* ]]; then
-    PS1="${PS1//\\$/🦆}"
-  else
-    PS1="${PS1//🦆/\\$}"
-  fi
-}
 alias gdn='git diff --name-only'
 alias gdsn='git diff --staged --name-only'
 alias cc='cat /dev/clipboard'
