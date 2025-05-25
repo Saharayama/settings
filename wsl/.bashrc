@@ -131,10 +131,16 @@ dh() {
     fi
   fi
   local total_lines=$(wc -l < ~/.bash_history)
-  local line_to_delete=$((total_lines - offset_from_end + 1))
-  if [[ "$line_to_delete" -lt 1 ]]; then
+  local line_num=$((total_lines - offset_from_end + 1))
+  if [[ "$line_num" -lt 1 ]]; then
     echo "Error: out of range" >&2
     return 1
   fi
-  sed -i "${line_to_delete}d" ~/.bash_history && history -c && history -r
+  local line_content=$(sed -n "${line_num}{p;q}" ~/.bash_history)
+  sed -i "${line_num}d" ~/.bash_history && history -c && history -r
+  if [ -t 1 ]; then
+    printf "\033[1;31mDeleted: \033[0m%s\r\n" "$line_content"
+  else
+    printf "Deleted: %s\r\n" "$line_content"
+  fi
 }
