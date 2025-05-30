@@ -90,7 +90,7 @@ mkcd() {
     return 1
   fi
 }
-alias pve='python -m venv --upgrade-deps .venv && . .venv/Scripts/activate'
+alias pve='python.exe -m venv --upgrade-deps .venv && . .venv/Scripts/activate'
 alias gd='git diff'
 rt() {
   local string="$1"
@@ -172,7 +172,7 @@ pp() {
   else
     final_expression="$input_pipe $input_arg"
   fi
-  if ! python -c "from math import *; res = $final_expression; out_res = f'{res}\n{hex(res)}\n{bin(res)}' if isinstance(res, int) else res; print(out_res)"; then
+  if ! python.exe -c "from math import *; res = $final_expression; out_res = f'{res}\n{hex(res)}\n{bin(res)}' if isinstance(res, int) else res; print(out_res)"; then
     return 1
   fi
 }

@@ -119,6 +119,25 @@ alias gds='git diff --staged'
 alias gdn='git diff --name-only'
 alias gdsn='git diff --staged --name-only'
 alias gdt='git difftool'
+pp() {
+  local input_arg="${*//$'\r'/}"
+  local input_pipe=""
+  if [ ! -t 0 ]; then
+    IFS=$'\r' read -r input_pipe || true
+  fi
+  if [ -z "$input_arg" ] && [ -z "$input_pipe" ]; then
+    return 1
+  fi
+  local final_expression=""
+  if [[ "$input_arg" == *"@"* ]]; then
+    final_expression="${input_arg//@/ "$input_pipe" }"
+  else
+    final_expression="$input_pipe $input_arg"
+  fi
+  if ! python.exe -c "from math import *; res = $final_expression; out_res = f'{res}\n{hex(res)}\n{bin(res)}' if isinstance(res, int) else res; print(out_res)"; then
+    return 1
+  fi
+}
 alias swu='sudo winget.exe upgrade'
 dh() {
   local offset_from_end=1
