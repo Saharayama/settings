@@ -2,7 +2,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-SUPPORTED_SUFFIXES = {".zip", ".7z", ".gz", ".tar"}
+SUPPORTED_SUFFIXES = {".zip", ".7z", ".gz", ".tar", ".zst"}
 SEVEN_ZIP = Path(r"C:\Program Files\7-Zip\7z.exe")
 
 
