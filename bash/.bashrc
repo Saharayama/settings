@@ -201,3 +201,29 @@ dh() {
     printf "Deleted: %s\r\n" "$line_content"
   fi
 }
+tmr() {
+  if [ -z "$1" ]; then
+    echo "Usage: tmr <end_time>" >&2
+    return 1
+  fi
+  local end_time_input="$1"
+  local end_time_unix=""
+  end_time_unix=$(date -d "$end_time_input" +%s 2>/dev/null)
+  if [ $? -ne 0 ]; then
+    echo "Error: Invalid datetime format" >&2
+    return 1
+  fi
+  local end_time_output="$(date -d "@$end_time_unix" '+%H:%M:%S')"
+  echo "終了時間: $end_time_output"
+  while true; do
+    local current_time_unix=$(date +%s)
+    if [ "$current_time_unix" -ge "$end_time_unix" ]; then
+      echo "残り時間: 00:00:00"
+      ntf "タイマーが終了しました" "$end_time_output"
+      break
+    fi
+    local remaining=$((end_time_unix - current_time_unix))
+    echo -ne "残り時間: $(date -u -d "@$remaining" '+%H:%M:%S')\r"
+    sleep 1
+  done
+}
