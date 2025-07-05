@@ -172,7 +172,7 @@ pp() {
   else
     final_expression="$input_pipe $input_arg"
   fi
-  if ! python.exe -c "from math import *; res = $final_expression; out_res = f'{res}\n{hex(res)}\n{bin(res)}' if isinstance(res, int) else res; print(out_res)"; then
+  if ! python.exe -c "from math import *; result = $final_expression; print(f'{result}\n{hex(result)}\n{bin(result)}' if isinstance(result, int) else result)"; then
     return 1
   fi
 }
