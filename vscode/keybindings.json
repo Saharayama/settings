@@ -1189,5 +1189,21 @@
 	{
 		"key": "ctrl+shift+c",
 		"command": "workbench.view.extension.references-view"
+	},
+	{
+		"key": "ctrl+shift+oem_1",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"name": "bold"
+		},
+		"when": "editorTextFocus && !editorHasSelection"
+	},
+	{
+		"key": "ctrl+shift+oem_1",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"name": "bold_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection"
 	}
 ]

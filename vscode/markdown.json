@@ -25,5 +25,13 @@
 	},
 	"md_list_complete_no_indent": {
 		"body": "\n${TM_CURRENT_LINE/(^\\s*-\\s.*$|^\\s*1\\.\\s.*$)|.*/${1:+- }/}"
+	},
+	"bold": {
+		"body": "**$1**",
+		"description": "bold"
+	},
+	"bold_selected": {
+		"body": "**$TM_SELECTED_TEXT**",
+		"description": "bold_selected"
 	}
 }
