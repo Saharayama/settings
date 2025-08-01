@@ -121,7 +121,6 @@
             "closeOnExit": "always",
             "colorScheme": "user3",
             "cursorShape": "underscore",
-            "experimental.repositionCursorWithMouse": true,
             "font": {
                 "cellHeight": "1.1",
                 "face": "Ricty ShinDiminished",
@@ -131,7 +130,10 @@
             "padding": "2, 0, 2, 2",
             "pathTranslationStyle": "none",
             "scrollbarState": "hidden",
-            "suppressApplicationTitle": true
+            "showMarksOnScrollbar": false,
+            "suppressApplicationTitle": true,
+            "experimental.rightClickContextMenu": true
+
         },
         "list": [
             {
