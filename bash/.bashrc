@@ -80,7 +80,7 @@ gr-() {
     echo "$output"
   fi
 }
-export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:rd:gdn:gdsn:cc:cco
+export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:gdn:gdsn:cc:cco
 export PROMPT_COMMAND="history -a"
 mkcd() {
   if ! [ -d "$1" ]; then
@@ -172,7 +172,7 @@ pp() {
   else
     final_expression="$input_pipe $input_arg"
   fi
-  if ! python.exe -c "from math import *; result = $final_expression; print(f'{result}\n{hex(result)}\n{bin(result)}' if isinstance(result, int) else result)"; then
+  if ! python.exe -c "from math import *; result = $final_expression; print(f'{result}\n{hex(result)}\n{bin(result)} ({len(bin(abs(result))) - 2})' if isinstance(result, int) else result)"; then
     return 1
   fi
 }
