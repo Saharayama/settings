@@ -225,5 +225,6 @@
     "breadcrumbs.enabled": false,
     "workbench.tree.indent": 16,
     "chat.commandCenter.enabled": false,
+    "editor.editContext": false,
     // "workbench.editor.wrapTabs": true
 }
