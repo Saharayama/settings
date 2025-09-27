@@ -141,7 +141,20 @@ pp() {
   else
     final_expression="$input_pipe $input_arg"
   fi
-  if ! python.exe -c "from math import *; result = $final_expression; print(f'{result}\n0x{result:X}\n{bin(result)} ({len(bin(abs(result))) - 2})' if isinstance(result, int) else result)"; then
+  local python_code="
+from math import *;
+result = $final_expression;
+if isinstance(result, int):
+    sign = '-' if result < 0 else '';
+    h = hex(result).upper().replace('X', 'x', 1);
+    b = f'{abs(result):b}';
+    blen = len(b);
+    formatted_b = '_'.join(b[::-1][i:i+4] for i in range(0, blen, 4))[::-1];
+    print(f'{result}\n{h}\n{bin(result)}\n{sign}0b{formatted_b} ({blen})');
+else:
+    print(result);
+"
+  if ! python.exe -c "$python_code"; then
     return 1
   fi
 }
