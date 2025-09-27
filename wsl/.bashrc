@@ -1,7 +1,7 @@
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
-      *) return;;
+  *i*) ;;
+    *) return;;
 esac
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -18,14 +18,14 @@ shopt -s checkwinsize
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  alias ls='ls --color=auto'
+  #alias dir='dir --color=auto'
+  #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
 fi
 
 PS1='(WSL) \[\e[1;32m\]\u \[\e[33m\]\w\[\e[0m\]\n\$ '
@@ -38,7 +38,7 @@ EDITOR='"code" --wait'
 stty -ixon
 alias rs='exec $SHELL -l'
 alias echon='printf "%s\r\n"'
-alias clip='iconv -f UTF-8 -t CP932 | clip.exe'
+alias clip='iconv -f UTF-8 -t CP932 -c | clip.exe'
 alias wu='winget.exe upgrade'
 alias wf='winget.exe find'
 alias ws='winget.exe show'
@@ -114,6 +114,13 @@ ef() {
     print fields[col]
   }' | tee >(clip)
 }
+tree() {
+  local path=""
+  if [ -n "$1" ]; then
+    path="\"$1\""
+  fi
+  pwsh.exe -c "tree /f "$path""
+}
 alias xargs='xargs '
 alias gds='git diff --staged'
 alias gdn='git diff --name-only'
@@ -134,7 +141,7 @@ pp() {
   else
     final_expression="$input_pipe $input_arg"
   fi
-  if ! python.exe -c "from math import *; result = $final_expression; print(f'{result}\n{hex(result)}\n{bin(result)} ({len(bin(abs(result))) - 2})' if isinstance(result, int) else result)"; then
+  if ! python.exe -c "from math import *; result = $final_expression; print(f'{result}\n0x{result:X}\n{bin(result)} ({len(bin(abs(result))) - 2})' if isinstance(result, int) else result)"; then
     return 1
   fi
 }
@@ -156,10 +163,36 @@ dh() {
     return 1
   fi
   local line_content=$(sed -n "${line_num}{p;q}" ~/.bash_history)
-  sed -i "${line_num}d" ~/.bash_history && history -c && history -r
+  ex -sc "${line_num}d|wq" ~/.bash_history && history -c && history -r
   if [ -t 1 ]; then
     printf "\033[1;31mDeleted: \033[0m%s\r\n" "$line_content"
   else
     printf "Deleted: %s\r\n" "$line_content"
   fi
+}
+tmr() {
+  if [ -z "$1" ]; then
+    echo "Usage: tmr <end_time>" >&2
+    return 1
+  fi
+  local end_time_input="$1"
+  local end_time_unix=""
+  end_time_unix=$(date -d "$end_time_input" +%s 2>/dev/null)
+  if [ $? -ne 0 ]; then
+    echo "Error: Invalid datetime format" >&2
+    return 1
+  fi
+  local end_time_output="$(date -d "@$end_time_unix" '+%H:%M:%S')"
+  echo "終了時間: $end_time_output"
+  while true; do
+    local current_time_unix=$(date +%s)
+    if [ "$current_time_unix" -ge "$end_time_unix" ]; then
+      echo "残り時間: 00:00:00"
+      ntf.exe "タイマーが終了しました" "$end_time_output"
+      break
+    fi
+    local remaining=$((end_time_unix - current_time_unix))
+    echo -ne "残り時間: $(date -u -d "@$remaining" '+%H:%M:%S')\r"
+    sleep 1
+  done
 }
