@@ -119,7 +119,7 @@ tree() {
   if [ -n "$1" ]; then
     path="\"$1\""
   fi
-  pwsh.exe -c "tree /f "$path""
+  pwsh.exe -c "tree /f "$path"" | iconv -f CP932 -t UTF-8 -c
 }
 alias xargs='xargs '
 alias gds='git diff --staged'
