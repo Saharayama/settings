@@ -183,9 +183,9 @@ dh() {
     printf "Deleted: %s\r\n" "$line_content"
   fi
 }
-tmr() {
+alm() {
   if [ -z "$1" ]; then
-    echo "Usage: tmr <end_time>" >&2
+    echo "Usage: alm <end_time>" >&2
     return 1
   fi
   local end_time_input="$1"
