@@ -183,9 +183,9 @@ dh() {
     printf "Deleted: %s\r\n" "$line_content"
   fi
 }
-alm() {
+await() {
   if [ -z "$1" ]; then
-    echo "Usage: alm <end_time>" >&2
+    echo "Usage: await <end_time>" >&2
     return 1
   fi
   local end_time_input="$1"
@@ -201,11 +201,16 @@ alm() {
     local current_time_unix=$(date +%s)
     if [ "$current_time_unix" -ge "$end_time_unix" ]; then
       echo "残り時間: 00:00:00"
-      ntf.exe "タイマーが終了しました" "$end_time_output"
+      ntf.exe "${end_time_output} になりました"
       break
     fi
     local remaining=$((end_time_unix - current_time_unix))
     echo -ne "残り時間: $(date -u -d "@$remaining" '+%H:%M:%S')\r"
     sleep 1
   done
+}
+tmr() {
+  local meas_time="$1"
+  local message="$2"
+  sleep "$meas_time" && ntf.exe ""$meas_time" 経過 (at $(date '+%H:%M:%S'))" "$message"
 }
