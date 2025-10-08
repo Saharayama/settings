@@ -1205,5 +1205,18 @@
 			"name": "bold_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection"
+	},
+	{
+		"key": "alt+f6",
+		"command": "-editor.action.accessibleViewDisableHint",
+		"when": "accessibilityHelpIsShown && accessibleViewVerbosityEnabled || accessibleViewIsShown && accessibleViewVerbosityEnabled"
+	},
+	{
+		"key": "alt+f6",
+		"command": "editor.debug.action.goToNextBreakpoint"
+	},
+	{
+		"key": "shift+alt+f6",
+		"command": "editor.debug.action.goToPreviousBreakpoint"
 	}
 ]
