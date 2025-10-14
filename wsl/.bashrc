@@ -45,7 +45,7 @@ alias ws='winget.exe show'
 alias g-='git switch -'
 alias gb='git branch'
 alias gl='git log --oneline --pretty=format:"%C(auto)%h %C(cyan)%cd%C(auto)%d %s %C(green bold dim)%an%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
-alias glr='git log --oneline --reverse --pretty=format:"%C(auto)%h %C(cyan)%cd%C(auto)%d %s %C(green bold dim)%an%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
+alias glr='gl --reverse'
 alias grl='git reflog --oneline --pretty=format:"%C(auto)%h %C(cyan)%gd:%C(auto)%d %gs %C(green bold dim)%gn%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
 alias gs='git show --date=format:"%Y-%m-%d %H:%M:%S"'
 alias gf='git fetch'
@@ -214,3 +214,5 @@ tmr() {
   local message="$2"
   sleep "$meas_time" && ntf.exe ""$meas_time" 経過 (at $(date '+%H:%M:%S'))" "$message"
 }
+alias gi='git ls-files --others --ignored --exclude-standard'
+alias gsn='gs --name-only'
