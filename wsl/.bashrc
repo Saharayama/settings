@@ -80,7 +80,7 @@ gr-() {
     echo "$output"
   fi
 }
-export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:gdn:gdsn:cc:cco
+export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:gdn:gdsn:cc:cco:gsn
 export PROMPT_COMMAND="history -a"
 mkcd() {
   if ! [ -d "$1" ]; then
@@ -123,8 +123,8 @@ tree() {
 }
 alias xargs='xargs '
 alias gds='git diff --staged'
-alias gdn='git diff --name-only'
-alias gdsn='git diff --staged --name-only'
+alias gdn='git diff --name-status'
+alias gdsn='git diff --staged --name-status'
 alias gdt='git difftool'
 pp() {
   local input_arg="${*//$'\r'/}"
@@ -215,4 +215,4 @@ tmr() {
   sleep "$meas_time" && ntf.exe ""$meas_time" 経過 (at $(date '+%H:%M:%S'))" "$message"
 }
 alias gi='git ls-files --others --ignored --exclude-standard'
-alias gsn='gs --name-only'
+alias gsn='git show --name-status --pretty=""'
