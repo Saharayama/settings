@@ -81,6 +81,7 @@
     "telemetry.telemetryLevel": "off",
     "security.workspace.trust.enabled": false,
     "editor.accessibilitySupport": "off",
+    "chat.disableAIFeatures": true,
     // update
     "update.mode": "manual",
     "update.enableWindowsBackgroundUpdates": false,
