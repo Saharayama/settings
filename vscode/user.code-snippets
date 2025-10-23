@@ -106,4 +106,10 @@
 		"body": "『$TM_SELECTED_TEXT』",
 		"description": "kakko_2_selected"
 	},
+	"html_tag": {
+		"body": "<$1>$2</$1>$0"
+	},
+	"html_tag_selected": {
+		"body": "<$1>$TM_SELECTED_TEXT</$1>$0"
+	}
 }

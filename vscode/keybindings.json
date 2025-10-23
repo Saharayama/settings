@@ -1194,7 +1194,7 @@
 		"key": "ctrl+shift+oem_1",
 		"command": "editor.action.insertSnippet",
 		"args": {
-			"name": "bold"
+			"name": "md_bold"
 		},
 		"when": "editorTextFocus && !editorHasSelection"
 	},
@@ -1202,7 +1202,7 @@
 		"key": "ctrl+shift+oem_1",
 		"command": "editor.action.insertSnippet",
 		"args": {
-			"name": "bold_selected"
+			"name": "md_bold_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection"
 	},
@@ -1218,5 +1218,21 @@
 	{
 		"key": "shift+alt+f6",
 		"command": "editor.debug.action.goToPreviousBreakpoint"
+	},
+	{
+		"key": "ctrl+shift+alt+.",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"name": "html_tag"
+		},
+		"when": "editorTextFocus && !editorHasSelection && (editorLangId == 'markdown' || editorLangId == 'html')"
+	},
+	{
+		"key": "ctrl+shift+alt+.",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"name": "html_tag_selected"
+		},
+		"when": "editorTextFocus && editorHasSelection && (editorLangId == 'markdown' || editorLangId == 'html')"
 	}
 ]
