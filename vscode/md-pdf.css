@@ -8,6 +8,7 @@ body {
 
 code {
     font-family: "Ricty ShinDiminished";
+    tab-size: 4;
 }
 
 h1 {
@@ -23,11 +24,11 @@ h3 {
 }
 
 :not(pre):not(.hljs)>code {
-    padding: .2em .4em;
+    padding: 0.05em 0.2em 0.15em 0.2em;
     margin: 0;
     font-size: inherit;
     white-space: break-spaces;
-    background-color: rgba(175, 184, 193, 0.3);
+    background-color: #e0e0e0;
     border-radius: 6px;
     color: rgb(0, 0, 0);
 }
@@ -35,4 +36,116 @@ h3 {
 pre code {
     color: rgb(0, 0, 0);
     tab-size: 4;
+}
+
+body .note {
+    border-left: 8px solid #999;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin: 14px 0;
+    background: #f7f7f7;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+body .note p {
+    margin: 0;
+}
+
+body .note.info {
+    border-color: #2b7bbb;
+    background: #e5f4ff;
+}
+
+body .note.warn {
+    border-color: #d99100;
+    background: #fff4de;
+}
+
+body .note.alert {
+    border-color: #cc3d3d;
+    background: #ffecec;
+}
+
+body .note.check {
+    border-color: #2c8869;
+    background: #e2ffdc;
+}
+
+body .note.info::before {
+    content: "ℹ️";
+    font-size: 1.1em;
+}
+
+body .note.warn::before {
+    content: "⚠️";
+    font-size: 1.1em;
+}
+
+body .note.alert::before {
+    content: "⛔";
+    font-size: 1.1em;
+}
+
+body .note.check::before {
+    content: "✅️";
+    font-size: 1.1em;
+}
+
+pre {
+    border-radius: 10px;
+    padding: 15px 20px;
+    border: none;
+    position: relative;
+    overflow: auto;
+}
+
+img:not(.emoji) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+img~span {
+    display: block;
+    max-inline-size: max-content;
+    margin-inline: auto;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+    display: inline;
+}
+
+.white {
+    color: white;
+    display: inline;
+}
+
+.green {
+    color: green;
+    font-weight: bold;
+    display: inline;
+}
+
+blockquote {
+    border-radius: 6px;
+}
+
+kbd {
+    border: solid 1px #b4b4b4;
+    display: inline-block;
+    margin: 0 0.2em;
+    padding: 0.4em 0.6em;
+    background-color: #f6f8fa;
+    border-bottom: 3px solid #b4b4b4;
+    border-radius: 5px;
+    vertical-align: middle;
+    font-size: 0.7em;
+    line-height: 0.6;
+    box-shadow: 0 1px 2px #111111;
+    font-family: "Ricty ShinDiminished";
+    font-weight: bold;
 }
