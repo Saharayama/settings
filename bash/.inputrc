@@ -9,3 +9,4 @@ set completion-ignore-case on
 "\C-n": "''\e[D"
 "\C-h": "**\e[D"
 "\e,": "\e0\e. "
+"\ew": unix-filename-rubout
