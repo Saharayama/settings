@@ -216,3 +216,5 @@ tmr() {
 }
 alias gi='git ls-files --others --ignored --exclude-standard'
 alias gsn='git show --name-status --pretty=""'
+alias gba='gb --all'
+alias gla='gl --all'
