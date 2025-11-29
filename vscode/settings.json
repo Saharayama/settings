@@ -72,6 +72,7 @@
     "[markdown][plaintext]": {
         "editor.occurrencesHighlight": "off"
     },
+    "window.newWindowProfile": "既定",
     // disable default settings
     "extensions.ignoreRecommendations": true,
     "workbench.enableExperiments": false,
