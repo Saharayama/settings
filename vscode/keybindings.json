@@ -1234,5 +1234,9 @@
 			"name": "html_tag_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection && (editorLangId == 'markdown' || editorLangId == 'html')"
+	},
+	{
+		"key": "ctrl+k ctrl+shift+alt+p",
+		"command": "workbench.profiles.actions.manageProfiles"
 	}
 ]
