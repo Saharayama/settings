@@ -218,3 +218,8 @@ alias gi='git ls-files --others --ignored --exclude-standard'
 alias gsn='git show --name-status --pretty=""'
 alias gba='gb --all'
 alias gla='gl --all'
+priv() {
+  if [[ ! "$PS1" =~ "(priv)" ]]; then
+    bash --rcfile <(echo 'source ${HOME}/.bashrc; PS1="(priv)${PS1}"; history -r; unset HISTFILE PROMPT_COMMAND')
+  fi
+}
