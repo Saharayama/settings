@@ -184,7 +184,7 @@ if isinstance(result, int):
 else:
     print(result);
 "
-  if ! python.exe -c "$python_code"; then
+  if ! python.exe -Sc "$python_code"; then
     return 1
   fi
 }
