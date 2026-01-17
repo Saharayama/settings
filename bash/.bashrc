@@ -190,14 +190,10 @@ else:
 }
 alias swu='sudo winget.exe upgrade'
 dh() {
-  local offset_from_end=1
-  if [[ -n "$1" ]]; then
-    if [[ "$1" =~ ^[1-9][0-9]*$ ]]; then
-      offset_from_end="$1"
-    else
-      echo "Usage: dh [OFFSET_FROM_END]" >&2
-      return 1
-    fi
+  local offset_from_end=${1:-1}
+  if ! [[ "$offset_from_end" =~ ^[1-9][0-9]*$ ]]; then
+    echo "Usage: dh [OFFSET_FROM_END]" >&2
+    return 1
   fi
   local total_lines=$(wc -l < ~/.bash_history)
   local line_num=$((total_lines - offset_from_end + 1))
@@ -250,6 +246,35 @@ alias gba='gb --all'
 alias gla='gl --all'
 priv() {
   if [[ ! "$PS1" =~ "(priv) " ]]; then
-    bash --rcfile <(echo 'source ${HOME}/.bashrc; PS1="(priv) ${PS1}"; history -r; unset HISTFILE')
+    bash --rcfile <(cat << 'EOF'
+source "${HOME}/.bashrc"
+PS1="(priv) ${PS1}"
+history -r
+unset HISTFILE
+dh() {
+  local offset_from_end=${1:-1}
+  if [[ ! "$offset_from_end" =~ ^[1-9][0-9]*$ ]]; then
+    echo "Usage: dh [OFFSET_FROM_END]" >&2
+    return 1
+  fi
+  local cur=$(history 1 | awk '{print $1}')
+  local line_num=$((cur - offset_from_end))
+  if [[ "$line_num" -le 0 ]]; then
+    echo "Error: out of range" >&2
+    return 1
+  fi
+  local line_content=$(fc -ln "$line_num" "$line_num" | sed 's/^[[:space:]]*//')
+  history -d "$cur"
+  history -d "$line_num"
+  if [ -t 1 ]; then
+    printf "\033[1;31mDeleted: \033[0m%s\r\n" "$line_content"
+  else
+    printf "Deleted: %s\r\n" "$line_content"
+  fi
+}
+EOF
+)
+  else
+    echo "Already in private mode"
   fi
 }
