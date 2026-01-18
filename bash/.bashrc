@@ -190,6 +190,10 @@ else:
 }
 alias swu='sudo winget.exe upgrade'
 dh() {
+  if [[ ! "$PROMPT_COMMAND" =~ "history -a" ]]; then
+    echo "Error: 'history -a' is not found in PROMPT_COMMAND" >&2
+    return 1
+  fi
   local offset_from_end=${1:-1}
   if ! [[ "$offset_from_end" =~ ^[1-9][0-9]*$ ]]; then
     echo "Usage: dh [OFFSET_FROM_END]" >&2
@@ -244,14 +248,7 @@ alias gi='git ls-files --others --ignored --exclude-standard'
 alias gsn='git show --name-status --pretty=""'
 alias gba='gb --all'
 alias gla='gl --all'
-priv() {
-  if [[ ! "$PS1" =~ "(priv) " ]]; then
-    bash --rcfile <(cat << 'EOF'
-source "${HOME}/.bashrc"
-PS1="(priv) ${PS1}"
-history -r
-unset HISTFILE
-dh() {
+dhm() {
   local offset_from_end=${1:-1}
   if [[ ! "$offset_from_end" =~ ^[1-9][0-9]*$ ]]; then
     echo "Usage: dh [OFFSET_FROM_END]" >&2
@@ -272,9 +269,18 @@ dh() {
     printf "Deleted: %s\r\n" "$line_content"
   fi
 }
+priv() {
+  if [[ ! "$PS1" =~ "(priv) " ]]; then
+    bash --rcfile <(cat << 'EOF'
+source "${HOME}/.bashrc"
+PS1="(priv) ${PS1}"
+history -r
+unset HISTFILE dh
+alias dh='dhm'
 EOF
 )
   else
-    echo "Already in private mode"
+    echo "Error: already in private mode" >&2
+    return 1
   fi
 }
