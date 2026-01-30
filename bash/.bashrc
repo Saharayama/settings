@@ -138,7 +138,7 @@ op() {
       "doc"*)
         start "" "C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE" //w "$windows_path" > /dev/null 2>&1;;
       *)
-        start "" "$windows_path" > /dev/null 2>&1
+        rundll32.exe url.dll,FileProtocolHandler "$windows_path" > /dev/null 2>&1
     esac
   }
   if [ ! -t 0 ]; then
@@ -157,36 +157,59 @@ alias cc='cat /dev/clipboard'
 alias cco='cat /dev/clipboard | op'
 alias gdt='git difftool'
 pp() {
-  local input_arg="${*//$'\r'/}"
   local input_pipe=""
   if [ ! -t 0 ]; then
     IFS=$'\r' read -r input_pipe || true
   fi
-  if [ -z "$input_arg" ] && [ -z "$input_pipe" ]; then
-    return 1
-  fi
-  local final_expression=""
-  if [[ "$input_arg" == *"@"* ]]; then
-    final_expression="${input_arg//@/ "$input_pipe" }"
-  else
-    final_expression="$input_pipe $input_arg"
-  fi
-  local python_code="
-from math import *;
-result = $final_expression;
-if isinstance(result, int):
-    sign = '-' if result < 0 else '';
-    h = hex(result).upper().replace('X', 'x', 1);
-    b = f'{abs(result):b}';
-    blen = len(b);
-    formatted_b = '_'.join(b[::-1][i:i+4] for i in range(0, blen, 4))[::-1];
-    print(f'{result}\n{h}\n{bin(result)}\n{sign}0b{formatted_b} ({blen})');
-else:
-    print(result);
-"
-  if ! python.exe -Sc "$python_code"; then
-    return 1
-  fi
+  MSYS_NO_PATHCONV=1 python.exe -Sc "
+import sys
+from math import *
+def solve():
+  pipe_val = sys.argv[1]
+  expressions = sys.argv[2:]
+  if not expressions and not pipe_val:
+    return
+  if not expressions and pipe_val:
+    expressions = pipe_val.split()
+    pipe_val = ''
+  if sys.stdout.isatty():
+    CYAN = '\033[96m'
+    RED = '\033[1;91m'
+    RESET = '\033[0m'
+  else:
+    CYAN = RED = RESET = ''
+  for i, expr in enumerate(expressions):
+    if not expr.strip():
+      continue
+    if '@' in expr:
+      final_expr = expr.replace('@', pipe_val)
+    else:
+      final_expr = f'{pipe_val} {expr}'.strip()
+    try:
+      result = eval(final_expr)
+      output = []
+      if isinstance(result, int):
+        sign = '-' if result < 0 else ''
+        abs_val = abs(result)
+        h = hex(result).upper().replace('X', 'x', 1)
+        b_raw = bin(result)
+        b_abs = f'{abs_val:b}'
+        blen = len(b_abs)
+        fmt_b = '_'.join(b_abs[::-1][i:i+4] for i in range(0, blen, 4))[::-1]
+        output = [str(result), h, b_raw, f'{sign}0b{fmt_b} ({blen})']
+      else:
+        output = [str(result)]
+      msg = '\n'.join(output)
+      if i % 2 == 1:
+        print(f'{CYAN}{msg}{RESET}')
+      else:
+        print(msg)
+    except Exception as e:
+      err_msg = getattr(e, 'msg', str(e))
+      print(f'{RED}Error at #{i+1}: {err_msg}{RESET}', file=sys.stderr)
+      sys.exit(1)
+solve()
+" "$input_pipe" "$@"
 }
 alias swu='sudo winget.exe upgrade'
 dh() {
