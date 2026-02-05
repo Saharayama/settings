@@ -200,11 +200,13 @@ dh() {
   fi
   local line_content=$(sed -n "${line_num}{p;q}" ~/.bash_history)
   ex -sc "${line_num}d|wq" ~/.bash_history && history -c && history -r
-  if [ -t 1 ]; then
-    printf "\033[1;31mDeleted: \033[0m%s\r\n" "$line_content"
-  else
-    printf "Deleted: %s\r\n" "$line_content"
+  local red=""
+  local reset=""
+  if [[ -t 1 ]]; then
+    red='\033[1;91m'
+    reset='\033[0m'
   fi
+  printf "${red}Deleted:${reset} %s\r\n" "$line_content"
 }
 await() {
   if [ -z "$1" ]; then
@@ -256,11 +258,13 @@ dhm() {
   local line_content=$(fc -ln "$line_num" "$line_num" | sed 's/^[[:space:]]*//')
   history -d "$cur"
   history -d "$line_num"
-  if [ -t 1 ]; then
-    printf "\033[1;31mDeleted: \033[0m%s\r\n" "$line_content"
-  else
-    printf "Deleted: %s\r\n" "$line_content"
+  local red=""
+  local reset=""
+  if [[ -t 1 ]]; then
+    red='\033[1;91m'
+    reset='\033[0m'
   fi
+  printf "${red}Deleted:${reset} %s\r\n" "$line_content"
 }
 priv() {
   if [[ ! "$PS1" =~ "(priv) " ]]; then
