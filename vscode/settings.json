@@ -9,7 +9,7 @@
     "editor.quickSuggestionsDelay": 0,
     "editor.suggestSelection": "recentlyUsedByPrefix",
     "editor.suggest.localityBonus": true,
-    "editor.wordSeparators": "`~!@$%^&*()=+[{]}|;:'\",<>/?.#にをはがのともへでや。、，．・：（）\\てなめり「」『』【】",
+    "editor.wordSeparators": "`~!@$%^&*()=+[{]}|;:'\",<>/?.#。、，．・：（）\\「」『』【】",
     "files.trimTrailingWhitespace": true,
     "files.autoGuessEncoding": true,
     "window.restoreWindows": "none",
@@ -73,6 +73,9 @@
         "editor.occurrencesHighlight": "off"
     },
     "window.newWindowProfile": "既定",
+    "editor.wordSegmenterLocales": [
+        "ja"
+    ],
     // disable default settings
     "extensions.ignoreRecommendations": true,
     "workbench.enableExperiments": false,
@@ -118,7 +121,7 @@
     "powershell.promptToUpdatePowerShell": false,
     "powershell.startAutomatically": false,
     // python
-    "python.defaultInterpreterPath": "C:/Program Files/Python313/python.exe",
+    "python.defaultInterpreterPath": "C:/Program Files/Python314/python.exe",
     "python.analysis.typeCheckingMode": "strict",
     "python.analysis.autoImportCompletions": false,
     "[python]": {
@@ -152,7 +155,7 @@
     "terminal.integrated.rescaleOverlappingGlyphs": false,
     "terminal.integrated.rightClickBehavior": "default",
     // git
-    "git.autofetch": true,
+    "git.autofetch": "all",
     "git.openRepositoryInParentFolders": "never",
     "git.showCommitInput": false,
     "git.showActionButton": {
