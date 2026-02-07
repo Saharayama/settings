@@ -297,18 +297,19 @@ dhm() {
   printf "${red}Deleted:${reset} %s\r\n" "$line_content"
 }
 priv() {
-  if [[ ! "$PS1" =~ "(priv) " ]]; then
-    bash --rcfile <(cat << 'EOF'
-source "${HOME}/.bashrc"
-PS1="(priv) ${PS1}"
-history -r
-unset HISTFILE dh
-alias dh='dhm'
-EOF
-)
+  if [[ -z "${IN_PRIV_MODE:-}" ]]; then
+    export IN_PRIV_MODE=1
+    bash --rcfile <(echo 'source "${HOME}/.bashrc"')
+    unset IN_PRIV_MODE
   else
     echo "Error: already in private mode" >&2
     return 1
   fi
 }
+if [[ -n "${IN_PRIV_MODE:-}" ]]; then
+  PS1="(priv) ${PS1}"
+  history -r
+  unset HISTFILE dh
+  alias dh='dhm'
+fi
 alias cc1='cc | tr -d "\r" | xargs'
