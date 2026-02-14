@@ -138,7 +138,8 @@
             "path": "C:/Program Files/Git/bin/bash.exe",
             "icon": "terminal-bash",
             "overrideName": true,
-            "color": "terminal.ansiGreen"
+            "color": "terminal.ansiGreen",
+            "args": []
         },
         "Command Prompt": null,
         "PowerShell": null,
@@ -166,6 +167,7 @@
     "git.blame.editorDecoration.enabled": false,
     "git.blame.statusBarItem.enabled": false,
     "git.blame.editorDecoration.template": "${subject} ${authorName} (${authorDate})",
+    "git.terminalAuthentication": false,
     // appearance
     "workbench.colorCustomizations": {
         "editor.selectionHighlightBackground": "#00000000",
