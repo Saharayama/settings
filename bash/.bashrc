@@ -313,3 +313,56 @@ if [[ -n "${IN_PRIV_MODE:-}" ]]; then
   alias dh='dhm'
 fi
 alias cc1='cc | tr -d "\r" | xargs'
+_pp_signed() {
+  local bit_width=$1
+  shift
+  local input_pipe=""
+  if [ ! -t 0 ]; then
+    IFS=$'\r\n' read -r input_pipe || true
+  fi
+  MSYS_NO_PATHCONV=1 python.exe -Sc "
+import sys
+from math import *
+def solve():
+  CYAN, RED, YELLOW, RESET = ('\033[96m', '\033[1;91m', '\033[1;93m', '\033[0m') if sys.stdout.isatty() else ('', '', '', '')
+  try:
+    width = int(sys.argv[1])
+    pipe_in = sys.argv[2].strip()
+    args = sys.argv[3:]
+    all_exprs = args if args else (pipe_in.split() if pipe_in else [])
+    if not all_exprs:
+      return
+    for i, expr in enumerate(all_exprs):
+      if not expr.strip():
+        continue
+      res = eval(expr)
+      if isinstance(res, int):
+        min_val, max_val = -(1 << (width - 1)), (1 << width) - 1
+        if res < min_val or res > max_val:
+          print(f'{YELLOW}Warning: {res} is out of range for {width}-bit ({min_val} to {max_val}){RESET}', file=sys.stderr)
+        mask = (1 << width) - 1
+        u_val = res & mask
+        s_val = u_val - (1 << width) if u_val & (1 << (width - 1)) else u_val
+        h_str = f'0x{u_val:X}'
+        b_raw = f'0b{u_val:0{width}b}'
+        b_str = f'{u_val:0{width}b}'
+        parts = [b_str[max(0, j-4):j] for j in range(len(b_str), 0, -4)][::-1]
+        b_fmt = '0b' + '_'.join(parts)
+        output = f'{s_val}\n{h_str}\n{b_raw}\n{b_fmt} ({width})'
+      else:
+        output = str(res)
+      if i % 2 == 1:
+        print(f'{CYAN}{output}{RESET}')
+      else:
+        print(output)
+  except Exception as e:
+    err_msg = getattr(e, 'msg', str(e))
+    print(f'{RED}Error at #{i+1}: {err_msg}{RESET}', file=sys.stderr)
+    sys.exit(1)
+solve()
+" "$bit_width" "$input_pipe" "$@"
+}
+p1() { _pp_signed 8 "$@"; }
+p2() { _pp_signed 16 "$@"; }
+p4() { _pp_signed 32 "$@"; }
+p8() { _pp_signed 64 "$@"; }
