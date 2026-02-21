@@ -4,9 +4,16 @@ set colored-stats on
 set completion-ignore-case on
 "\C-t": "()\e[D"
 "\C-o": "{}\e[D"
-"\C-p": "[]\e[D"
+"\C-]": "[]\e[D"
 "\C-b": "\"\"\e[D"
 "\C-n": "''\e[D"
 "\C-h": "**\e[D"
 "\e,": "\e0\e. "
 "\ew": unix-filename-rubout
+"\C-p": "pp \"\"\e[D"
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"\C-x\C-b": "\C-w\"\C-y\""
+"\C-x\C-n": "\C-w\'\C-y\'"
+"\eW": "\e[1;5D\ed"
+"\eu": undo
