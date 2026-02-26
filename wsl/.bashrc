@@ -294,8 +294,10 @@ import sys
 from math import *
 def solve():
   CYAN, RED, YELLOW, RESET = ('\033[96m', '\033[1;91m', '\033[1;93m', '\033[0m') if sys.stdout.isatty() else ('', '', '', '')
+  i = -1
   try:
     width = int(sys.argv[1])
+    h_len = width // 4
     pipe_in = sys.argv[2].strip()
     args = sys.argv[3:]
     all_exprs = args if args else (pipe_in.split() if pipe_in else [])
@@ -312,7 +314,7 @@ def solve():
         mask = (1 << width) - 1
         u_val = res & mask
         s_val = u_val - (1 << width) if u_val & (1 << (width - 1)) else u_val
-        h_str = f'0x{u_val:X}'
+        h_str = f'0x{u_val:0{h_len}X}'
         b_raw = f'0b{u_val:0{width}b}'
         b_str = f'{u_val:0{width}b}'
         parts = [b_str[max(0, j-4):j] for j in range(len(b_str), 0, -4)][::-1]
@@ -326,7 +328,8 @@ def solve():
         print(output)
   except Exception as e:
     err_msg = getattr(e, 'msg', str(e))
-    print(f'{RED}Error at #{i+1}: {err_msg}{RESET}', file=sys.stderr)
+    loc = f' at #{i+1}' if i >= 0 else ''
+    print(f'{RED}Error{loc}: {err_msg}{RESET}', file=sys.stderr)
     sys.exit(1)
 solve()
 " "$bit_width" "$input_pipe" "$@"
