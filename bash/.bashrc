@@ -369,3 +369,4 @@ p1() { _pp_signed 8 "$@"; }
 p2() { _pp_signed 16 "$@"; }
 p4() { _pp_signed 32 "$@"; }
 p8() { _pp_signed 64 "$@"; }
+alias su='store.exe updates'
