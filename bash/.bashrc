@@ -79,7 +79,7 @@ gr-() {
     echo "$output"
   fi
 }
-export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gs:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:gdn:gdsn:cc:cco:gdt:gi:gsn:gba:gla:priv
+export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gs:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:gdn:gdsn:cc:cco:gdt:gi:gsn:gba:gla:priv:su
 export PROMPT_COMMAND="history -a"
 mkcd() {
   if ! [ -d "$1" ]; then
@@ -169,15 +169,10 @@ def solve():
   expressions = sys.argv[2:]
   if not expressions and not pipe_val:
     return
-  if not expressions and pipe_val:
+  if pipe_val and not any(expressions):
     expressions = pipe_val.split()
     pipe_val = ''
-  if sys.stdout.isatty():
-    CYAN = '\033[96m'
-    RED = '\033[1;91m'
-    RESET = '\033[0m'
-  else:
-    CYAN = RED = RESET = ''
+  CYAN, RED, RESET = ('\033[96m', '\033[1;91m', '\033[0m') if sys.stdout.isatty() else ('', '', '')
   for i, expr in enumerate(expressions):
     if not expr.strip():
       continue
@@ -191,12 +186,11 @@ def solve():
       if isinstance(result, int):
         sign = '-' if result < 0 else ''
         abs_val = abs(result)
-        h = hex(result).upper().replace('X', 'x', 1)
+        h = f'{result:#X}'.replace('0X', '0x')
         b_raw = bin(result)
-        b_abs = f'{abs_val:b}'
-        blen = len(b_abs)
-        fmt_b = '_'.join(b_abs[::-1][i:i+4] for i in range(0, blen, 4))[::-1]
-        output = [str(result), h, b_raw, f'{sign}0b{fmt_b} ({blen})']
+        blen = max(1, abs_val.bit_length())
+        fmt_b = f'{abs_val:#_b}'
+        output = [str(result), h, b_raw, f'{sign}{fmt_b} ({blen})']
       else:
         output = [str(result)]
       msg = '\n'.join(output)
@@ -331,7 +325,7 @@ def solve():
     h_len = width // 4
     pipe_in = sys.argv[2].strip()
     args = sys.argv[3:]
-    all_exprs = args if args else (pipe_in.split() if pipe_in else [])
+    all_exprs = [a for a in args if a] or pipe_in.split()
     if not all_exprs:
       return
     for i, expr in enumerate(all_exprs):
@@ -340,23 +334,19 @@ def solve():
       res = eval(expr)
       if isinstance(res, int):
         min_val, max_val = -(1 << (width - 1)), (1 << width) - 1
-        if res < min_val or res > max_val:
+        if not (min_val <= res <= max_val):
           print(f'{YELLOW}Warning: {res} is out of range for {width}-bit ({min_val} to {max_val}){RESET}', file=sys.stderr)
         mask = (1 << width) - 1
         u_val = res & mask
         s_val = u_val - (1 << width) if u_val & (1 << (width - 1)) else u_val
         h_str = f'0x{u_val:0{h_len}X}'
         b_raw = f'0b{u_val:0{width}b}'
-        b_str = f'{u_val:0{width}b}'
-        parts = [b_str[max(0, j-4):j] for j in range(len(b_str), 0, -4)][::-1]
-        b_fmt = '0b' + '_'.join(parts)
+        total_b_len = width + (width - 1) // 4
+        b_fmt = f'0b{u_val:0{total_b_len}_b}'
         output = f'{s_val}\n{h_str}\n{b_raw}\n{b_fmt} ({width})'
       else:
         output = str(res)
-      if i % 2 == 1:
-        print(f'{CYAN}{output}{RESET}')
-      else:
-        print(output)
+      print(f'{CYAN if i % 2 else ''}{output}{RESET}')
   except Exception as e:
     err_msg = getattr(e, 'msg', str(e))
     loc = f' at #{i+1}' if i >= 0 else ''

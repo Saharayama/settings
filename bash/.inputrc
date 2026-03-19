@@ -11,6 +11,8 @@ set completion-ignore-case on
 "\e,": "\e0\e. "
 "\ew": unix-filename-rubout
 "\C-p": "pp \"\"\e[D"
+"\ep": "p1 \"\"\e[D"
+"\eP": "p2 \"\"\e[D"
 "\e[A": history-search-backward
 "\e[B": history-search-forward
 "\C-x\C-b": "\C-w\"\C-y\""
