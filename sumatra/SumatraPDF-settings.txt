@@ -1,10 +1,45 @@
-﻿# For documentation, see http://www.sumatrapdfreader.org/settings3.2.html
+﻿# For documentation, see https://www.sumatrapdfreader.org/settings/settings3-6.html
 
-MainWindowBackground = #555555
+CheckForUpdates = false
+CustomScreenDPI = 0
+DefaultDisplayMode = continuous book view
+DefaultZoom = fit page
+EnableTeXEnhancements = true
 EscToExit = false
-ReuseInstance = false
-UseSysColors = false
+FullPathInTitle = false
+InverseSearchCmdLine = notepad.exe "%f"
+LazyLoading = false
+MainWindowBackground = #444444
+NoHomeTab = true
+HomePageSortByFrequentlyRead = false
+ReloadModifiedDocuments = true
+RememberOpenedFiles = false
+RememberStatePerDocument = true
 RestoreSession = true
+ReuseInstance = false
+ShowMenubar = true
+ShowToolbar = false
+ShowFavorites = false
+ShowToc = true
+ShowLinks = false
+ShowStartPage = true
+SidebarDx = 411
+ScrollbarInSinglePage = false
+SmoothScroll = false
+FastScrollOverScrollbar = false
+PreventSleepInFullscreen = true
+TabWidth = 300
+Theme = Dark background Bright text
+TocDy = 0
+ToolbarSize = 18
+TreeFontName = automatic
+TreeFontSize = 0
+UIFontSize = 0
+DisableAntiAlias = false
+UseSysColors = false
+UseTabs = true
+ZoomLevels = 8.33 12.5 18 25 33.33 50 66.67 75 100 125 150 200 300 400 600 800 1000 1200 1600 2000 2400 3200 4800 6400
+ZoomIncrement = 0
 
 FixedPageUI [
 	TextColor = #ffffff
@@ -13,70 +48,87 @@ FixedPageUI [
 	WindowMargin = 2 4 2 4
 	PageSpacing = 4 4
 	GradientColors = #111111
+	InvertColors = false
+	HideScrollbars = false
 ]
-EbookUI [
-	FontName = Georgia
-	FontSize = 12.5
-	TextColor = #ffffff
-	BackgroundColor = #000000
-	UseFixedPageUI = false
+
+EBookUI [
+	FontSize = 0
+	LayoutDx = 0
+	LayoutDy = 0
+	IgnoreDocumentCSS = false
 ]
+
 ComicBookUI [
 	WindowMargin = 0 0 0 0
 	PageSpacing = 4 4
 	CbxMangaMode = false
 ]
+
 ChmUI [
 	UseFixedPageUI = false
 ]
-ExternalViewers [
-	[
-		CommandLine = "" "%1" "-page" "%p"
-		Name = Day Mode
-		Filter = *.pdf
-	]
-]
-ShowMenubar = true
-ReloadModifiedDocuments = true
-FullPathInTitle = false
-ZoomLevels = 8.33 12.5 18 25 33.33 50 66.67 75 100 125 150 200 300 400 600 800 1000 1200 1600 2000 2400 3200 4800 6400
-ZoomIncrement = 0
 
-PrinterDefaults [
-	PrintScale = shrink
+Annotations [
+	HighlightColor = #ffff00
+	UnderlineColor = #00ff00
+	SquigglyColor = #ff00ff
+	StrikeOutColor = #ff0000
+	FreeTextColor =
+	FreeTextBackgroundColor =
+	FreeTextOpacity = 100
+	FreeTextSize = 12
+	FreeTextBorderWidth = 1
+	TextIconColor = #ffff00
+	TextIconType =
+	DefaultAuthor =
 ]
+
+ExternalViewers [
+]
+
 ForwardSearch [
 	HighlightOffset = 0
 	HighlightWidth = 15
 	HighlightColor = #6581ff
 	HighlightPermanent = false
 ]
-CustomScreenDPI = 0
 
-RememberStatePerDocument = false
-UiLanguage = ja
-ShowToolbar = false
-ShowFavorites = false
-AssociateSilently = false
-CheckForUpdates = false
-RememberOpenedFiles = false
-InverseSearchCmdLine = "C:\Program Files\Microsoft VS Code\bin\code.cmd" -g "%f:%l"
-EnableTeXEnhancements = true
-DefaultDisplayMode = automatic
-DefaultZoom = fit page
+PrinterDefaults [
+	PrintScale = shrink
+]
+
+SelectionHandlers [
+]
+
+Shortcuts [
+	[
+		Cmd = CmdPrevTab
+		Key = Ctrl + Shift + Tab
+	]
+	[
+		Cmd = CmdNextTab
+		Key = Ctrl + Tab
+	]
+	[
+		Cmd = CmdCommandPalette
+		Key = F1
+	]
+]
+
+Themes [
+]
+
+# You're not expected to change those manually
+UiLanguage = en
 WindowState = 2
-WindowPos = 1478 124 1623 1930
-ShowToc = false
-SidebarDx = 324
-TocDy = 0
-ShowStartPage = true
-UseTabs = true
-
+WindowPos = 1716 464 1661 1090
 FileStates [
 ]
 SessionData [
 ]
-TimeOfLastUpdateCheck = 30748503 -1862831577
-OpenCountWeek = 597
+TimeOfLastUpdateCheck = 31242119 2005944510
+OpenCountWeek = 793
 
-# Settings after this line have not been recognized by the current version
+# Settings below are not recognized by the current version
+TreeFontWeightOffset = 0
