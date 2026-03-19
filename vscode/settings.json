@@ -115,19 +115,15 @@
     "C_Cpp.dimInactiveRegions": false,
     "C_Cpp.default.compilerPath": "",
     "C_Cpp.markdownInComments": "disabled",
-    // powershell
-    "powershell.integratedConsole.showOnStartup": false,
-    "powershell.cwd": "${fileDirname}",
-    "powershell.promptToUpdatePowerShell": false,
-    "powershell.startAutomatically": false,
     // python
     "python.defaultInterpreterPath": "C:/Program Files/Python314/python.exe",
-    "python.analysis.typeCheckingMode": "strict",
-    "python.analysis.autoImportCompletions": false,
     "[python]": {
         "editor.glyphMargin": true,
         "editor.defaultFormatter": "charliermarsh.ruff"
     },
+    "python.terminal.activateEnvInCurrentTerminal": false,
+    "python.terminal.activateEnvironment": false,
+    "python.terminal.shellIntegration.enabled": false,
     // terminal
     "terminal.integrated.cursorStyle": "underline",
     "terminal.integrated.cursorBlinking": true,
