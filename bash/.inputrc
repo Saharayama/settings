@@ -17,5 +17,4 @@ set completion-ignore-case on
 "\e[B": history-search-forward
 "\C-x\C-b": "\C-w\"\C-y\""
 "\C-x\C-n": "\C-w\'\C-y\'"
-"\eW": "\e[1;5D\ed"
 "\eu": undo

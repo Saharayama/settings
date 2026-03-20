@@ -360,3 +360,17 @@ p2() { _pp_signed 16 "$@"; }
 p4() { _pp_signed 32 "$@"; }
 p8() { _pp_signed 64 "$@"; }
 alias su='store.exe updates'
+_delete_to_prev_delimiter() {
+  local line="$READLINE_LINE"
+  local pos="$READLINE_POINT"
+  local prefix="${line:0:pos}"
+  local suffix="${line:pos}"
+  if [[ "$prefix" =~ (.*[\(\)\"\'])([^\(\)\"\']*)$ ]]; then
+    READLINE_LINE="${BASH_REMATCH[1]}${suffix}"
+    READLINE_POINT=${#BASH_REMATCH[1]}
+  else
+    READLINE_LINE="$suffix"
+    READLINE_POINT=0
+  fi
+}
+bind -x '"\eW": _delete_to_prev_delimiter'
