@@ -194,10 +194,7 @@ def solve():
       else:
         output = [str(result)]
       msg = '\n'.join(output)
-      if i % 2 == 1:
-        print(f'{CYAN}{msg}{RESET}')
-      else:
-        print(msg)
+      print(f'{CYAN if i % 2 else ''}{msg}{RESET}')
     except Exception as e:
       err_msg = getattr(e, 'msg', str(e))
       print(f'{RED}Error at #{i+1}: {err_msg}{RESET}', file=sys.stderr)
