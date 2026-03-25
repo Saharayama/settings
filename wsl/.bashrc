@@ -331,7 +331,7 @@ _delete_to_prev_delimiter() {
   local pos="$READLINE_POINT"
   local prefix="${line:0:pos}"
   local suffix="${line:pos}"
-  if [[ "$prefix" =~ (.*[\(\)\"\'])([^\(\)\"\']*)$ ]]; then
+  if [[ "$prefix" =~ (.*[][\(\)\"\'\{\}])([^][\(\)\"\'\{\}]*)$ ]]; then
     READLINE_LINE="${BASH_REMATCH[1]}${suffix}"
     READLINE_POINT=${#BASH_REMATCH[1]}
   else
