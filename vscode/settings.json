@@ -86,6 +86,7 @@
     "security.workspace.trust.enabled": false,
     "editor.accessibilitySupport": "off",
     "chat.disableAIFeatures": true,
+    "workbench.editor.useModal": "off",
     // update
     "update.mode": "manual",
     "update.enableWindowsBackgroundUpdates": false,
@@ -211,7 +212,7 @@
     "editor.glyphMargin": false,
     "window.menuBarVisibility": "toggle",
     "editor.unicodeHighlight.ambiguousCharacters": false,
-    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorTheme": "Dark+",
     "editor.minimap.enabled": false,
     "editor.renderLineHighlight": "none",
     "workbench.activityBar.location": "hidden",
