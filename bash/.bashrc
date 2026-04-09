@@ -34,7 +34,6 @@ alias exp='explorer.exe'
 alias la='ls -lAhtr --time-style="+%Y-%m-%d"'
 alias las='ls -lAhtr --time-style="+%Y-%m-%d %H:%M:%S"'
 export LANG=ja_JP.UTF-8
-EDITOR='"code" --wait'
 stty -ixon
 alias rs='exec $SHELL'
 alias echon='printf "%s\r\n"'
@@ -49,7 +48,12 @@ alias grl='git reflog --oneline --pretty=format:"%C(auto)%h %C(cyan)%gd:%C(auto)
 alias gs='git show --date=format:"%Y-%m-%d %H:%M:%S"'
 alias gf='git fetch'
 gr() {
-  git rev-parse --revs-only "${1:-"@"}" | tee >(clip)
+  local res
+  res=$(git rev-parse --revs-only "${1:-"@"}" 2>&1) || {
+    echo "Error: $res" >&2
+    return 1
+  }
+  echo "$res" | tee >(clip)
 }
 en() {
   if [ -z "$2" ]; then
@@ -79,8 +83,8 @@ gr-() {
     echo "$output"
   fi
 }
-export HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gs:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:gdn:gdsn:cc:cco:gdt:gi:gsn:gba:gla:priv:su
-export PROMPT_COMMAND="history -a"
+HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gs:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:gdn:gdsn:cc:cco:gdt:gi:gsn:gba:gla:priv:su
+PROMPT_COMMAND="history -a"
 mkcd() {
   if ! [ -d "$1" ]; then
     mkdir -p "$1" && cd "$1"
@@ -267,7 +271,7 @@ alias gla='gl --all'
 dhm() {
   local offset_from_end=${1:-1}
   if [[ ! "$offset_from_end" =~ ^[1-9][0-9]*$ ]]; then
-    echo "Usage: dh [OFFSET_FROM_END]" >&2
+    echo "Usage: dhm [OFFSET_FROM_END]" >&2
     return 1
   fi
   local cur=$(history 1 | awk '{print $1}')
@@ -371,3 +375,8 @@ _delete_to_prev_delimiter() {
   fi
 }
 bind -x '"\eW": _delete_to_prev_delimiter'
+if [ "$TERM_PROGRAM" = "vscode" ]; then
+  export EDITOR="code --wait"
+else
+  export EDITOR="edit"
+fi
