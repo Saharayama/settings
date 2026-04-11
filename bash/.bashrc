@@ -294,7 +294,7 @@ dhm() {
 priv() {
   if [[ -z "${IN_PRIV_MODE:-}" ]]; then
     export IN_PRIV_MODE=1
-    bash --rcfile <(echo 'source "${HOME}/.bashrc"')
+    bash
     unset IN_PRIV_MODE
   else
     echo "Error: already in private mode" >&2
