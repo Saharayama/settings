@@ -13,7 +13,7 @@ MainWindowBackground = #444444
 NoHomeTab = true
 HomePageSortByFrequentlyRead = false
 ReloadModifiedDocuments = true
-RememberOpenedFiles = false
+RememberOpenedFiles = true
 RememberStatePerDocument = true
 RestoreSession = true
 ReuseInstance = false
@@ -113,6 +113,26 @@ Shortcuts [
 	[
 		Cmd = CmdCommandPalette
 		Key = F1
+	]
+	[
+		Cmd = CmdFavoriteAdd
+		Key = Ctrl + Shift + b
+	]
+	[
+		Cmd = CmdFavoriteToggle
+		Key = Ctrl + b
+	]
+	[
+		Cmd = CmdCreateAnnotHighlight #00ff00
+		Key = a
+	]
+	[
+		Cmd = CmdCreateAnnotHighlight #00ffff openedit focusedit
+		Key = Shift + a
+	]
+	[
+		Cmd = CmdEditAnnotations
+		Key = Ctrl + Shift + a
 	]
 ]
 
