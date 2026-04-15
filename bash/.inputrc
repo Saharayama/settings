@@ -10,7 +10,7 @@ set completion-ignore-case on
 "\C-h": "**\e[D"
 "\e,": "\e0\e. "
 "\ew": unix-filename-rubout
-"\C-p": "pp \"\"\e[D"
+"\C-p": "p \"\"\e[D"
 "\ep": "p1 \"\"\e[D"
 "\eP": "p2 \"\"\e[D"
 "\e[A": history-search-backward

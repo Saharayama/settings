@@ -160,7 +160,7 @@ alias gdsn='git diff --staged --name-status'
 alias cc='cat /dev/clipboard'
 alias cco='cat /dev/clipboard | op'
 alias gdt='git difftool'
-pp() {
+p() {
   local input_pipe=""
   if [ ! -t 0 ]; then
     IFS=$'\r' read -r input_pipe || true
@@ -308,7 +308,7 @@ if [[ -n "${IN_PRIV_MODE:-}" ]]; then
   alias dh='dhm'
 fi
 alias cc1='cc | tr -d "\r" | xargs'
-_pp_signed() {
+_p_signed() {
   local bit_width=$1
   shift
   local input_pipe=""
@@ -356,10 +356,10 @@ def solve():
 solve()
 " "$bit_width" "$input_pipe" "$@"
 }
-p1() { _pp_signed 8 "$@"; }
-p2() { _pp_signed 16 "$@"; }
-p4() { _pp_signed 32 "$@"; }
-p8() { _pp_signed 64 "$@"; }
+p1() { _p_signed 8 "$@"; }
+p2() { _p_signed 16 "$@"; }
+p4() { _p_signed 32 "$@"; }
+p8() { _p_signed 64 "$@"; }
 alias su='store.exe updates'
 _delete_to_prev_delimiter() {
   local line="$READLINE_LINE"
