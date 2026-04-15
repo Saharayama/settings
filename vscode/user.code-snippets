@@ -98,13 +98,13 @@
 	"no_indent_newline": {
 		"body": "${TM_LINE_INDEX/(.*)/\n/}"
 	},
-	"kakko_2": {
+	"kagi_kakko_2": {
 		"body": "『$1』",
-		"description": "kakko_2"
+		"description": "kagi_kakko_2"
 	},
-	"kakko_2_selected": {
+	"kagi_kakko_2_selected": {
 		"body": "『$TM_SELECTED_TEXT』",
-		"description": "kakko_2_selected"
+		"description": "kagi_kakko_2_selected"
 	},
 	"html_tag": {
 		"body": "<$1>$2</$1>$0"

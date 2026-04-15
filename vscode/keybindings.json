@@ -542,7 +542,7 @@
 		"key": "ctrl+shift+oem_6",
 		"command": "editor.action.insertSnippet",
 		"args": {
-			"name": "kagi_kakko"
+			"name": "kagi_kakko_2"
 		},
 		"when": "editorTextFocus && !editorHasSelection"
 	},
@@ -550,7 +550,7 @@
 		"key": "ctrl+shift+oem_6",
 		"command": "editor.action.insertSnippet",
 		"args": {
-			"name": "kagi_kakko_selected"
+			"name": "kagi_kakko_2_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection"
 	},
@@ -1159,7 +1159,7 @@
 		"key": "ctrl+oem_6",
 		"command": "editor.action.insertSnippet",
 		"args": {
-			"name": "kakko_2"
+			"name": "kagi_kakko"
 		},
 		"when": "editorTextFocus && !editorHasSelection"
 	},
@@ -1167,7 +1167,7 @@
 		"key": "ctrl+oem_6",
 		"command": "editor.action.insertSnippet",
 		"args": {
-			"name": "kakko_2_selected"
+			"name": "kagi_kakko_selected"
 		},
 		"when": "editorTextFocus && editorHasSelection"
 	},
@@ -1238,5 +1238,9 @@
 	{
 		"key": "ctrl+k ctrl+shift+alt+p",
 		"command": "workbench.profiles.actions.manageProfiles"
+	},
+	{
+		"key": "ctrl+k ctrl+oem_comma",
+		"command": "workbench.action.openSettings2"
 	}
 ]
