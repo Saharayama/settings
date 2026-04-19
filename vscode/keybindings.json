@@ -1242,5 +1242,13 @@
 	{
 		"key": "ctrl+k ctrl+oem_comma",
 		"command": "workbench.action.openSettings2"
+	},
+	{
+		"key": "ctrl+f12",
+		"command": "editor.action.revealDeclaration"
+	},
+	{
+		"key": "ctrl+alt+f12",
+		"command": "editor.action.peekDeclaration"
 	}
 ]
