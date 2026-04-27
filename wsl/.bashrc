@@ -74,7 +74,7 @@ echonc() {
 }
 alias wttr='curl -s "wttr.in?1MF&lang=ja"'
 # chcp.com 65001 >/dev/null
-alias gst='git status'
+alias gst='git status -sb'
 gr-() {
   local output
   output=$(git rev-parse --revs-only --symbolic-full-name --abbrev-ref=loose @{-1}) || return
