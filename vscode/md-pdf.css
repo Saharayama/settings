@@ -39,13 +39,23 @@ pre code {
 }
 
 body .note {
+    position: relative;
+    padding: 12px 14px 12px 36px;
     border-left: 8px solid #999;
     border-radius: 10px;
-    padding: 12px 14px;
     margin: 14px 0;
     background: #f7f7f7;
     font-size: 0.95em;
     line-height: 1.5;
+}
+
+body .note::before {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    font-size: 1.2em;
+    width: 1.5em;
+    text-align: center;
 }
 
 body .note p {
@@ -74,22 +84,18 @@ body .note.check {
 
 body .note.info::before {
     content: "ℹ️";
-    font-size: 1.1em;
 }
 
 body .note.warn::before {
     content: "⚠️";
-    font-size: 1.1em;
 }
 
 body .note.alert::before {
     content: "⛔";
-    font-size: 1.1em;
 }
 
 body .note.check::before {
     content: "✅️";
-    font-size: 1.1em;
 }
 
 pre {
