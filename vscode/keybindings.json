@@ -97,11 +97,6 @@
 		"when": "textInputFocus"
 	},
 	{
-		"key": "ctrl+right",
-		"command": "-cursorWordEndRight",
-		"when": "textInputFocus"
-	},
-	{
 		"key": "ctrl+p",
 		"command": "-workbench.action.quickOpen"
 	},
@@ -1245,5 +1240,10 @@
 	{
 		"key": "ctrl+alt+f12",
 		"command": "editor.action.peekDeclaration"
+	},
+	{
+		"key": "shift+alt+oem_102",
+		"command": "workbench.action.terminal.kill",
+		"when": "terminalFocus"
 	}
 ]
