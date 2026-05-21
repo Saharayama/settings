@@ -313,7 +313,7 @@ _p_signed() {
   shift
   local input_pipe=""
   if [ ! -t 0 ]; then
-    IFS=$'\r\n' read -r input_pipe || true
+    IFS=$'\r' read -r input_pipe || true
   fi
   MSYS_NO_PATHCONV=1 python.exe -Sc "
 import sys
