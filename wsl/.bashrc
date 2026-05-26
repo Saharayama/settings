@@ -84,7 +84,7 @@ gr-() {
     echo "$output"
   fi
 }
-HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gs:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:gdn:gdsn:cc:cco:gdt:gi:gsn:gba:gla:priv:su:glf:glaf
+HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gs:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:gdn:gdsn:cc:cco:gdt:gi:gsn:gba:gla:priv:su:glf:glaf:gstl
 PROMPT_COMMAND="history -a"
 mkcd() {
   if ! [ -d "$1" ]; then
@@ -351,3 +351,4 @@ else
 fi
 alias glf='git log --oneline --pretty=format:"%C(auto)%h %C(cyan)%cd %C(magenta)%ad%C(auto)%d %s %C(green bold dim)%an%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
 alias glaf='glf --all'
+alias gstl='git status'
