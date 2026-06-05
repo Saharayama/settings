@@ -72,7 +72,7 @@ echonc() {
   echon $* | tee >(clip)
 }
 alias wttr='curl -s "wttr.in?1MF&lang=ja"'
-chcp.com 65001 >/dev/null
+chcp.com 65001 > /dev/null
 alias gst='git status -sb'
 gr-() {
   local output
@@ -83,7 +83,7 @@ gr-() {
     echo "$output"
   fi
 }
-HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gs:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:gdn:gdsn:cc:cco:gdt:gi:gsn:gba:gla:priv:su:glf:glaf:gstl
+HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gs:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:gdn:gdsn:cc:cco:gdt:gi:gsn:gba:gla:priv:su:glf:glaf:gstl:gsw:'op .'
 PROMPT_COMMAND="history -a"
 mkcd() {
   if ! [ -d "$1" ]; then
@@ -123,12 +123,12 @@ tree() {
   if [ -n "$1" ]; then
     path="\"$1\""
   fi
-  pwsh.exe -c "tree /f "$path""
+  pwsh.exe -c "tree /f "$path"" | iconv -f CP932 -t UTF-8 -c
 }
 alias xargs='xargs '
 alias gds='git diff --staged'
-op() {
-  open_file() {
+op() (
+  _open_file() {
     local file_name="${1//$'\r'/}"
     if [ ! -e "$file_name" ]; then
       echo "'$file_name' does not exist." >&2
@@ -147,14 +147,13 @@ op() {
   }
   if [ ! -t 0 ]; then
     while IFS= read -r std_input || [ -n "$std_input" ]; do
-      open_file "$std_input"
+      _open_file "$std_input"
     done
   fi
   for arg in "$@"; do
-    open_file "$arg"
+    _open_file "$arg"
   done
-  unset -f open_file
-}
+)
 alias gdn='git diff --name-status'
 alias gdsn='git diff --staged --name-status'
 alias cc='cat /dev/clipboard'
@@ -240,7 +239,7 @@ await() {
   fi
   local end_time_input="$1"
   local end_time_unix=""
-  end_time_unix=$(date -d "$end_time_input" +%s 2>/dev/null)
+  end_time_unix=$(date -d "$end_time_input" +%s 2> /dev/null)
   if [ $? -ne 0 ]; then
     echo "Error: Invalid datetime format" >&2
     return 1
@@ -383,3 +382,35 @@ fi
 alias glf='git log --oneline --pretty=format:"%C(auto)%h %C(cyan)%cd %C(magenta)%ad%C(auto)%d %s %C(green bold dim)%an%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
 alias glaf='glf --all'
 alias gstl='git status'
+gsw() (
+  local query="${1:-}"
+  local -a branches
+  git rev-parse --is-inside-work-tree > /dev/null || return 1
+  mapfile -t branches < <(
+    git branch --format='%(refname:short)' |
+    { if [[ -z "$query" ]]; then grep -Fvx -- "$(git branch --show-current)"; else cat; fi } |
+    grep -v -- "[[:space:]]" |
+    grep -F -- "$query"
+  )
+  local count=${#branches[@]}
+  if [[ $count -eq 0 ]]; then
+    if [[ -n "$query" ]]; then
+      printf "gsw: no branch matching '%s'\n" "$query" >&2
+    else
+      echo "gsw: no other branches available" >&2
+    fi
+    return 1
+  elif [[ $count -eq 1 ]]; then
+    git switch -- "${branches[0]}"
+  else
+    PS3="Select a branch (1-$count): "
+    select br in "${branches[@]}"; do
+      if [[ -n "$br" ]]; then
+        git switch -- "$br"
+        return $?
+      else
+        echo "gsw: invalid selection" >&2
+      fi
+    done
+  fi
+)
