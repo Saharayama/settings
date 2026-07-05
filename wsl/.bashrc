@@ -84,7 +84,7 @@ gr-() {
     echo "$output"
   fi
 }
-HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gs:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:gdn:gdsn:cc:cco:gdt:gi:gsn:gba:gla:priv:su:glf:glaf:gstl:gsw:'op .'
+HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gs:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:gdn:gdsn:cc:cco:gdt:gi:gsn:gba:gla:priv:su:glf:glaf:gstl:gsw:'op .':gwl:gwr:gwp
 PROMPT_COMMAND="history -a"
 mkcd() {
   if ! [ -d "$1" ]; then
@@ -384,3 +384,11 @@ gsw() (
     done
   fi
 )
+gwa() {
+  if git worktree add "$@" && [[ -d ".vscode" ]] && ! git ls-files --error-unmatch .vscode >/dev/null 2>&1; then
+    cp -pr .vscode "$1/"
+  fi
+}
+alias gwl='git worktree list'
+alias gwr='git worktree remove'
+alias gwp='git worktree prune'
