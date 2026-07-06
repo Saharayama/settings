@@ -385,8 +385,11 @@ gsw() (
   fi
 )
 gwa() {
-  if git worktree add "$@" && [[ -d ".vscode" ]] && ! git ls-files --error-unmatch .vscode >/dev/null 2>&1; then
-    cp -pr .vscode "$1/"
+  if git worktree add "$@"; then
+    if [[ -d ".vscode" ]] && ! git ls-files --error-unmatch .vscode >/dev/null 2>&1; then
+      cp -pr .vscode "$1/"
+    fi
+    code "$1/"
   fi
 }
 alias gwl='git worktree list'
