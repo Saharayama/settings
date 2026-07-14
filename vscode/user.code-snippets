@@ -111,5 +111,38 @@
 	},
 	"html_tag_selected": {
 		"body": "<$1>$TM_SELECTED_TEXT</$1>$0"
+	},
+	"md_code_block": {
+		"body": [
+			"```$1",
+			"$0",
+			"```"
+		]
+	},
+	"md_code_block_selected": {
+		"body": [
+			"```$1",
+			"$TM_SELECTED_TEXT",
+			"```",
+			"$0"
+		]
+	},
+	"md_list_complete": {
+		"body": "\n${TM_CURRENT_LINE/(^\\s*-\\s.*$)|(^\\s*1\\.\\s.*$)|.*/${1:+- }${2:+1. }/}"
+	},
+	"md_list_selective": {
+		"body": "${1|- ,1. |}"
+	},
+	"md_list_complete_indent": {
+		"body": "\n${TM_CURRENT_LINE/(^\\s*-\\s.*$|^\\s*1\\.\\s.*$)|.*/${1:+    - }/}"
+	},
+	"md_list_complete_no_indent": {
+		"body": "\n${TM_CURRENT_LINE/(^\\s*-\\s.*$|^\\s*1\\.\\s.*$)|.*/${1:+- }/}"
+	},
+	"md_bold": {
+		"body": "**$1**"
+	},
+	"md_bold_selected": {
+		"body": "**$TM_SELECTED_TEXT**"
 	}
 }

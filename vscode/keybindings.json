@@ -606,19 +606,17 @@
 		"key": "ctrl+shift+alt+oem_3",
 		"command": "editor.action.insertSnippet",
 		"args": {
-			"langId": "markdown",
 			"name": "md_code_block"
 		},
-		"when": "editorTextFocus && editorLangId == 'markdown'"
+		"when": "editorTextFocus"
 	},
 	{
 		"key": "ctrl+shift+alt+oem_3",
 		"command": "editor.action.insertSnippet",
 		"args": {
-			"langId": "markdown",
 			"name": "md_code_block_selected"
 		},
-		"when": "editorTextFocus && editorHasSelection && editorLangId == 'markdown'"
+		"when": "editorTextFocus && editorHasSelection"
 	},
 	{
 		"key": "ctrl+alt+up",
@@ -905,13 +903,12 @@
 				{
 					"command": "editor.action.insertSnippet",
 					"args": {
-						"langId": "markdown",
 						"name": "md_list_complete"
 					}
 				}
 			]
 		},
-		"when": "editorTextFocus && editorLangId == 'markdown'"
+		"when": "editorTextFocus"
 	},
 	{
 		"key": "shift+alt+enter",
@@ -922,13 +919,12 @@
 				{
 					"command": "editor.action.insertSnippet",
 					"args": {
-						"langId": "markdown",
 						"name": "md_list_complete_indent"
 					}
 				}
 			]
 		},
-		"when": "editorTextFocus && editorLangId == 'markdown'"
+		"when": "editorTextFocus"
 	},
 	{
 		"key": "ctrl+alt+enter",
@@ -939,14 +935,13 @@
 				{
 					"command": "editor.action.insertSnippet",
 					"args": {
-						"langId": "markdown",
 						"name": "md_list_complete_no_indent"
 					}
 				},
 				"editor.action.outdentLines"
 			]
 		},
-		"when": "editorTextFocus && editorLangId == 'markdown'"
+		"when": "editorTextFocus"
 	},
 	{
 		"key": "ctrl+shift+alt+enter",
@@ -968,10 +963,9 @@
 		"key": "alt+enter",
 		"command": "editor.action.insertSnippet",
 		"args": {
-			"langId": "markdown",
 			"name": "md_list_selective"
 		},
-		"when": "editorTextFocus && editorLangId == 'markdown' && !suggestWidgetVisible"
+		"when": "editorTextFocus && !suggestWidgetVisible"
 	},
 	{
 		"key": "alt+enter",
@@ -1215,7 +1209,7 @@
 		"args": {
 			"name": "html_tag"
 		},
-		"when": "editorTextFocus && !editorHasSelection && (editorLangId == 'markdown' || editorLangId == 'html')"
+		"when": "editorTextFocus && !editorHasSelection"
 	},
 	{
 		"key": "ctrl+shift+alt+.",
@@ -1223,7 +1217,7 @@
 		"args": {
 			"name": "html_tag_selected"
 		},
-		"when": "editorTextFocus && editorHasSelection && (editorLangId == 'markdown' || editorLangId == 'html')"
+		"when": "editorTextFocus && editorHasSelection"
 	},
 	{
 		"key": "ctrl+k ctrl+shift+alt+p",
