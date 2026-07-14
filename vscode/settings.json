@@ -76,6 +76,7 @@
     "editor.wordSegmenterLocales": [
         "ja"
     ],
+    "editor.autoClosingComments": "never",
     // disable default settings
     "extensions.ignoreRecommendations": true,
     "workbench.enableExperiments": false,
@@ -90,7 +91,7 @@
     // update
     "update.mode": "manual",
     "update.enableWindowsBackgroundUpdates": false,
-    "extensions.autoUpdate": false,
+    "extensions.autoUpdate": "off",
     "extensions.autoCheckUpdates": false,
     // settings for setting
     "workbench.settings.editor": "json",
