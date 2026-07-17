@@ -17,7 +17,7 @@ HISTFILESIZE=-1
 shopt -s checkwinsize
 
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
+if [[ -x /usr/bin/dircolors ]]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
   alias ls='ls --color=auto'
   #alias dir='dir --color=auto'
@@ -57,12 +57,12 @@ gr() {
   echo "$res" | tee >(clip)
 }
 en() {
-  if [ -z "$2" ]; then
+  if [[ -z "$2" ]]; then
     echo "Usage: en BEGIN END [PREFIX [SUFFIX [STEP]]]" >&2
     return 1
   fi
   local step=""
-  if [ -n "$5" ]; then
+  if [[ -n "$5" ]]; then
     step="..$5"
   fi
   local sequence=$(eval echo '$3'"{""$1".."$2""$step""}"'$4')
@@ -73,12 +73,11 @@ echonc() {
   echon $* | tee >(clip)
 }
 alias wttr='curl -s "wttr.in?1MF&lang=ja"'
-# chcp.com 65001 > /dev/null
 alias gst='git status -sb'
 gr-() {
   local output
   output=$(git rev-parse --revs-only --symbolic-full-name --abbrev-ref=loose @{-1}) || return
-  if [ -z "$output" ]; then
+  if [[ -z "$output" ]]; then
     git rev-parse --revs-only @{-1}
   else
     echo "$output"
@@ -87,7 +86,7 @@ gr-() {
 HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gs:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:gdn:gdsn:cc:cco:gdt:gi:gsn:gba:gla:priv:su:glf:glaf:gstl:gsw:'op .':gwl:gwr:gwp
 PROMPT_COMMAND="history -a"
 mkcd() {
-  if ! [ -d "$1" ]; then
+  if [[ ! -d "$1" ]]; then
     mkdir -p "$1" && cd "$1"
   else
     echo "Directory '$1' already exists." >&2
@@ -120,7 +119,7 @@ ef() {
 }
 tree() {
   local path=""
-  if [ -n "$1" ]; then
+  if [[ -n "$1" ]]; then
     path="\"$1\""
   fi
   pwsh.exe -c "tree /f "$path"" | iconv -f CP932 -t UTF-8 -c
@@ -132,7 +131,7 @@ alias gdsn='git diff --staged --name-status'
 alias gdt='git difftool'
 p() {
   local input_pipe=""
-  if [ ! -t 0 ]; then
+  if [[ ! -t 0 ]]; then
     IFS=$'\r' read -r input_pipe || true
   fi
   MSYS_NO_PATHCONV=1 python3 -Sc "
@@ -204,28 +203,31 @@ dh() {
   printf "${red}Deleted:${reset} %s\r\n" "$line_content"
 }
 await() {
-  if [ -z "$1" ]; then
+  if [[ -z "$1" ]]; then
     echo "Usage: await <end_time>" >&2
     return 1
   fi
-  local end_time_input="$1"
-  local end_time_unix=""
-  end_time_unix=$(date -d "$end_time_input" +%s 2> /dev/null)
-  if [ $? -ne 0 ]; then
+  local end_time_unix
+  end_time_unix=$(date -d "$1" +%s 2> /dev/null) || {
     echo "Error: Invalid datetime format" >&2
     return 1
-  fi
-  local end_time_output="$(date -d "@$end_time_unix" '+%H:%M:%S')"
+  }
+  local end_time_output
+  end_time_output=$(date -d "@$end_time_unix" '+%H:%M:%S')
   echo "終了時間: $end_time_output"
+  local current_time_unix remaining h m s
   while true; do
-    local current_time_unix=$(date +%s)
-    if [ "$current_time_unix" -ge "$end_time_unix" ]; then
+    current_time_unix=$EPOCHSECONDS
+    if ((current_time_unix >= end_time_unix)); then
       echo "残り時間: 00:00:00"
       ntf.exe "${end_time_output} になりました"
       break
     fi
-    local remaining=$((end_time_unix - current_time_unix))
-    echo -ne "残り時間: $(date -u -d "@$remaining" '+%H:%M:%S')\r"
+    ((remaining = end_time_unix - current_time_unix))
+    ((h = remaining / 3600))
+    ((m = (remaining % 3600) / 60))
+    ((s = remaining % 60))
+    printf "残り時間: %02d:%02d:%02d\r" "$h" "$m" "$s"
     sleep 1
   done
 }
@@ -281,7 +283,7 @@ _p_signed() {
   local bit_width=$1
   shift
   local input_pipe=""
-  if [ ! -t 0 ]; then
+  if [[ ! -t 0 ]]; then
     IFS=$'\r' read -r input_pipe || true
   fi
   MSYS_NO_PATHCONV=1 python3 -Sc "
@@ -331,20 +333,18 @@ p4() { _p_signed 32 "$@"; }
 p8() { _p_signed 64 "$@"; }
 alias su='store.exe updates'
 _delete_to_prev_delimiter() {
-  local line="$READLINE_LINE"
-  local pos="$READLINE_POINT"
-  local prefix="${line:0:pos}"
-  local suffix="${line:pos}"
-  if [[ "$prefix" =~ (.*[][\(\)\"\'\{\}])([^][\(\)\"\'\{\}]*)$ ]]; then
-    READLINE_LINE="${BASH_REMATCH[1]}${suffix}"
+  local prefix="${READLINE_LINE:0:READLINE_POINT}"
+  local re="(.*[][()\"'{}])([^][()\"'{}]*)$"
+  if [[ "$prefix" =~ $re ]]; then
+    READLINE_LINE="${BASH_REMATCH[1]}${READLINE_LINE:READLINE_POINT}"
     READLINE_POINT=${#BASH_REMATCH[1]}
   else
-    READLINE_LINE="$suffix"
+    READLINE_LINE="${READLINE_LINE:READLINE_POINT}"
     READLINE_POINT=0
   fi
 }
 bind -x '"\eW": _delete_to_prev_delimiter'
-if [ "$TERM_PROGRAM" = "vscode" ]; then
+if [[ "$TERM_PROGRAM" == "vscode" ]]; then
   export EDITOR="code --wait"
 else
   export EDITOR="edit"
@@ -395,3 +395,14 @@ gwa() {
 alias gwl='git worktree list'
 alias gwr='git worktree remove'
 alias gwp='git worktree prune'
+_format_spaces() {
+  [[ -z "${READLINE_LINE//[[:blank:]]/}" ]] && return
+  shopt -q extglob
+  local extglob_disabled=$?
+  ((extglob_disabled)) && shopt -s extglob
+  READLINE_LINE="${READLINE_LINE//+([[:blank:]])/ }"
+  ((extglob_disabled)) && shopt -u extglob
+  READLINE_LINE="${READLINE_LINE% }"
+  READLINE_POINT="${#READLINE_LINE}"
+}
+bind -x '"\C-f": _format_spaces'
