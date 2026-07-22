@@ -43,15 +43,15 @@ alias wf='winget.exe find'
 alias ws='winget.exe show'
 alias g-='git switch -'
 alias gb='git branch'
-alias gl='git log --oneline --pretty=format:"%C(auto)%h %C(cyan)%cd%C(auto)%d %s %C(green bold dim)%an%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
+alias gl='git log --pretty=format:"%C(auto)%h %C(cyan)%cd%C(auto)%d %s %C(green bold dim)%an%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
 alias glr='gl --reverse'
-alias grl='git reflog --oneline --pretty=format:"%C(auto)%h %C(cyan)%gd:%C(auto)%d %gs %C(green bold dim)%gn%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
+alias grl='git reflog --pretty=format:"%C(auto)%h %C(cyan)%gd:%C(auto)%d %gs %C(green bold dim)%gn%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
 alias gs='git show --date=format:"%Y-%m-%d %H:%M:%S"'
 alias gf='git fetch'
 gr() {
   local res
-  res=$(git rev-parse --revs-only "${1:-"@"}" 2>&1) || {
-    echo "Error: $res" >&2
+  res=$(git rev-parse --revs-only --verify "${1:-"@"}" 2>&1) || {
+    echo "$res" >&2
     return 1
   }
   echo "$res" | tee >(clip)
@@ -349,7 +349,7 @@ if [[ "$TERM_PROGRAM" == "vscode" ]]; then
 else
   export EDITOR="edit"
 fi
-alias glf='git log --oneline --pretty=format:"%C(auto)%h %C(cyan)%cd %C(magenta)%ad%C(auto)%d %s %C(green bold dim)%an%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
+alias glf='git log --pretty=format:"%C(auto)%h %C(cyan)%cd %C(magenta)%ad%C(auto)%d %s %C(green bold dim)%an%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
 alias glaf='glf --all'
 alias gstl='git status'
 gsw() (
