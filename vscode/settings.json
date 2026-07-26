@@ -101,15 +101,6 @@
     "markdown.preview.fontSize": 16,
     "markdown.preview.scrollEditorWithPreview": false,
     "markdown.preview.breaks": true,
-    "markdown-pdf.styles": [
-        "~/AppData/Roaming/Code/User/md-pdf.css"
-    ],
-    "markdown-pdf.outputDirectory": "D:/Desktop",
-    "markdown-pdf.headerTemplate": "<div></div>",
-    "markdown-pdf.footerTemplate": "<div style=\"font-size: 11px; margin: 0 auto; font-family: 'Ricty ShinDiminished'\"> <span class='pageNumber'></span> / <span class='totalPages'></span></div>",
-    "markdown-pdf.margin.bottom": "1.5cm",
-    "markdown-pdf.breaks": true,
-    "markdown-pdf.executablePath": "C:/Program Files/Google/Chrome/Application/chrome.exe",
     // c
     "C_Cpp.loggingLevel": "Information",
     "C_Cpp.suggestSnippets": false,

@@ -231,11 +231,6 @@
 		"when": "editorLangId == 'markdown'"
 	},
 	{
-		"key": "shift+f5",
-		"command": "extension.markdown-pdf.pdf",
-		"when": "editorTextFocus && editorLangId == 'markdown'"
-	},
-	{
 		"key": "ctrl+shift+v",
 		"command": "-markdown.showPreview",
 		"when": "editorLangId == 'markdown'"
