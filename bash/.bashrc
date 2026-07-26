@@ -437,3 +437,19 @@ _format_spaces() {
   READLINE_POINT="${#READLINE_LINE}"
 }
 bind -x '"\C-f": _format_spaces'
+pk() {
+  if [[ $# -eq 0 ]]; then
+    echo "Usage: pk <file_or_directory>" >&2
+    return 1
+  fi
+  local target="$1"
+  local abs_path="$(readlink -f -- "$target")"
+  if [[ -e "$abs_path" ]]; then
+    local win_path=$(cygpath -w -- "$abs_path")
+    local app_path="/c/Program Files/PowerToys/WinUI3Apps/PowerToys.Peek.UI.exe"
+    "$app_path" "$win_path"
+  else
+    echo "Error: '$target' does not exist." >&2
+    return 1
+  fi
+}
