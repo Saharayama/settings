@@ -1,0 +1,26 @@
+[core]
+	whitespace = cr-at-eol
+	quotepath = false
+	attributesfile = ~/.gitattributes
+[init]
+	defaultBranch = main
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[difftool]
+	prompt = false
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+[mergetool]
+	keepBackup = false
+[gui]
+	encoding = utf-8
+[pager]
+	diff = less -x1,5,9,13,17
+	show = less -x1,5,9,13,17
+	log = less -x1,5,9,13,17
+[interactive]
+	diffFilter = "sed -u 's/\\t/    /g'"
