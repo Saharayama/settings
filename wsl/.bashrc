@@ -353,6 +353,10 @@ alias glf='git log --pretty=format:"%C(auto)%h %C(cyan)%cd %C(magenta)%ad%C(auto
 alias glaf='glf --all'
 alias gstl='git status'
 gsw() (
+  if [[ $# -ge 2 || "$1" == -* ]]; then
+    git switch "$@"
+    return $?
+  fi
   local query="${1:-}"
   local -a branches
   git rev-parse --is-inside-work-tree > /dev/null || return 1
