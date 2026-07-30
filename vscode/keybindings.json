@@ -1244,5 +1244,15 @@
 		"key": "ctrl+k f2",
 		"command": "-togglePeekWidgetFocus",
 		"when": "inReferenceSearchEditor || referenceSearchVisible"
+	},
+	{
+		"key": "shift+f5",
+		"command": "workbench.action.tasks.reRunTask",
+		"when": "!inDebugMode"
+	},
+	{
+		"key": "ctrl+shift+f5",
+		"command": "workbench.action.tasks.runTask",
+		"when": "!inDebugMode"
 	}
 ]
