@@ -958,7 +958,15 @@
 		"key": "alt+enter",
 		"command": "editor.action.insertSnippet",
 		"args": {
-			"name": "md_list_selective"
+			"name": "md_list_unordered"
+		},
+		"when": "editorTextFocus && !suggestWidgetVisible"
+	},
+	{
+		"key": "ctrl+k alt+enter",
+		"command": "editor.action.insertSnippet",
+		"args": {
+			"name": "md_list_ordered"
 		},
 		"when": "editorTextFocus && !suggestWidgetVisible"
 	},
