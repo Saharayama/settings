@@ -65,7 +65,8 @@ en() {
   if [[ -n "$5" ]]; then
     step="..$5"
   fi
-  local sequence=$(eval echo '$3'"{""$1".."$2""$step""}"'$4')
+  local sequence
+  sequence=$(eval echo '$3'"{""$1".."$2""$step""}"'$4')
   printf "%s\r\n" $sequence | clip
   printf "%s\r\n" "$sequence" | tee >(wc -w)
 }
@@ -83,7 +84,7 @@ gr-() {
     echo "$output"
   fi
 }
-HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gs:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:gdn:gdsn:cc:cco:gdt:gi:gsn:gba:gla:priv:su:glf:glaf:gstl:gsw:'op .':gwl:gwr:gwp
+HISTIGNORE=cd:'exp .':la:las:rs:wu:g-:gb:gl:glr:grl:gs:gf:wttr:gst:gr:gr-:pve:gd:cpc:gds:gdn:gdsn:cc:cco:gdt:gi:gsn:gba:gla:priv:su:glf:glaf:gstl:gsw:'op .':gwl:gwr:gwp:gbd
 PROMPT_COMMAND="history -a"
 mkcd() {
   if [[ ! -d "$1" ]]; then
@@ -186,13 +187,16 @@ dh() {
     echo "Usage: dh [OFFSET_FROM_END]" >&2
     return 1
   fi
-  local total_lines=$(wc -l < ~/.bash_history)
-  local line_num=$((total_lines - offset_from_end + 1))
+  local total_lines
+  local line_num
+  total_lines=$(wc -l < ~/.bash_history)
+  line_num=$((total_lines - offset_from_end + 1))
   if [[ "$line_num" -lt 1 ]]; then
     echo "Error: out of range" >&2
     return 1
   fi
-  local line_content=$(sed -n "${line_num}{p;q}" ~/.bash_history)
+  local line_content
+  line_content=$(sed -n "${line_num}{p;q}" ~/.bash_history)
   ex -sc "${line_num}d|wq" ~/.bash_history && history -c && history -r
   local red=""
   local reset=""
@@ -246,13 +250,16 @@ dhm() {
     echo "Usage: dhm [OFFSET_FROM_END]" >&2
     return 1
   fi
-  local cur=$(history 1 | awk '{print $1}')
-  local line_num=$((cur - offset_from_end))
+  local cur
+  local line_num
+  cur=$(history 1 | awk '{print $1}')
+  line_num=$((cur - offset_from_end))
   if [[ "$line_num" -le 0 ]]; then
     echo "Error: out of range" >&2
     return 1
   fi
-  local line_content=$(fc -ln "$line_num" "$line_num" | sed 's/^[[:space:]]*//')
+  local line_content
+  line_content=$(fc -ln "$line_num" "$line_num" | sed 's/^[[:space:]]*//')
   history -d "$cur"
   history -d "$line_num"
   local red=""
@@ -352,42 +359,6 @@ fi
 alias glf='git log --pretty=format:"%C(auto)%h %C(cyan)%cd %C(magenta)%ad%C(auto)%d %s %C(green bold dim)%an%Creset" --date=format:"%Y-%m-%d %H:%M:%S"'
 alias glaf='glf --all'
 alias gstl='git status'
-gsw() (
-  if [[ $# -ge 2 || "$1" == -* ]]; then
-    git switch "$@"
-    return $?
-  fi
-  local query="${1:-}"
-  local -a branches
-  git rev-parse --is-inside-work-tree > /dev/null || return 1
-  mapfile -t branches < <(
-    git branch --format='%(refname:short)' |
-    { if [[ -z "$query" ]]; then grep -Fvx -- "$(git branch --show-current)"; else cat; fi } |
-    grep -v -- "[[:space:]]" |
-    grep -F -- "$query"
-  )
-  local count=${#branches[@]}
-  if [[ $count -eq 0 ]]; then
-    if [[ -n "$query" ]]; then
-      printf "gsw: no branch matching '%s'\n" "$query" >&2
-    else
-      echo "gsw: no other branches available" >&2
-    fi
-    return 1
-  elif [[ $count -eq 1 ]]; then
-    git switch -- "${branches[0]}"
-  else
-    PS3="Select a branch (1-$count): "
-    select br in "${branches[@]}"; do
-      if [[ -n "$br" ]]; then
-        git switch -- "$br"
-        return $?
-      else
-        echo "gsw: invalid selection" >&2
-      fi
-    done
-  fi
-)
 gwa() {
   if git worktree add "$@"; then
     if [[ -d ".vscode" ]] && ! git ls-files --error-unmatch .vscode >/dev/null 2>&1; then
@@ -410,3 +381,71 @@ _format_spaces() {
   READLINE_POINT="${#READLINE_LINE}"
 }
 bind -x '"\C-f": _format_spaces'
+_select_git_branch() {
+  local caller="$1"
+  local query="$2"
+  local prompt="$3"
+  local -a branches
+  local current
+  git rev-parse --is-inside-work-tree > /dev/null 2>&1 || return 1
+  current="$(git branch --show-current)" || return 1
+  mapfile -t branches < <(
+    git for-each-ref --format='%(refname:short)' refs/heads |
+    grep -Fvx -- "$current" |
+    grep -F -- "$query"
+  )
+  local count=${#branches[@]}
+  if ((count == 0)); then
+    if [[ -n "$query" ]]; then
+      printf "%s: no branch matching '%s'\n" "$caller" "$query" >&2
+    else
+      printf '%s: no other branches available\n' "$caller" >&2
+    fi
+    return 1
+  fi
+  if ((count == 1)); then
+    printf '%s\n' "${branches[0]}"
+    return
+  fi
+  if [[ -n "$current" ]]; then
+    printf 'Current branch: %s\n' "$current" >&2
+  else
+    printf 'Current branch: (detached HEAD)\n' >&2
+  fi
+  PS3="$prompt (1-$count): "
+  select branch in "${branches[@]}"; do
+    if [[ -n "$branch" ]]; then
+      printf '%s\n' "$branch"
+      return
+    fi
+    printf '%s: invalid selection\n' "$caller" >&2
+  done
+}
+gsw() (
+  if (( $# >= 2 )) || [[ ${1:-} == -* ]]; then
+    git switch "$@"
+    return
+  fi
+  local branch
+  branch="$(
+    _select_git_branch \
+      gsw \
+      "${1:-}" \
+      "Select a branch"
+  )" || return
+  git switch -- "$branch"
+)
+gbd() (
+  if (( $# >= 2 )) || [[ ${1:-} == -* ]]; then
+    git branch -D "$@"
+    return
+  fi
+  local branch
+  branch="$(
+    _select_git_branch \
+      gbd \
+      "${1:-}" \
+      "Select a branch to delete"
+  )" || return
+  git branch -D -- "$branch"
+)
