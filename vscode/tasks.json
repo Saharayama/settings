@@ -26,7 +26,7 @@
             },
             "options": {
                 "env": {
-                    "RELATIVE_FILE": "${relativeFile}",
+                    "FILE": "${file}",
                     "LINE_NUMBER": "${lineNumber}",
                     "SELECTED_TEXT": "${selectedText}",
                     "BASE_COMMIT": ""
@@ -58,7 +58,7 @@
             },
             "options": {
                 "env": {
-                    "RELATIVE_FILE": "${relativeFile}",
+                    "FILE": "${file}",
                     "LINE_NUMBER": "${lineNumber}",
                     "SELECTED_TEXT": "${selectedText}",
                     "BASE_COMMIT": "${input:baseCommit}"
@@ -87,7 +87,7 @@
             },
             "options": {
                 "env": {
-                    "RELATIVE_FILE": "${relativeFile}",
+                    "FILE": "${file}",
                     "LINE_NUMBER": "${lineNumber}",
                     "SELECTED_TEXT": "${selectedText}"
                 }
