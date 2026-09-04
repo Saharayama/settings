@@ -4,7 +4,7 @@
             "name": "MinGW",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:/Program Files/mingw64/x86_64-w64-mingw32/include/**"
+                "${env:LOCALAPPDATA}/mingw64/x86_64-w64-mingw32/include/**"
             ],
             "defines": [
                 "_DEBUG",
@@ -14,7 +14,7 @@
             "cStandard": "c23",
             "cppStandard": "c++17",
             "intelliSenseMode": "windows-gcc-x64",
-            "compilerPath": "C:/Program Files/mingw64/bin/gcc.exe"
+            "compilerPath": "${env:LOCALAPPDATA}/mingw64/bin/gcc.exe"
         }
     ],
     "version": 4
