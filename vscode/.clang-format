@@ -1,6 +1,5 @@
 ---
-# 2026-03-25
-# clang-format version 22.1.1 (https://github.com/llvm/llvm-project.git fef02d48c08db859ef83f84232ed78bd9d1c323a)
+# clang-format version 23.1.0 (https://github.com/llvm/llvm-project.git ea7d852a70e8bdfaf601d6626a760f9771b2c4b4)
 Language:        Cpp
 AlignAfterOpenBracket: true
 AccessModifierOffset: -2
@@ -12,6 +11,7 @@ AlignConsecutiveAssignments:
   AlignCompound:   false
   AlignFunctionDeclarations: false
   AlignFunctionPointers: false
+  EnumAssignments: false
   PadOperators:    true
 AlignConsecutiveBitFields:
   Enabled:         false
@@ -20,6 +20,7 @@ AlignConsecutiveBitFields:
   AlignCompound:   false
   AlignFunctionDeclarations: false
   AlignFunctionPointers: false
+  EnumAssignments: false
   PadOperators:    false
 AlignConsecutiveDeclarations:
   Enabled:         false
@@ -28,6 +29,7 @@ AlignConsecutiveDeclarations:
   AlignCompound:   false
   AlignFunctionDeclarations: true
   AlignFunctionPointers: false
+  EnumAssignments: false
   PadOperators:    false
 AlignConsecutiveMacros:
   Enabled:         false
@@ -36,6 +38,7 @@ AlignConsecutiveMacros:
   AlignCompound:   false
   AlignFunctionDeclarations: false
   AlignFunctionPointers: false
+  EnumAssignments: false
   PadOperators:    false
 AlignConsecutiveShortCaseStatements:
   Enabled:         false
@@ -50,6 +53,7 @@ AlignConsecutiveTableGenBreakingDAGArgColons:
   AlignCompound:   false
   AlignFunctionDeclarations: false
   AlignFunctionPointers: false
+  EnumAssignments: false
   PadOperators:    false
 AlignConsecutiveTableGenCondOperatorColons:
   Enabled:         false
@@ -58,6 +62,7 @@ AlignConsecutiveTableGenCondOperatorColons:
   AlignCompound:   false
   AlignFunctionDeclarations: false
   AlignFunctionPointers: false
+  EnumAssignments: false
   PadOperators:    false
 AlignConsecutiveTableGenDefinitionColons:
   Enabled:         false
@@ -66,6 +71,7 @@ AlignConsecutiveTableGenDefinitionColons:
   AlignCompound:   false
   AlignFunctionDeclarations: false
   AlignFunctionPointers: false
+  EnumAssignments: false
   PadOperators:    false
 AlignEscapedNewlines: Right
 AlignOperands:   Align
@@ -82,18 +88,20 @@ AllowShortCaseExpressionOnASingleLine: true
 AllowShortCaseLabelsOnASingleLine: false
 AllowShortCompoundRequirementOnASingleLine: true
 AllowShortEnumsOnASingleLine: false
-AllowShortFunctionsOnASingleLine: None
+AllowShortFunctionsOnASingleLine:
+  Empty:           false
+  Inline:          false
+  Other:           false
 AllowShortIfStatementsOnASingleLine: Never
 AllowShortLambdasOnASingleLine: All
 AllowShortLoopsOnASingleLine: false
 AllowShortNamespacesOnASingleLine: false
+AllowShortRecordOnASingleLine: EmptyAndAttached
 AlwaysBreakAfterDefinitionReturnType: None
 AlwaysBreakBeforeMultilineStrings: false
 AttributeMacros:
   - __capability
-BinPackArguments: true
 BinPackLongBracedList: true
-BinPackParameters: BinPack
 BitFieldColonSpacing: After
 BracedInitializerIndentWidth: -1
 BraceWrapping:
@@ -134,10 +142,13 @@ BreakBeforeCloseBracketSwitch: false
 BreakBeforeConceptDeclarations: Always
 BreakBeforeBraces: Custom
 BreakBeforeInlineASMColon: OnlyMultiline
+BreakBeforeReturnType: None
 BreakBeforeTemplateCloser: false
 BreakBeforeTernaryOperators: true
-BreakBinaryOperations: Never
+BreakBinaryOperations:
+  Default:         Never
 BreakConstructorInitializers: BeforeColon
+BreakFunctionDeclarationParameters: false
 BreakFunctionDefinitionParameters: false
 BreakInheritanceList: BeforeColon
 BreakStringLiterals: true
@@ -182,7 +193,7 @@ IndentCaseBlocks: false
 IndentCaseLabels: true
 IndentExportBlock: true
 IndentExternBlock: AfterExternBlock
-IndentGotoLabels: true
+IndentGotoLabels: OuterIndent
 IndentPPDirectives: None
 IndentRequiresClause: true
 IndentWidth:     4
@@ -225,10 +236,17 @@ NumericLiteralCase:
 ObjCBinPackProtocolList: Auto
 ObjCBlockIndentWidth: 2
 ObjCBreakBeforeNestedBlockParam: true
+ObjCSpaceAfterMethodDeclarationPrefix: true
 ObjCSpaceAfterProperty: false
 ObjCSpaceBeforeProtocolList: true
 OneLineFormatOffRegex: ''
+PackArguments:
+  BinPack:         BinPack
+  BreakAfter:      0
 PackConstructorInitializers: BinPack
+PackParameters:
+  BinPack:         BinPack
+  BreakAfter:      0
 PenaltyBreakAssignment: 2
 PenaltyBreakBeforeFirstCallParameter: 19
 PenaltyBreakBeforeMemberAccess: 150
@@ -270,6 +288,7 @@ SpaceBeforeAssignmentOperators: true
 SpaceBeforeCaseColon: false
 SpaceBeforeCpp11BracedList: false
 SpaceBeforeCtorInitializerColon: true
+SpaceBeforeEnumUnderlyingTypeColon: true
 SpaceBeforeInheritanceColon: true
 SpaceBeforeJsonColon: false
 SpaceBeforeParens: Custom
