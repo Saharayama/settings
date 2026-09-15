@@ -441,8 +441,7 @@ _select_git_branch() {
   git rev-parse --is-inside-work-tree > /dev/null 2>&1 || return 1
   current="$(git branch --show-current)" || return 1
   mapfile -t branches < <(
-    git for-each-ref --format='%(refname:short)' refs/heads |
-    grep -Fvx -- "$current" |
+    git for-each-ref --format='%(refname:lstrip=2)' refs/heads |
     grep -F -- "$query"
   )
   local count=${#branches[@]}
