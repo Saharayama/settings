@@ -110,7 +110,7 @@
     "C_Cpp.default.compilerPath": "",
     "C_Cpp.markdownInComments": "disabled",
     // python
-    "python.defaultInterpreterPath": "C:/Program Files/Python314/python.exe",
+    "python.defaultInterpreterPath": "python.exe",
     "[python]": {
         "editor.glyphMargin": true,
         "editor.defaultFormatter": "charliermarsh.ruff"
