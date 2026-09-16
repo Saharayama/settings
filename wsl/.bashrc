@@ -303,8 +303,10 @@ def solve():
     width = int(sys.argv[1])
     h_len = width // 4
     pipe_in = sys.argv[2].strip()
-    args = sys.argv[3:]
-    all_exprs = [a for a in args if a] or pipe_in.split()
+    args = [a for a in sys.argv[3:] if a.strip()]
+    if pipe_in and args:
+      raise ValueError('use either stdin or arguments, not both')
+    all_exprs = args or pipe_in.split()
     if not all_exprs:
       return
     for i, expr in enumerate(all_exprs):
