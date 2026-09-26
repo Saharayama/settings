@@ -36,7 +36,7 @@ alias las='ls -lAhtr --time-style="+%Y-%m-%d %H:%M:%S"'
 export LANG=ja_JP.UTF-8
 stty -ixon
 alias rs='exec $SHELL'
-alias echon='printf "%s\r\n"'
+alias echon='printf "%s\n"'
 alias wu='winget.exe upgrade'
 alias wf='winget.exe find'
 alias ws='winget.exe show'
@@ -67,7 +67,7 @@ en() {
   local sequence
   sequence=$(eval echo '$3'"{""$1".."$2""$step""}"'$4')
   printf "%s\r\n" $sequence | clip
-  printf "%s\r\n" "$sequence" | tee >(wc -w)
+  printf "%s\n" "$sequence" | tee >(wc -w)
 }
 echonc() {
   echon $* | tee >(clip)
@@ -238,7 +238,7 @@ dh() {
     red='\033[1;91m'
     reset='\033[0m'
   fi
-  printf "${red}Deleted:${reset} %s\r\n" "$line_content"
+  printf "${red}Deleted:${reset} %s\n" "$line_content"
 }
 await() {
   if [[ -z "$1" ]]; then
@@ -302,7 +302,7 @@ dhm() {
     red='\033[1;91m'
     reset='\033[0m'
   fi
-  printf "${red}Deleted:${reset} %s\r\n" "$line_content"
+  printf "${red}Deleted:${reset} %s\n" "$line_content"
 }
 priv() {
   if [[ -z "${IN_PRIV_MODE:-}" ]]; then
