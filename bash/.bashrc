@@ -170,6 +170,8 @@ p() {
   MSYS_NO_PATHCONV=1 python.exe -Sc "
 import sys
 from math import *
+sys.stdout.reconfigure(newline='\n')
+sys.stderr.reconfigure(newline='\n')
 def solve():
   pipe_val = sys.argv[1]
   expressions = sys.argv[2:]
@@ -329,6 +331,8 @@ _p_signed() {
   MSYS_NO_PATHCONV=1 python.exe -Sc "
 import sys
 from math import *
+sys.stdout.reconfigure(newline='\n')
+sys.stderr.reconfigure(newline='\n')
 def solve():
   CYAN, RED, YELLOW, RESET = ('\033[96m', '\033[1;91m', '\033[1;93m', '\033[0m') if sys.stdout.isatty() else ('', '', '', '')
   i = -1
@@ -501,3 +505,4 @@ gbd() (
   )" || return
   git branch -D -- "$branch"
 )
+alias 1='head -n1'
